@@ -1,0 +1,60 @@
+body {
+	font-family: "Verdana";
+	width: 675px;
+}
+
+@media ( max-width: 690px ) {
+	body {
+		width: 94%;
+	}
+}
+
+h1 {
+	font-weight: inherit;
+	font-size: 28px;
+	text-decoration: underline;
+	margin: 0;
+}
+
+p, ul, a {
+	font-size: 13px;
+}
+
+ul {
+	padding-left: 20px;
+}
+
+a {
+	text-decoration: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.warning {
+	color: #db2323;
+	font-weight: bold;
+}
+
+code {
+	display: inline;
+	font-family: monospace;
+	background-color: #e8e8e8;
+	padding: 0px 3px 0px 3px;
+}
+
+a[target="_blank"]:after {
+	content: url( "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==" );
+	margin: 0px 3px 0px 5px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: #000000;
+}
+
+address {
+	font-size: 12px;
+}
