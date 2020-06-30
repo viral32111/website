@@ -1,0 +1,35 @@
+h2 {
+	font-weight: inherit;
+	font-size: 24px;
+	text-decoration: underline;
+	margin: 0;
+}
+
+code {
+	display: inline;
+	font-family: monospace;
+	background-color: #e8e8e8;
+	padding: 0px 3px 0px 3px;
+}
+
+p, ul, a {
+	font-size: 13px;
+}
+
+ul {
+	list-style: none;
+	padding-left: 15px;
+}
+
+ul li:before {
+	content: "\2022";
+	font-size: 13px;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
+}
+
+.warning {
+	color: #db2323;
+	font-weight: bold;
+}

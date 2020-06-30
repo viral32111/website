@@ -1,0 +1,50 @@
+* {
+	font-family: "Verdana";
+}
+
+body {
+	width: 675px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: #000000;
+}
+
+address {
+	font-size: 12px;
+}
+
+a {
+	text-decoration: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a[target="_blank"]:after {
+	content: url( "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==" );
+	margin: 0px 3px 0px 5px;
+}
+
+h1 {
+	font-weight: inherit;
+	font-size: 26px;
+	margin: 0px 0px 4px 00px;
+	text-align: center;
+}
+
+nav {
+	text-align: center;
+}
+
+nav a {
+	display: inline-block;
+	margin: 0px 10px 0px 10px;
+}
+
+.selected {
+	font-weight: bold;
+}
