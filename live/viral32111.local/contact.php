@@ -1,6 +1,68 @@
 <?php
 require( 'php/protect.php' );
 
+$isBot = Protection\UserAgent\IsBot( $_SERVER[ 'HTTP_USER_AGENT' ] );
+
+$emailLink = '';
+$emailAddress = Protection\Encode('[email protected]');
+
+if ( $isBot === FALSE ) {
+	$emailLink = ' href="' . Protection\Encode('mailto:viral32111@pm.me') . '?subject=Contact"';
+	$emailAddress = Protection\Encode('viral32111@pm.me');
+}
+
+
+/* Common User-Agents:
+* Firefox: Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0
+* Firefox Nightly: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0
+* Google Chrome: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
+* Internet Explorer: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+* Microsoft Edge: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.61
+* cURL: curl/7.55.1
+* wget: Wget/1.20.3 (linux-gnu)
+* Googlebot: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+	* Googlebot News: Googlebot-News
+	* Googlebot Images: Googlebot-Image/1.0
+	* Googlebot Video: Googlebot-Video/1.0
+	* Google Adsense: Mediapartners-Google
+	* Google Mobile Adsense: (compatible; Mediapartners-Google/2.1; +http://www.google.com/bot.html)
+	* Google Mobile: SAMSUNG-SGH-E250/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
+	* Google Smartphone: Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+	* Google AdsBot: AdsBot-Google (+http://www.google.com/adsbot.html)
+	* Google App Crawler: AdsBot-Google-Mobile-Apps
+* Bingbot: Mozilla/5.0 (compatible; Bingbot/2.0; +http://www.bing.com/bingbot.htm)
+* Slurp (Yahoo): Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)
+* DuckDuckBot: DuckDuckBot/1.0; (+http://duckduckgo.com/duckduckbot.html)
+	* Source IP: 72.94.249.34, 72.94.249.35, 72.94.249.36, 72.94.249.37, 72.94.249.38
+Baiduspider: Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
+	* Image Search: Baiduspider-image
+	* Video Search: Baiduspider-video
+	* News Search: Baiduspider-news
+	* Baidu wishlists: Baiduspider-favo
+	* Baidu Union: Baiduspider-cpro
+	* Business Search: Baiduspider-ads
+	* Other search pages: Baiduspider
+YandexBot: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+Sogou Spider:
+	* Sogou Pic Spider/3.0( http://www.sogou.com/docs/help/webmasters.htm#07)
+	* Sogou head spider/3.0( http://www.sogou.com/docs/help/webmasters.htm#07)
+	* Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)
+	* Sogou Orion spider/3.0( http://www.sogou.com/docs/help/webmasters.htm#07)
+	* Sogou-Test-Spider/4.0 (compatible; MSIE 5.5; Windows 98)
+Exabot:
+	* Mozilla/5.0 (compatible; Konqueror/3.5; Linux) KHTML/3.5.5 (like Gecko) (Exabot-Thumbnails)
+	* Mozilla/5.0 (compatible; Exabot/3.0; +http://www.exabot.com/go/robot)
+Facebook External Hit:
+	* facebot
+	* facebookexternalhit/1.0 (+http://www.facebook.com/externalhit_uatext.php)
+	* facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+Alexa Crawler: ia_archiver (+http://www.alexa.com/site/help/webmasters; crawler@alexa.com)
+Archive.org / Archive.is:
+	* ia_archiver
+	* archive.org_bot
+	* ia_archiver-web.archive.org
+*/
+
 // Set timezone to UTC
 date_default_timezone_set( 'UTC' );
 ?>
@@ -37,7 +99,7 @@ date_default_timezone_set( 'UTC' );
 		</header>
 
 		<!-- Content -->
-		<p>The ideal way to get in contact with me is to send an email to <a class="noexternal" href="<?=protect('mailto:viral32111@pm.me');?>?subject=Contact" rel="noopener noreferrer" title="Open your default email application with a new draft with me as the recipient."><?=protect('viral32111@pm.me');?></a>.<br>I check my inbox regularly throughout the week, so expect a reply within a few days.</p>
+		<p>The ideal way to get in contact with me is to send an email to <a class="noexternal"<?=$emailLink?> rel="noopener noreferrer" title="Open your default email application with a new draft with me as the recipient."><?=$emailAddress?></a>.<br>I check my inbox regularly throughout the week, so expect a reply within a few days.</p>
 
 		<p>Do not bother contacting me on other platforms that I have an account on. If I wish to speak with you on a different platform, I will add that to my reply.</p>
 
