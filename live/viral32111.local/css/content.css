@@ -1,0 +1,50 @@
+/* Headings */
+#content h1 {
+	/* Position */
+	margin: 0;
+
+	/* Font */
+	font-size: 24px;
+	text-decoration: underline;
+}
+
+/* Codeblocks */
+#content code {
+	/* Position */
+	display: inline;
+	padding: 0px 3px 0px 3px;
+
+	/* Font */
+	font-family: monospace;
+
+	/* Color */
+	background-color: #e8e8e8;
+}
+
+/* Lists */
+#content ul {
+	/* Position */
+	padding-left: 15px;
+
+	/* List */
+	list-style: none;
+}
+
+#content ul li:before {
+	/* Position */
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
+	
+	/* Content */
+	content: "\2022";
+}
+
+/* Warnings */
+#content .warning {
+	/* Font */
+	font-weight: bold;
+
+	/* Color */
+	color: #db2323;
+}
