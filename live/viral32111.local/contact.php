@@ -63,15 +63,43 @@ Archive.org / Archive.is:
 	* ia_archiver-web.archive.org
 */
 
-// Set timezone to UTC
-//date_default_timezone_set( 'UTC' );
+$dateFormatRegular = 'l jS F Y, H:i:s T';
+$dateFormatPrecise = 'l jS F Y, H:i:s.v T';
+$requestDate = DateTime::createFromFormat( 'U.u', $_SERVER[ 'REQUEST_TIME_FLOAT' ] );
+$requestDate->setTimezone( new DateTimeZone( date_default_timezone_get() ) );
+$requestReceived = $requestDate->format( $dateFormatPrecise );
+
+$quotes = [
+	'Break the rules. Find your freedom. Live your life.',
+	'Freedom is the power to choose your own chains.',
+	'Freedom is being you, without anyone\'s permission.',
+	'Freedom is the oxygen of the soul',
+	'It\'s time to remember what it\'s like to feel alive.',
+	'Can you remember who you were before the world told you who you should be?',
+	'Normal people have no idea how beautiful the darkness is.',
+	'Stars hide your fires; Let not light see my black and deep desires.',
+	'I love the sound of heavy rain and thunder on a dark night, I find it peaceful.',
+	'Spoiler, we die in the end.',
+	'A smooth sea never made a skilled sailor.',
+	'Speak your mind, even if your voice shakes.',
+	'Do the world a favour, don\'t hide your magic.',
+	'Life is so infinitly finite.',
+	'I always like tomorrows, I haven\'t made any mistakes yet in tomorrows.',
+	'Life is an art of failing magnificently.',
+	'I love places that make you realize how tiny you and your problems are.',
+	'The reason most goals are not achieved is because we spend our time doing second things first.',
+	'Have you come this far to only come this far?'
+]
+
 ?>
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
 		<title>Contact</title>
+
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<?php if ( isset( $_GET[ 'nocss' ] ) == FALSE ) { ?>
 		<link rel="stylesheet" href="/css/global.css" type="text/css">
 		<link rel="stylesheet" href="/css/header.css" type="text/css">
@@ -82,11 +110,13 @@ Archive.org / Archive.is:
 		<link rel="stylesheet" href="/css/dark.css" type="text/css">
 		<?php } ?>
 		<?php } ?>
+
+		<link rel="icon" href="/img/avatar.png" type="image/png">
 	</head>
 	<body>
 		<!-- Header -->
 		<header>
-			<h1>viral32111's website</h1>
+			<h1><img src="/img/avatar.png" height="31px">viral32111's website</h1>
 			<nav>
 				<a href="/index.php">[Home]</a>
 				<a href="/about.php">[About]</a>
@@ -104,11 +134,11 @@ Archive.org / Archive.is:
 		<!-- Announcement -->
 		<div id="announcements">
 			<div class="announcement">
-				<h1>Important Title!</h1>
+				<h2>Important Title!</h2>
 				<p>This is some important information, you must read it right away! What is love? Baby don't hurt me, don't hurt me, no more! Never gonna give you up, never gonna let you down, never gonna hurt you!</p>
-				<footer>Friday 10th July 2020 at 18:00:31 UTC.</footer>
+				<footer>Friday 10th July 2020, 18:00:31 UTC.</footer>
 			</div>
-			<div class="announcement">
+			<!--<div class="announcement">
 				<h1>Important Title!</h1>
 				<p>This is some important information, you must read it right away!</p>
 				<footer>Friday 10th July 2020 at 18:00:31 UTC.</footer>
@@ -117,7 +147,7 @@ Archive.org / Archive.is:
 				<h1>Important Title!</h1>
 				<p>This is some important information, you must read it right away! What is love? Baby don't hurt me, don't hurt me, no more! Never gonna give you up, never gonna let you down, never gonna hurt you!</p>
 				<footer>Friday 10th July 2020 at 18:00:31 UTC.</footer>
-			</div>
+			</div>-->
 		</div>
 
 		<hr>
@@ -147,38 +177,39 @@ Archive.org / Archive.is:
 
 			<p>If you care about privacy, consider encrypting your message using <a href="/public.txt" target="_blank" rel="noopener">my public key</a> so that only I can read your message. It would be wise for you to send your public key in your first email to me so that I too may encrypt my replies.</p>
 
-			<p class="warning">Sending junk or any form of spam to my inbox will get you personally blacklisted until the end of time, reported to your provider and reported to a public spam database, so I strongly advise against doing that if you ever wish to email with me or anyone else in the future.</p>
+			<p class="warning">Sending junk or any form of spam to my inbox will get you personally blacklisted until the end of time, reported to your provider and reported to a public spam database, so I strongly advise against doing that if you ever wish to email me or anyone else in the future.</p>
 		</div>
 
 		<hr>
 
 		<!-- Footer -->
 		<footer>
-			<!-- Statistics & Information -->
 			<p>
-				<!-- Request Statistics (Processing time, Request received timestamp)-->
-				This request took around <?=round( ( microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ] ) * 1000, 2 )?>ms to process, it was received on <?=date( 'l dS F Y \a\t H:i:s T', $_SERVER[ 'REQUEST_TIME_FLOAT' ] )?>.<br>
+				Your request took <?= round( ( microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ] ) * 1000, 2 ) ?>ms to process from being received on <?= $requestReceived ?>.<br>
 
-				<!-- Cache Information & Content History -->
-				This content on this page was last updated on <?=date( 'l dS F Y \a\t H:i:s T', filemtime( __FILE__ ) )?>. <a href="?changelog">[Changelog]</a><br>
+				The content on this page was last modified on <?= date( $dateFormatRegular, filemtime( __FILE__ ) ) ?>. <a href="?changelog">[Changelog]</a><br>
 
-				<!-- Page Statistics (Total & Unique Views) -->
+				The code for this website was last modified on <?= date( $dateFormatRegular, filemtime( __FILE__ ) - random_int( 20000, 1000000 ) ) ?>. <a href="?changelog">[Changelog]</a><br>
+
 				This page has been viewed 12,634 times (17 via Tor, 2 via CLI), 176 of which were unique.
 			</p>
 
-			<!-- Buttons (Toggle CSS, Toggle Theme) -->
-			<!--<?php if ( isset( $_GET[ 'nocss' ] ) ) { ?>
-			<a href="/contact.php">[Enable CSS]</a>
+			<!--<p>
+			<?php if ( isset( $_GET[ 'nocss' ] ) ) { ?>
+			Consider <a href="/contact.php">[Enabling CSS]</a> for a prettier layout.
 			<?php } else { ?>
-			<a href="?nocss">[Disable CSS]</a>
+			You can <a href="?nocss">[Disable CSS]</a> for classic-web looks.
+
+			<br>
 
 			<?php if ( isset( $_GET[ 'dark' ] ) ) { ?>
-			<a href="/contact.php">[Use Light Theme]</a>
+			Want to <a href="/contact.php">[Use Light Theme]</a>?
 			<?php } else { ?>
-			<a href="?dark">[Use Dark Theme]</a>
+			Want to <a href="?dark">[Use Dark Theme]</a>?
 			<?php } ?>
 
-			<?php } ?>-->
+			<?php } ?>
+			</p>-->
 
 			<!-- Legal -->
 			<p>
@@ -192,12 +223,3 @@ Archive.org / Archive.is:
 		</footer>
 	</body>
 </html>
-
-<!--Connection Security (HTTP/HTTPs)
-<?php if ( $_SERVER[ 'HTTPS' ] == "on" ) { ?>
-<p>This connection is encrypted with <?=$_SERVER[ 'SSL_PROTOCOL' ]?> using <?=$_SERVER[ 'SSL_CIPHER_USEKEYSIZE' ]?>-bit keys (<code><?=$_SERVER[ 'SSL_CIPHER' ]?></code>).</p>
-<?php } else { ?>
-<p>This connection is <u>not</u> encrypted.</p>
-<?php } ?>-->
-
-<!-- Icons provided by famfamfam.com/lab/icons/silk under CC-BY-2.5 -->
