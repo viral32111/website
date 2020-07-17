@@ -1,5 +1,6 @@
 <?php
 require( 'php/protect.php' );
+require( 'php/markdown/parser.php' );
 
 $isBot = Protection\UserAgent\IsBot( $_SERVER[ 'HTTP_USER_AGENT' ] );
 
@@ -10,7 +11,6 @@ if ( $isBot === FALSE ) {
 	$emailLink = ' href="' . Protection\Encode('mailto:viral32111@pm.me') . '?subject=Contact"';
 	$emailAddress = Protection\Encode('viral32111@pm.me');
 }
-
 
 /* Common User-Agents:
 * Firefox: Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0
@@ -70,7 +70,13 @@ $requestDate->setTimezone( new DateTimeZone( date_default_timezone_get() ) );
 $requestReceived = $requestDate->format( $dateFormatPrecise );
 
 $contentDirectory = '/home/ubuntu2004/github-repositories/viral32111/viral32111.local/content/';
+$thePageContent = parseContent( $contentDirectory . $_GET[ 'page' ] . '.md' );
 
+//echo( '<pre>' );
+//var_dump( $thePageContent );
+//echo( '</pre>' );
+
+/*
 $quotes = [
 	'Break the rules. Find your freedom. Live your life.',
 	'Freedom is the power to choose your own chains.',
@@ -91,7 +97,8 @@ $quotes = [
 	'I love places that make you realize how tiny you and your problems are.',
 	'The reason most goals are not achieved is because we spend our time doing second things first.',
 	'Have you come this far to only come this far?'
-]
+];
+*/
 
 /* metadata for md files:
 ;title
@@ -107,12 +114,21 @@ $quotes = [
 	* default if not specified is avatar: /img/avatar.png
 */
 
-
+$pages = [
+	'index' => [ '/', 'Home' ],
+	'about' => [ '/about', 'About' ],
+	'projects' => [ '/projects', 'Projects' ],
+	'blog/index' => [ '/blog', 'Blog' ],
+	'guides/index' => [ '/guides', 'Guides' ],
+	'community' => [ '/community', 'Community' ],
+	'contact' => [ '/contact', 'Contact' ],
+	'donate' => [ '/donate', 'Donate' ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
-		<title>Hello World</title>
+		<title><?= $thePageContent[ 'metadata' ][ 'title' ] ?></title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -135,27 +151,26 @@ $quotes = [
 		<header>
 			<h1><img src="/img/avatar.png" height="31px">viral32111's website</h1>
 			<nav>
-				<a href="/" class="selected">[Home]</a>
-				<a href="/about">[About]</a>
-				<a href="/projects">[Projects]</a>
-				<a href="/blog">[Blog]</a>
-				<a href="/guides">[Guides]</a>
-				<a href="/community">[Community]</a>
-				<a href="/contact">[Contact]</a>
-				<a href="/donate">[Donate]</a>
+				<?php foreach ( $pages as $page => $link ) {
+					if ( $page === $_GET[ 'page' ] ) {
+						echo( '<a href="' . $link[ 0 ] . '" class="selected">[' . $link[ 1 ] . ']</a>' . "\n" );
+					} else {
+						echo( '<a href="' . $link[ 0 ] . '">[' . $link[ 1 ] . ']</a>' . "\n"  );
+					}
+				} ?>
 			</nav>
 		</header>
 
 		<hr>
 
 		<!-- Announcements -->
-		<div id="announcements">
+		<!--<div id="announcements">
 			<div class="announcement">
 				<h2>Important Title!</h2>
 				<p>This is some important information, you must read it right away! What is love? Baby don't hurt me, don't hurt me, no more! Never gonna give you up, never gonna let you down, never gonna hurt you!</p>
 				<footer>Friday 10th July 2020, 18:00:31 UTC.</footer>
 			</div>
-			<!--<div class="announcement">
+			<div class="announcement">
 				<h1>Important Title!</h1>
 				<p>This is some important information, you must read it right away!</p>
 				<footer>Friday 10th July 2020 at 18:00:31 UTC.</footer>
@@ -164,24 +179,26 @@ $quotes = [
 				<h1>Important Title!</h1>
 				<p>This is some important information, you must read it right away! What is love? Baby don't hurt me, don't hurt me, no more! Never gonna give you up, never gonna let you down, never gonna hurt you!</p>
 				<footer>Friday 10th July 2020 at 18:00:31 UTC.</footer>
-			</div>-->
+			</div>
 		</div>
 
-		<hr>
+		<hr>-->
 
 		<!-- Content -->
 		<div id="content">
-			<p>You're looking for <strong><?= $_GET[ 'page' ] ?></strong>?</p>
+			<!-- <p>You're looking for <strong><?= $_GET[ 'page' ] ?></strong>?</p>
 
-			<?php if ( file_exists( $contentDirectory . $_GET[ 'page' ] . '.md' ) === TRUE ) { ?>
+			<?php if ( is_file( $contentDirectory . $_GET[ 'page' ] . '.md' ) === TRUE ) { ?>
 			<p style="color:#008800;">It exists!</p>
 		
 			<pre><?php echo( file_get_contents( $contentDirectory . $_GET[ 'page' ] . '.md' ) ); ?></pre>
 			<?php } else { ?>
 			<p style="color:#ff0000;">It does not exist.</p>
-			<?php } ?>
+			<?php } ?> -->
 
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, fugiat atque cupiditate laborum dolorem quo? Voluptatibus cumque molestias tenetur dolorem sit? Iure, quo. Hic temporibus placeat tenetur quidem dolore odit.</p>
+			<?=$thePageContent[ 'html' ]?>
+
+			<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, fugiat atque cupiditate laborum dolorem quo? Voluptatibus cumque molestias tenetur dolorem sit? Iure, quo. Hic temporibus placeat tenetur quidem dolore odit.</p> -->
 		</div>
 
 		<hr>
@@ -218,10 +235,10 @@ $quotes = [
 			<p>
 				Copyright &copy; 2016 - <?= date( 'Y' ) ?> viral32111. All rights reserved unless stated otherwise.
 				<br>
-				<a href="/legal/tos.php">[Terms of Service]</a>
-				<a href="/legal/privacy.php">[Privacy Policy]</a>
-				<a href="/legal/cookies.php">[Cookie Policy]</a>
-				<a href="/legal/thirdparty.php">[Thirdparty Notices]</a>
+				<a href="/legal/tos">[Terms of Service]</a>
+				<a href="/legal/privacy">[Privacy Policy]</a>
+				<a href="/legal/cookies">[Cookie Policy]</a>
+				<a href="/legal/thirdparty">[Thirdparty Notices]</a>
 			</p>
 		</footer>
 	</body>
