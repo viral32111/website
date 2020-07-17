@@ -115,7 +115,7 @@ $quotes = [
 */
 
 $pages = [
-	'index' => [ '/', 'Home' ],
+	'home' => [ '/', 'Home' ],
 	'about' => [ '/about', 'About' ],
 	'projects' => [ '/projects', 'Projects' ],
 	'blog/index' => [ '/blog', 'Blog' ],
@@ -208,7 +208,7 @@ $pages = [
 			<p>
 				Your request took <?= round( ( microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ] ) * 1000, 2 ) ?>ms to process from being received on <?= $requestReceived ?>.<br>
 
-				The content on this page was last modified on <?= date( $dateFormatRegular, filemtime( $contentDirectory . $_GET[ 'page' ] . '.md' ) ) ?>. <a href="?changelog">[Changelog]</a><br>
+				The content on this page was last modified on <?= date( $dateFormatRegular, filemtime( $contentDirectory . $_GET[ 'page' ] . '.md' ) ) ?>. <a href="?changelog">[History]</a><br>
 
 				The code for this website was last modified on <?= date( $dateFormatRegular, filemtime( __FILE__ ) ) ?>. <a href="?changelog">[Changelog]</a><br>
 
