@@ -1,1 +1,3 @@
-I am the cookie policy.
+Cookie policy:
+
+* This website does not use cookies.

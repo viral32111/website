@@ -1,6 +1,7 @@
 <?php
 require( 'php/protect.php' );
-require( 'php/markdown/parser.php' );
+require( 'php/parser.php' );
+require( 'php/announcements.php' );
 
 $isBot = Protection\UserAgent\IsBot( $_SERVER[ 'HTTP_USER_AGENT' ] );
 
@@ -72,9 +73,27 @@ $requestReceived = $requestDate->format( $dateFormatPrecise );
 $contentDirectory = '/home/ubuntu2004/github-repositories/viral32111/viral32111.local/content/';
 $thePageContent = parseContent( $contentDirectory . $_GET[ 'page' ] . '.md' );
 
-//echo( '<pre>' );
-//var_dump( $thePageContent );
-//echo( '</pre>' );
+/*
+echo( '<pre style="font-family: monospace;">' );
+var_dump( $thePageContent );
+echo( '</pre>' );
+*/
+
+$announcementsPath = '/home/ubuntu2004/github-repositories/viral32111/viral32111.local/content/announcements';
+$announcements = fetchAnnouncements( $announcementsPath );
+
+/*
+echo( '<pre style="font-family: monospace;">' );
+var_dump( $announcements );
+echo( '</pre>' );
+*/
+
+/*
+$timestamp = filemtime( $contentDirectory . $_GET[ 'page' ] . '.md' );
+echo( '<pre style="font-family: monospace;">' );
+echo( substr( hash( 'sha3-512', $thePageContent[ 'markdown' ] ), 0, 32 ) . "\n" );
+echo( '</pre>' );
+*/
 
 /*
 $quotes = [
@@ -118,12 +137,14 @@ $pages = [
 	'home' => [ '/', 'Home' ],
 	'about' => [ '/about', 'About' ],
 	'projects' => [ '/projects', 'Projects' ],
-	'blog/index' => [ '/blog', 'Blog' ],
+	'blog/index' => [ '/blog', 'Blog' ], // Fix this cuz it doesn't display as highlighted when viewing a blog post - just check the start of the $get page string
 	'guides/index' => [ '/guides', 'Guides' ],
 	'community' => [ '/community', 'Community' ],
 	'contact' => [ '/contact', 'Contact' ],
 	'donate' => [ '/donate', 'Donate' ]
 ];
+
+$pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'https' : 'http' ) . '://' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ];
 ?>
 <!DOCTYPE html>
 <html lang="en-GB">
@@ -132,6 +153,13 @@ $pages = [
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="viral32111's website">
+		<meta property="og:url" content="<?= $pageURL ?>">
+		<meta property="og:title" content="<?= $thePageContent[ 'metadata' ][ 'title' ] ?>">
+		<meta property="og:description" content="<?= $thePageContent[ 'metadata' ][ 'summary' ] ?>">
+		<meta property="og:image" content="<?= $thePageContent[ 'metadata' ][ 'thumbnail' ] ?>">
 
 		<?php if ( $_GET[ 'css' ] !== 'disabled' ) { ?>
 		<link rel="stylesheet" href="/css/global.css" type="text/css">
@@ -152,55 +180,55 @@ $pages = [
 			<h1><img src="/img/avatar.png" height="31px">viral32111's website</h1>
 			<nav>
 				<?php foreach ( $pages as $page => $link ) {
+
 					if ( $page === $_GET[ 'page' ] ) {
+
 						echo( '<a href="' . $link[ 0 ] . '" class="selected">[' . $link[ 1 ] . ']</a>' . "\n" );
+
 					} else {
-						echo( '<a href="' . $link[ 0 ] . '">[' . $link[ 1 ] . ']</a>' . "\n"  );
+
+						echo( '<a href="' . $link[ 0 ] . '">[' . $link[ 1 ] . ']</a>' . "\n" );
+
 					}
+
 				} ?>
 			</nav>
 		</header>
 
+		<!-- Divider -->
 		<hr>
 
 		<!-- Announcements -->
-		<!--<div id="announcements">
-			<div class="announcement">
-				<h2>Important Title!</h2>
-				<p>This is some important information, you must read it right away! What is love? Baby don't hurt me, don't hurt me, no more! Never gonna give you up, never gonna let you down, never gonna hurt you!</p>
-				<footer>Friday 10th July 2020, 18:00:31 UTC.</footer>
-			</div>
-			<div class="announcement">
-				<h1>Important Title!</h1>
-				<p>This is some important information, you must read it right away!</p>
-				<footer>Friday 10th July 2020 at 18:00:31 UTC.</footer>
-			</div>
-			<div class="announcement">
-				<h1>Important Title!</h1>
-				<p>This is some important information, you must read it right away! What is love? Baby don't hurt me, don't hurt me, no more! Never gonna give you up, never gonna let you down, never gonna hurt you!</p>
-				<footer>Friday 10th July 2020 at 18:00:31 UTC.</footer>
-			</div>
-		</div>
+		<?php if ( count( $announcements ) > 0 ) {
 
-		<hr>-->
+			echo( '<div id="announcements">' . "\n" );
+
+			foreach ( $announcements as $index => $name ) {
+
+				$announcement = parseContent( $announcementsPath . '/' . $name );
+
+				echo( '<div class="announcement">' . "\n" );
+
+				echo( '<h2>' . $announcement[ 'metadata' ][ 'title' ] . '</h2>' . "\n" );
+				echo( '<p>' . $announcement[ 'metadata' ][ 'summary' ] . ' <em><a href="/announcements/' . pathinfo( $name, PATHINFO_FILENAME ) . '">[Read more...]</a></em></p>' . "\n" );
+				echo( '<footer>' . date( $dateFormatRegular, filemtime( $announcementsPath . '/' . $name ) ) . '</footer>' . "\n" );
+
+				echo( '</div>' . "\n" );
+			
+			}
+
+			echo( '</div>' . "\n" );
+
+			echo( '<hr style="margin-top: 10px;">' . "\n" );
+			
+		} ?>
 
 		<!-- Content -->
 		<div id="content">
-			<!-- <p>You're looking for <strong><?= $_GET[ 'page' ] ?></strong>?</p>
-
-			<?php if ( is_file( $contentDirectory . $_GET[ 'page' ] . '.md' ) === TRUE ) { ?>
-			<p style="color:#008800;">It exists!</p>
-		
-			<pre><?php echo( file_get_contents( $contentDirectory . $_GET[ 'page' ] . '.md' ) ); ?></pre>
-			<?php } else { ?>
-			<p style="color:#ff0000;">It does not exist.</p>
-			<?php } ?> -->
-
-			<?=$thePageContent[ 'html' ]?>
-
-			<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, fugiat atque cupiditate laborum dolorem quo? Voluptatibus cumque molestias tenetur dolorem sit? Iure, quo. Hic temporibus placeat tenetur quidem dolore odit.</p> -->
+			<?= $thePageContent[ 'content' ][ 'html' ] . "\n" ?>
 		</div>
 
+		<!-- Divider -->
 		<hr>
 
 		<!-- Footer -->
@@ -208,28 +236,33 @@ $pages = [
 			<p>
 				Your request took <?= round( ( microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ] ) * 1000, 2 ) ?>ms to process from being received on <?= $requestReceived ?>.<br>
 
-				The content on this page was last modified on <?= date( $dateFormatRegular, filemtime( $contentDirectory . $_GET[ 'page' ] . '.md' ) ) ?>. <a href="?changelog">[History]</a><br>
+				The content for this page was last modified on <?= date( $dateFormatRegular, filemtime( $contentDirectory . $_GET[ 'page' ] . '.md' ) ) ?>. <a href="?history">[Edit History]</a><br>
 
-				The code for this website was last modified on <?= date( $dateFormatRegular, filemtime( __FILE__ ) ) ?>. <a href="?changelog">[Changelog]</a><br>
+				The code for this website was last modified on <?= date( $dateFormatRegular, filemtime( __FILE__ ) ) ?>. <a href="/changelog">[Changelog]</a><br>
 
 				This page has been viewed 0 times (0 via Tor, 0 via CLI), 0 of which were unique.
 			</p>
 
 			<!-- Buttons -->
-			<p>
-			<?php if ( $_GET[ 'css' ] === 'disabled' ) { ?>
-			<a href="?css=enabled">[Enable CSS]</a>
-			<?php } else { ?>
-			<a href="?css=disabled">[Disable CSS]</a>
+			<p><?php if ( $_GET[ 'css' ] === 'disabled' ) { ?>
 
-			<?php if ( $_GET[ 'theme' ] === 'dark' ) { ?>
-			<a href="?theme=light">[Light Theme]</a>
-			<?php } else { ?>
-			<a href="?theme=dark">[Dark Theme]</a>
-			<?php } ?>
+				<a href="?css=enabled">[Enable CSS]</a>
 
-			<?php } ?>
-			</p>
+			<?php } else { ?>
+
+				<a href="?css=disabled">[Disable CSS]</a>
+
+				<?php if ( $_GET[ 'theme' ] === 'dark' ) { ?>
+
+					<a href="?theme=light">[Light Theme]</a>
+
+				<?php } else { ?>
+
+					<a href="?theme=dark">[Dark Theme]</a>
+
+				<?php } ?>
+
+			<?php } ?></p>
 
 			<!-- Legal -->
 			<p>
@@ -239,6 +272,7 @@ $pages = [
 				<a href="/legal/privacy">[Privacy Policy]</a>
 				<a href="/legal/cookies">[Cookie Policy]</a>
 				<a href="/legal/thirdparty">[Thirdparty Notices]</a>
+				<a href="/sitemap">[Sitemap]</a>
 			</p>
 		</footer>
 	</body>
