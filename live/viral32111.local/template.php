@@ -1,4 +1,5 @@
 <?php
+
 require( 'php/protect.php' );
 require( 'php/parser.php' );
 require( 'php/announcements.php' );
@@ -225,7 +226,17 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 
 		<!-- Content -->
 		<div id="content">
-			<?= $thePageContent[ 'content' ][ 'html' ] . "\n" ?>
+			<?php if ( isset( $_GET[ 'error' ] ) === TRUE ) {
+
+				echo( '<pre>' );
+				var_dump( $_SERVER );
+				echo( '</pre>' );
+
+			} else {
+
+				echo( $thePageContent[ 'content' ][ 'html' ] . "\n" );
+
+			} ?>
 		</div>
 
 		<!-- Divider -->
