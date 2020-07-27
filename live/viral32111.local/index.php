@@ -237,16 +237,16 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 		<meta property="og:description" content="<?= $thePageContent[ 'metadata' ][ 'summary' ] ?>">
 		<meta property="og:image" content="<?= $thePageContent[ 'metadata' ][ 'thumbnail' ] ?>">
 
-		<?php if ( $_GET[ 'css' ] !== 'disabled' ) { ?>
+		<!-- <?php if ( $_GET[ 'css' ] !== 'disabled' ) { ?> -->
 		<link rel="stylesheet" href="/css/global.css" type="text/css">
 		<link rel="stylesheet" href="/css/header.css" type="text/css">
 		<link rel="stylesheet" href="/css/announcement.css" type="text/css">
 		<link rel="stylesheet" href="/css/content.css" type="text/css">
 		<link rel="stylesheet" href="/css/footer.css" type="text/css">
-		<?php if ( $_GET[ 'theme' ] === 'dark' ) { ?>
+		<!-- <?php if ( $_GET[ 'theme' ] === 'dark' ) { ?> -->
 		<link rel="stylesheet" href="/css/dark.css" type="text/css">
-		<?php } ?>
-		<?php } ?>
+		<!-- <?php } ?>
+		<?php } ?> -->
 
 		<link rel="icon" href="/img/avatar.png" type="image/png">
 	</head>
