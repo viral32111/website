@@ -1,1 +1,5 @@
-I am the about page!
+;title=About
+;summary=You can learn stuff here about me.
+;changenote=Created the page.
+
+About my life, blah blah... boring! 

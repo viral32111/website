@@ -1,3 +1,7 @@
+;title=Contact
+;summary=Wanna speak with me?
+;changenote=Created the page.
+
 The ideal way to get in contact with me is to send an email to [viral32111@pm.me](mailto:viral32111@pm.me?subject=Contact).<br>I check my inbox regularly throughout the week, so expect a reply within a few days.
 
 Do not bother contacting me on other platforms that I have an account on. If I wish to speak with you on a different platform, I will add that to my reply.

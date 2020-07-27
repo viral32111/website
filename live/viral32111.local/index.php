@@ -135,17 +135,18 @@ $quotes = [
 */
 
 $pages = [
-	'home' => [ '/', 'Home' ],
+	'index' => [ '/', 'Home' ],
 	'about' => [ '/about', 'About' ],
 	'projects' => [ '/projects', 'Projects' ],
-	'blog/index' => [ '/blog', 'Blog' ], // Fix this cuz it doesn't display as highlighted when viewing a blog post - just check the start of the $get page string
-	'guides/index' => [ '/guides', 'Guides' ],
+	'blog/' => [ '/blog', 'Blog' ],
+	'guides/' => [ '/guides', 'Guides' ],
 	'community' => [ '/community', 'Community' ],
 	'contact' => [ '/contact', 'Contact' ],
 	'donate' => [ '/donate', 'Donate' ]
 ];
 
 $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'https' : 'http' ) . '://' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ];
+
 ?>
 <!DOCTYPE html>
 <html lang="en-GB">
@@ -182,7 +183,7 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 			<nav>
 				<?php foreach ( $pages as $page => $link ) {
 
-					if ( $page === $_GET[ 'page' ] ) {
+					if ( substr( $_GET[ 'page' ], 0, strlen( $page ) ) === $page ) {
 
 						echo( '<a href="' . $link[ 0 ] . '" class="selected">[' . $link[ 1 ] . ']</a>' . "\n" );
 
@@ -220,13 +221,15 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 
 			echo( '</div>' . "\n" );
 
-			echo( '<hr style="margin-top: 10px;">' . "\n" );
+			echo( '<hr>' . "\n" ); //  style="margin-top: 10px;"
 			
 		} ?>
 
 		<!-- Content -->
 		<div id="content">
 			<?php if ( isset( $_GET[ 'error' ] ) === TRUE ) {
+
+				echo( 'this is an error page, ok?<br>' );
 
 				echo( '<pre>' );
 				var_dump( $_SERVER );
@@ -243,7 +246,7 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 		<hr>
 
 		<!-- Footer -->
-		<footer>
+		<footer> <!--  style="margin-top: -5px;" -->
 			<p>
 				Your request took <?= round( ( microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ] ) * 1000, 2 ) ?>ms to process from being received on <?= $requestReceived ?>.<br>
 
@@ -255,7 +258,7 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 			</p>
 
 			<!-- Buttons -->
-			<p><?php if ( $_GET[ 'css' ] === 'disabled' ) { ?>
+			<!--<p><?php if ( $_GET[ 'css' ] === 'disabled' ) { ?>
 
 				<a href="?css=enabled">[Enable CSS]</a>
 
@@ -273,7 +276,7 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 
 				<?php } ?>
 
-			<?php } ?></p>
+			<?php } ?></p>-->
 
 			<!-- Legal -->
 			<p>
