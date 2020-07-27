@@ -11,11 +11,11 @@ body {
 	width: 675px;
 }
 
-@media ( max-width: 690px ) {
+/*@media ( max-width: 690px ) {
 	body {
 		width: 94%;
 	}
-}
+}*/
 
 /* Horizontal Lines */
 hr {

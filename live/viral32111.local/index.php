@@ -80,6 +80,76 @@ var_dump( $thePageContent );
 echo( '</pre>' );
 */
 
+/************* GnuPG Stuff! (Start) *************/
+
+// Set GnuPG's folder
+putenv( 'GNUPGHOME=/home/ubuntu2004/github-repositories/viral32111/viral32111.local/gnupg/' );
+
+// Initalise GnuPG
+$gpgHandle = gnupg_init();
+
+// Import my public key
+$gpgPublicKeyFPR = '906F25BD726AAE08F5F14E280A993CCFC26A5E2E';
+$gpgPublicKeyData = file_get_contents( 'public.txt' );
+if ( gnupg_import( $gpgHandle, $gpgPublicKeyData ) === FALSE ) {
+	die( 'Failed to import GPG public key: ' . gnupg_geterror( $gpgHandle ) );
+}
+
+// A helper function to verify a PGP clearsigned text
+function isSignatureGood( $clearSignedText ) {
+
+	// Expose some global variables to this scope
+	global $gpgHandle, $gpgPublicKeyFPR;
+
+	// Placeholder for the original text
+	$plainText = '';
+
+	// Verify it
+	$info = gnupg_verify( $gpgHandle, $clearSignedText, FALSE, $plainText );
+
+	// Return null if signature verification failed - this usually means the text is not clearsigned, but do check gnupg_error()
+	if ( $info === FALSE ) return NULL;
+
+	/* If the resulting fpr matches the fpr of the public key, then the signature is valid.
+	Otherwise, if the fingerprint is the keyid of the public key's signing key, the signature is invalid */
+
+	// Return true/false depending on if the resulting fpr is the same as the public key's fpr
+	return $info[ 0 ][ 'fingerprint' ] === $gpgPublicKeyFPR;
+
+}
+
+/************* GnuPG Stuff! (End) *************/
+
+/*$gpgSignatureClearSign = $thePageContent[ 'raw' ];
+$gpgSignaturePlainText = '';
+$gpgSignatureVerify = gnupg_verify( $gpgHandle, $gpgSignatureClearSign, FALSE, $gpgSignaturePlainText );
+$gpgSignatureError = gnupg_geterror( $gpgHandle );
+
+echo( '<pre style="font-family: monospace;">' );
+echo( '$gpgSignatureClearSign = ' );
+var_dump( $gpgSignatureClearSign );
+echo( '</pre><hr><pre style="font-family: monospace;">' );
+echo( '$gpgSignatureVerify = ' );
+var_dump( $gpgSignatureVerify );
+echo( '</pre><hr><pre style="font-family: monospace;">' );
+echo( '$gpgSignatureError = ' );
+var_dump( $gpgSignatureError );
+echo( '</pre><hr><pre style="font-family: monospace;">' );
+echo( '$gpgSignaturePlainText = ' );
+var_dump( $gpgSignaturePlainText );
+echo( '</pre><hr>' );
+
+$gpgKeyInfo = gnupg_keyinfo( $gpgHandle, '906F25BD726AAE08F5F14E280A993CCFC26A5E2E');
+$gpgKeyInfoError = gnupg_geterror( $gpgHandle );
+
+echo( '<pre style="font-family: monospace;">' );
+echo( '$gpgKeyInfo = ' );
+var_dump( $gpgKeyInfo );
+echo( '</pre><hr><pre style="font-family: monospace;">' );
+echo( '$gpgKeyInfoError = ' );
+var_dump( $gpgKeyInfoError );
+echo( '</pre><hr>' );*/
+
 $announcementsPath = '/home/ubuntu2004/github-repositories/viral32111/viral32111.local/content/announcements';
 $announcements = fetchAnnouncements( $announcementsPath );
 
@@ -151,7 +221,11 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
-		<title><?= $thePageContent[ 'metadata' ][ 'title' ] ?></title>
+		<?php if ( isset( $_GET[ 'error' ] ) === TRUE ) { ?>
+			<title><?= $_SERVER[ 'REDIRECT_STATUS' ] ?></title>
+		<?php } else { ?>
+			<title><?= $thePageContent[ 'metadata' ][ 'title' ] ?></title>
+		<?php } ?>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -179,7 +253,7 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 	<body>
 		<!-- Header -->
 		<header>
-			<h1><img src="/img/avatar.png" height="31px">viral32111's website</h1>
+			<h1><img src="/img/avatar.png" height="29px">viral32111's website</h1>
 			<nav>
 				<?php foreach ( $pages as $page => $link ) {
 
@@ -212,7 +286,7 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 				echo( '<div class="announcement">' . "\n" );
 
 				echo( '<h2>' . $announcement[ 'metadata' ][ 'title' ] . '</h2>' . "\n" );
-				echo( '<p>' . $announcement[ 'metadata' ][ 'summary' ] . ' <em><a href="/announcements/' . pathinfo( $name, PATHINFO_FILENAME ) . '">[Read more...]</a></em></p>' . "\n" );
+				echo( '<p>' . $announcement[ 'metadata' ][ 'summary' ] . ' <em><a href="/announcements/' . pathinfo( $name, PATHINFO_FILENAME ) . '">Continue reading...</a></em></p>' . "\n" );
 				echo( '<footer>' . date( $dateFormatRegular, filemtime( $announcementsPath . '/' . $name ) ) . '</footer>' . "\n" );
 
 				echo( '</div>' . "\n" );
@@ -239,6 +313,18 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 
 				echo( $thePageContent[ 'content' ][ 'html' ] . "\n" );
 
+				$signatureStatus = isSignatureGood( $thePageContent[ 'raw' ] );
+
+				echo( '<p>Signature Status: <strong>' );
+				if ( $signatureStatus === TRUE ) {
+					echo( '<span style="color: #23ad00">GOOD</span>' );
+				} elseif ( $signatureStatus === FALSE ) {
+					echo( '<span style="color: #ad0000">BAD</span>' );
+				} elseif ( $signatureStatus === NULL ) {
+					echo( '<span style="color: #7a7a7a">UNSIGNED</span>' );
+				}
+				echo( '</strong></p>' );
+
 			} ?>
 		</div>
 
@@ -250,9 +336,11 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 			<p>
 				Your request took <?= round( ( microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ] ) * 1000, 2 ) ?>ms to process from being received on <?= $requestReceived ?>.<br>
 
-				The content for this page was last modified on <?= date( $dateFormatRegular, filemtime( $contentDirectory . $_GET[ 'page' ] . '.md' ) ) ?>. <a href="?history">[Edit History]</a><br>
+				<?php if ( isset( $_GET[ 'error' ] ) !== TRUE ) { ?>
+					The content on this page was last modified on <?= date( $dateFormatRegular, filemtime( $contentDirectory . $_GET[ 'page' ] . '.md' ) ) ?>. <a href="?history">[Edit History]</a><br>
+				<?php } ?>
 
-				The code for this website was last modified on <?= date( $dateFormatRegular, filemtime( __FILE__ ) ) ?>. <a href="/changelog">[Changelog]</a><br>
+				The code of this website was last modified on <?= date( $dateFormatRegular, filemtime( __FILE__ ) ) ?>. <a href="/changelog">[Changelog]</a><br>
 
 				This page has been viewed 0 times (0 via Tor, 0 via CLI), 0 of which were unique.
 			</p>

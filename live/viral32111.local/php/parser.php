@@ -96,6 +96,9 @@ function parseContent( $path ) {
 
 	}
 
+	// DEBUGGING
+	$response[ 'raw' ] = $contents;
+
 	// Update original file content variable
 	$contents = trim( implode( "\n", $lines ) );
 
@@ -105,7 +108,7 @@ function parseContent( $path ) {
 	$signature = [];
 
 	// Is this content signed?
-	if ( preg_match( '/^-----BEGIN PGP SIGNED MESSAGE-----\nHash: ([A-Za-z0-9]+)\n\n(.*)\n-----BEGIN PGP SIGNATURE-----\n\n([A-Za-z0-9\/\+\=\n]+)\n-----END PGP SIGNATURE-----$/', $contents, $signature ) === 1 ) { // Needs single dot matches newline flag
+	if ( preg_match( '/^-----BEGIN PGP SIGNED MESSAGE-----\nHash: ([A-Za-z0-9]+)\n\n(.*)\n-----BEGIN PGP SIGNATURE-----\n\n([A-Za-z0-9\/\+\=\n]+)\n-----END PGP SIGNATURE-----$/s', $contents, $signature ) === 1 ) {
 
 		// Add it to the response's metadata
 		$response[ 'metadata' ][ 'signature' ] = [
