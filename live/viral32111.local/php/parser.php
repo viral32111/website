@@ -1,5 +1,20 @@
 <?php
 
+// Set GnuPG's data folder
+putenv( 'GNUPGHOME=/home/ubuntu2004/github-repositories/viral32111/viral32111.local/gnupg/' );
+
+// Initalise a GnuPG instance
+$gpgHandle = gnupg_init();
+
+// My public key's fingerprint
+$gpgPublicKeyFPR = '906F25BD726AAE08F5F14E280A993CCFC26A5E2E';
+
+// Read my public key from the '/public.txt' file
+//$gpgPublicKeyData = file_get_contents( 'public.txt' );
+
+// Throw an error if importing my public key fails
+//if ( gnupg_import( $gpgHandle, $gpgPublicKeyData ) === FALSE ) die( 'Failed to import public key: ' . gnupg_geterror( $gpgHandle ) );
+
 // The template for a content parse result
 $template = [
 
@@ -16,30 +31,48 @@ $template = [
 		'thumbnail' => '/img/avatar.png',
 
 		// Edit reason
-		'changenote' => null,
-
-		// GPG signature
-		'signature' => null
+		'changenote' => NULL
 
 	],
 
 	// The content of the page
-	'content' => [
-	
-		// The markdown representation of the page
-		'markdown' => '',
+	'content' => NULL,
 
-		// The HTML representation of the page
-		'html' => '',
-
-		// The JSON representation of the page
-		'json' => []
-
-	]
+	// The PGP signature of the content
+	'signature' => NULL
 
 ];
 
-function parseContent( $path ) {
+// A helper function to verify PGP clearsigned text
+function verifySignature( $clearSignedText ) {
+
+	// Include some global variables in this scope
+	global $gpgHandle, $gpgPublicKeyFPR;
+
+	// Placeholder for the original text
+	$plainText = '';
+
+	// Verify it
+	$verifyResult = gnupg_verify( $gpgHandle, $clearSignedText, FALSE, $plainText );
+
+	// Return null if signature verification failed - this usually means the text is not clearsigned, but do check gnupg_error()
+	if ( $verifyResult === FALSE ) return NULL;
+
+	// Return an array
+	return [
+		
+		// True/false depending on if the signature's fingerprint matches the public key fingerprint
+		'good' => ( $verifyResult[ 0 ][ 'fingerprint' ] === $gpgPublicKeyFPR ),
+
+		// The original plaintext
+		'text' => $plainText
+
+	];
+
+}
+
+// A function to parse a markdown content file to a specific format
+function parseContent( $path, $format ) {
 
 	/******** SETUP ********/
 
@@ -70,6 +103,19 @@ function parseContent( $path ) {
 	// Close the file
 	fclose( $handle );
 
+	/******** PARSE SIGNATURE ********/
+
+	// Was parsing the signature within the contents of the file successful?
+	if ( ( $verifyResult = verifySignature( $contents ) ) !== NULL ) {
+		
+		// Set the response signature status
+		$response[ 'signature' ] = $verifyResult[ 'good' ];
+
+		// Set the content
+		$contents = $verifyResult[ 'text' ];
+
+	}
+
 	/******** PARSE METADATA ********/
 
 	// Split the file up every new line
@@ -96,41 +142,30 @@ function parseContent( $path ) {
 
 	}
 
-	// DEBUGGING
-	$response[ 'raw' ] = $contents;
-
 	// Update original file content variable
 	$contents = trim( implode( "\n", $lines ) );
 
-	/******** PARSE CONTENT ********/
-
-	// Placeholder for matched regex groups
-	$signature = [];
-
-	// Is this content signed?
-	if ( preg_match( '/^-----BEGIN PGP SIGNED MESSAGE-----\nHash: ([A-Za-z0-9]+)\n\n(.*)\n-----BEGIN PGP SIGNATURE-----\n\n([A-Za-z0-9\/\+\=\n]+)\n-----END PGP SIGNATURE-----$/s', $contents, $signature ) === 1 ) {
-
-		// Add it to the response's metadata
-		$response[ 'metadata' ][ 'signature' ] = [
-			'hash' => $signature[ 1 ],
-			'hex' => $signature[ 3 ],
-		];
-
-		// Update original file content variable
-		$contents = $signature[ 2 ];
-
-	}
-
 	/******** PARSE MARKDOWN ********/
 
-	// Set the markdown
-	$response[ 'content' ][ 'markdown' ] = $contents;
+	// Is the requested format markdown?
+	if ( $format === 'markdown' ) {
 
-	// Set the HTML
-	$response[ 'content' ][ 'html' ] = $contents;
+		// Set the markdown
+		$response[ 'content' ] = $contents;
 
-	// Set the JSON
-	$response[ 'content' ][ 'json' ] = $contents;
+	// Is the requested format HTML?
+	} elseif ( $format === 'html' ) {
+
+		// Set the HTML
+		$response[ 'content' ] = $contents;
+
+	// Is the requested format JSON?
+	} elseif ( $format === 'json' ) {
+
+		// Set the JSON
+		$response[ 'content' ] = $contents;
+
+	}
 
 	/******** FINALISE ********/
 

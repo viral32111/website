@@ -72,53 +72,13 @@ $requestDate->setTimezone( new DateTimeZone( date_default_timezone_get() ) );
 $requestReceived = $requestDate->format( $dateFormatPrecise );
 
 $contentDirectory = '/home/ubuntu2004/github-repositories/viral32111/viral32111.local/content/';
-$thePageContent = parseContent( $contentDirectory . $_GET[ 'page' ] . '.md' );
+$thePageContent = parseContent( $contentDirectory . $_GET[ 'page' ] . '.md', 'html' );
 
 /*
 echo( '<pre style="font-family: monospace;">' );
 var_dump( $thePageContent );
 echo( '</pre>' );
 */
-
-/************* GnuPG Stuff! (Start) *************/
-
-// Set GnuPG's folder
-putenv( 'GNUPGHOME=/home/ubuntu2004/github-repositories/viral32111/viral32111.local/gnupg/' );
-
-// Initalise GnuPG
-$gpgHandle = gnupg_init();
-
-// Import my public key
-$gpgPublicKeyFPR = '906F25BD726AAE08F5F14E280A993CCFC26A5E2E';
-$gpgPublicKeyData = file_get_contents( 'public.txt' );
-if ( gnupg_import( $gpgHandle, $gpgPublicKeyData ) === FALSE ) {
-	die( 'Failed to import GPG public key: ' . gnupg_geterror( $gpgHandle ) );
-}
-
-// A helper function to verify a PGP clearsigned text
-function isSignatureGood( $clearSignedText ) {
-
-	// Expose some global variables to this scope
-	global $gpgHandle, $gpgPublicKeyFPR;
-
-	// Placeholder for the original text
-	$plainText = '';
-
-	// Verify it
-	$info = gnupg_verify( $gpgHandle, $clearSignedText, FALSE, $plainText );
-
-	// Return null if signature verification failed - this usually means the text is not clearsigned, but do check gnupg_error()
-	if ( $info === FALSE ) return NULL;
-
-	/* If the resulting fpr matches the fpr of the public key, then the signature is valid.
-	Otherwise, if the fingerprint is the keyid of the public key's signing key, the signature is invalid */
-
-	// Return true/false depending on if the resulting fpr is the same as the public key's fpr
-	return $info[ 0 ][ 'fingerprint' ] === $gpgPublicKeyFPR;
-
-}
-
-/************* GnuPG Stuff! (End) *************/
 
 /*$gpgSignatureClearSign = $thePageContent[ 'raw' ];
 $gpgSignaturePlainText = '';
@@ -281,7 +241,7 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 
 			foreach ( $announcements as $index => $name ) {
 
-				$announcement = parseContent( $announcementsPath . '/' . $name );
+				$announcement = parseContent( $announcementsPath . '/' . $name, 'html' );
 
 				echo( '<div class="announcement">' . "\n" );
 
@@ -299,6 +259,13 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 			
 		} ?>
 
+		<!-- Bad signature warning -->
+		<?php if ( $thePageContent[ 'signature' ] === FALSE ) { ?>
+			<p id="signature"><strong>WARNING:</strong> The content on this page has a bad digital signature! This could mean somebody is trying to impersonate me, do <u>not</u> trust any of the content written below!
+			</p>
+			<hr>
+		<?php } ?>
+
 		<!-- Content -->
 		<div id="content">
 			<?php if ( isset( $_GET[ 'error' ] ) === TRUE ) {
@@ -311,19 +278,7 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 
 			} else {
 
-				echo( $thePageContent[ 'content' ][ 'html' ] . "\n" );
-
-				$signatureStatus = isSignatureGood( $thePageContent[ 'raw' ] );
-
-				echo( '<p>Signature Status: <strong>' );
-				if ( $signatureStatus === TRUE ) {
-					echo( '<span style="color: #23ad00">GOOD</span>' );
-				} elseif ( $signatureStatus === FALSE ) {
-					echo( '<span style="color: #ad0000">BAD</span>' );
-				} elseif ( $signatureStatus === NULL ) {
-					echo( '<span style="color: #7a7a7a">UNSIGNED</span>' );
-				}
-				echo( '</strong></p>' );
+				echo( $thePageContent[ 'content' ] . "\n" );
 
 			} ?>
 		</div>
@@ -341,6 +296,15 @@ $pageURL = ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] === 'on' ? 'htt
 				<?php } ?>
 
 				The code of this website was last modified on <?= date( $dateFormatRegular, filemtime( __FILE__ ) ) ?>. <a href="/changelog">[Changelog]</a><br>
+
+				<!-- The content on this page has
+				<?php if ( $thePageContent[ 'signature' ] === TRUE ) { ?>
+					been signed with a <span style="color: #209c00">good</span> signature, you can trust that it was truly written by me.
+				<?php } elseif ( $thePageContent[ 'signature' ] === FALSE ) { ?>
+					been signed with a <span style="color: #990202"><strong>bad</strong></span> signature, do not trust any of the content written on this page!
+				<?php } elseif ( $thePageContent[ 'signature' ] === NULL ) { ?>
+					not been signed.
+				<?php } ?> -->
 
 				This page has been viewed 0 times (0 via Tor, 0 via CLI), 0 of which were unique.
 			</p>

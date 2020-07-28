@@ -48,3 +48,10 @@
 	/* Color */
 	color: #db2323;
 }
+
+#signature {
+	text-align: center;
+	width: 90%;
+	margin: 0 auto;
+	color: #ba0000;
+}
