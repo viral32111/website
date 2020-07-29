@@ -13,7 +13,6 @@ If you do not receive a reply, this could mean your email has been flagged by a 
 * The email server's IP address is __not__ behind a proxy network.
 * The email server's IP address is __not__ in a known spam blacklist.
 
-
 Whenever possible, write your emails in plaintext instead of HTML mode. This makes it easier for me to read and mitigates security issues such as phishing links and downloading remote content.
 
 Try to reduce the number of emails you are sending. You should write everything you wish to say in a single email, even if you have multiple unrelated topics you wish to speak about.

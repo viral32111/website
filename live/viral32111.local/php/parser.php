@@ -1,19 +1,27 @@
 <?php
 
-// Set GnuPG's data folder
-putenv( 'GNUPGHOME=/home/ubuntu2004/github-repositories/viral32111/viral32111.local/gnupg/' );
+/****************************************************************
+Initalise global variables
+****************************************************************/
 
-// Initalise a GnuPG instance
-$gpgHandle = gnupg_init();
+/******** GNUPG ********/
+
+// Set the GnuPG home directory
+putenv( 'GNUPGHOME=' . $_SERVER[ 'CONFIG_GNUPG_HOME' ] );
+
+// Create a GnuPG instance
+$gnupg = gnupg_init();
+
+// Set GnuPG error mode to warning instead of silent
+gnupg_seterrormode( $gnupg, GNUPG_ERROR_WARNING );
 
 // My public key's fingerprint
-$gpgPublicKeyFPR = '906F25BD726AAE08F5F14E280A993CCFC26A5E2E';
+$publicKeyFingerprint = '906F25BD726AAE08F5F14E280A993CCFC26A5E2E';
 
-// Read my public key from the '/public.txt' file
-//$gpgPublicKeyData = file_get_contents( 'public.txt' );
+// Throw an error if importing my public key from the '/public.txt' file fails - this only needs to be done once as the keyring is persistent!
+//if ( gnupg_import( $gnupg, file_get_contents( 'public.txt' ) ) === FALSE ) die( 'Failed to import public key: ' . gnupg_geterror( $gnupg ) );
 
-// Throw an error if importing my public key fails
-//if ( gnupg_import( $gpgHandle, $gpgPublicKeyData ) === FALSE ) die( 'Failed to import public key: ' . gnupg_geterror( $gpgHandle ) );
+/******** ARRAYS ********/
 
 // The template for a content parse result
 $template = [
@@ -21,16 +29,16 @@ $template = [
 	// The metadata of the page
 	'metadata' => [
 
-		// Title
+		// Default title
 		'title' => 'viral32111\'s website',
 
-		// Description
+		// Default description
 		'summary' => 'I\'m viral32111, this is my website.',
 
-		// Image
+		// Default image
 		'thumbnail' => '/img/avatar.png',
 
-		// Edit reason
+		// Default edit reason
 		'changenote' => NULL
 
 	],
@@ -38,48 +46,50 @@ $template = [
 	// The content of the page
 	'content' => NULL,
 
-	// The PGP signature of the content
+	// The digital signature of the content
 	'signature' => NULL
 
 ];
 
-// A helper function to verify PGP clearsigned text
-function verifySignature( $clearSignedText ) {
+// Available content formats & their parsing functions
+$formats = [
 
-	// Include some global variables in this scope
-	global $gpgHandle, $gpgPublicKeyFPR;
+	// Plaintext
+	'text' => function( $raw, $content, $lines ) {
 
-	// Placeholder for the original text
-	$plainText = '';
+		// Just return the entire file
+		return $raw;
 
-	// Verify it
-	$verifyResult = gnupg_verify( $gpgHandle, $clearSignedText, FALSE, $plainText );
+	},
 
-	// Return null if signature verification failed - this usually means the text is not clearsigned, but do check gnupg_error()
-	if ( $verifyResult === FALSE ) return NULL;
+	// HTML
+	'html' => function( $raw, $content, $lines ) {
 
-	// Return an array
-	return [
-		
-		// True/false depending on if the signature's fingerprint matches the public key fingerprint
-		'good' => ( $verifyResult[ 0 ][ 'fingerprint' ] === $gpgPublicKeyFPR ),
+		// Remove empty lines
+		$lines = array_filter( $lines, fn( $line ) => !is_null( $line ) && $line !== '' );
 
-		// The original plaintext
-		'text' => $plainText
+		// Return each line as a HTML paragraph
+		return '<p>' . implode( '</p><p>', $lines ) . '</p>';
+	}
 
-	];
+];
 
-}
+/****************************************************************
+Define public functions
+****************************************************************/
 
 // A function to parse a markdown content file to a specific format
 function parseContent( $path, $format ) {
 
 	/******** SETUP ********/
 
-	// Include $template into the scope of this function
-	global $template;
+	// Include global variables into the scope of this function
+	global $template, $formats, $gnupg, $publicKeyFingerprint;
 
 	/******** CHECKS ********/
+
+	// Don't continue if the requested format isn't recognised
+	if ( array_key_exists( $format, $formats ) !== TRUE ) return FALSE;
 
 	// Don't continue if the file isn't a markdown file
 	if ( pathinfo( $path, PATHINFO_EXTENSION ) !== 'md' ) return FALSE;
@@ -98,29 +108,35 @@ function parseContent( $path, $format ) {
 	$handle = fopen( $path, 'r' );
 
 	// Read the entire file into a string
-	$contents = fread( $handle, filesize( $path ) );
+	$content = fread( $handle, filesize( $path ) );
+	
+	// Create a copy of the file's content
+	$raw = $content;
 
 	// Close the file
 	fclose( $handle );
 
-	/******** PARSE SIGNATURE ********/
+	/******** VERIFY SIGNATURE ********/
 
-	// Was parsing the signature within the contents of the file successful?
-	if ( ( $verifyResult = verifySignature( $contents ) ) !== NULL ) {
-		
-		// Set the response signature status
-		$response[ 'signature' ] = $verifyResult[ 'good' ];
+	// A placeholder for the original text
+	$plaintext = '';
 
-		// Set the content
-		$contents = $verifyResult[ 'text' ];
+	// Was attepting to verify the digital signature successful?
+	if ( ( $verifyResult = gnupg_verify( $gnupg, $content, FALSE, $plaintext ) ) !== FALSE ) {
+
+		// True/false depending on if the signature's fingerprint matches the public key fingerprint
+		$response[ 'signature' ] = ( $verifyResult[ 0 ][ 'fingerprint' ] === $publicKeyFingerprint );
+
+		// Set the original text
+		$content = $plaintext;
 
 	}
 
 	/******** PARSE METADATA ********/
 
 	// Split the file up every new line
-	$lines = explode( "\n", $contents );
-	
+	$lines = explode( "\n", $content );
+
 	// Loop through each line
 	foreach ( $lines as $index => $line ) {
 
@@ -130,47 +146,62 @@ function parseContent( $path, $format ) {
 		// Skip lines that aren't metadata
 		if ( preg_match( '/^;([a-z]+)=(.+)$/', $line, $pair ) !== 1 ) continue;
 
-		// Fetch the metadata's key and value pair
-		$key = $pair[ 1 ];
-		$value = $pair[ 2 ];
-
-		// Add it to the response's metadata
-		$response[ 'metadata' ][ $key ] = $value;
+		// Add the metadata's key and value pair to the response's metadata
+		$response[ 'metadata' ][ $pair[ 1 ] ] = $pair[ 2 ];
 
 		// Remove it from the array
 		unset( $lines[ $index ] );
 
 	}
 
+	// Remove the first value of the array if it's an empty string
+	if ( reset( $lines ) === '' ) unset( $lines[ key( $lines ) ] );
+
+	// Remove the last value of the array if it's an empty string
+	if ( end( $lines ) === '' ) unset( $lines[ key( $lines ) ] );
+
 	// Update original file content variable
-	$contents = trim( implode( "\n", $lines ) );
+	$content = trim( implode( "\n", $lines ) );
 
-	/******** PARSE MARKDOWN ********/
+	/******** PARSE CONTENT ********/
 
-	// Is the requested format markdown?
-	if ( $format === 'markdown' ) {
-
-		// Set the markdown
-		$response[ 'content' ] = $contents;
-
-	// Is the requested format HTML?
-	} elseif ( $format === 'html' ) {
-
-		// Set the HTML
-		$response[ 'content' ] = $contents;
-
-	// Is the requested format JSON?
-	} elseif ( $format === 'json' ) {
-
-		// Set the JSON
-		$response[ 'content' ] = $contents;
-
-	}
+	$response[ 'content' ] = $formats[ $format ]( $raw, $content, $lines );
 
 	/******** FINALISE ********/
 
 	// Return the final response
 	return $response;
+
+}
+
+// A function to parse the HTTP accept header's values
+function parseAcceptHeader() {
+
+	// Return null if the header isn't available
+	if ( isset( $_SERVER[ 'HTTP_ACCEPT' ] ) !== TRUE ) return NULL;
+
+	// A placeholder to be filled with the sorted mime types
+	$accept = [];
+
+	// Loop through each mime type
+	foreach ( explode( ',', trim( $_SERVER[ 'HTTP_ACCEPT' ] ) ) as $type ) {
+
+		// Placeholder for the matched regex groups
+		$groups = [];
+
+		// Skip this iteration if the mime type doesn't match the regular expression
+		if ( preg_match( '/^([A-Za-z0-9\+-\.\*]+\/[A-Za-z0-9\+-\.\*]+)(?>;q=(\d(?>\.\d)?))?$/', trim( $type ), $groups ) !== 1 ) continue;
+
+		// Add the mime type and weight to the array
+		$accept[ $groups[ 1 ] ] = floatval( $groups[ 2 ] ?? '1.0' );
+
+	}
+
+	// Sort the array in reverse by value
+	arsort( $accept );
+
+	// Return the sorted array if there are values in it, if not then return null
+	return count( $accept ) > 0 ? $accept : NULL;
 
 }
 
