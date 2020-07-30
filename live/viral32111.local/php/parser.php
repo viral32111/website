@@ -12,9 +12,6 @@ putenv( 'GNUPGHOME=' . $_SERVER[ 'CONFIG_GNUPG_HOME' ] );
 // Create a GnuPG instance
 $gnupg = gnupg_init();
 
-// Set GnuPG error mode to warning instead of silent
-gnupg_seterrormode( $gnupg, GNUPG_ERROR_WARNING );
-
 // My public key's fingerprint
 $publicKeyFingerprint = '906F25BD726AAE08F5F14E280A993CCFC26A5E2E';
 

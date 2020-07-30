@@ -22,8 +22,8 @@ $isBot = Protection\UserAgent\IsBot( $_SERVER[ 'HTTP_USER_AGENT' ] );
 $emailLink = '';
 $emailAddress = Protection\Encode('[email protected]');
 if ( $isBot === FALSE ) {
-	$emailLink = ' href="' . Protection\Encode('mailto:viral32111@pm.me') . '?subject=Contact"';
-	$emailAddress = Protection\Encode('viral32111@pm.me');
+	$emailLink = ' href="' . Protection\Encode('mailto:' . $_SERVER[ 'SERVER_ADMIN' ] ) . '?subject=Contact"';
+	$emailAddress = Protection\Encode( $_SERVER[ 'SERVER_ADMIN' ] );
 }
 */
 
@@ -141,6 +141,20 @@ $title = ( isset( $_SERVER[ 'REDIRECT_STATUS' ] ) === TRUE ? $_SERVER[ 'REDIRECT
 $url = $_SERVER[ 'SCRIPT_URI' ];
 
 /****************************************************************
+Things for footer
+****************************************************************/
+
+$isErrorPage = isset( $_SERVER[ 'REDIRECT_STATUS' ] );
+$isPageSigned = $page[ 'signature' ];
+
+$contentLastModified = date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( $_SERVER[ 'CONFIG_CONTENT_DIRECTORY' ] . '/' . $_SERVER[ 'PAGE' ] . '.md' ) );
+$contentChangelogLink = '/changelog?page=' . base64URLEncode( $_SERVER[ 'PAGE' ] );
+
+$codeLastModified = date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( __FILE__ ) );
+
+$requestReceivedPretty = $requestReceived->format( $_SERVER[ 'CONFIG_DATETIME_FORMAT_PRECISE' ] );
+
+/****************************************************************
 Output the content
 ****************************************************************/
 
@@ -233,15 +247,15 @@ if ( $requestedFormat === 'text' ) {
 		<!-- Footer -->
 		<footer>
 			<p>
-				Your request took <?= round( ( microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ] ) * 1000, 2 ) ?>ms to process after being received on <?= $requestReceived->format( $_SERVER[ 'CONFIG_DATETIME_FORMAT_PRECISE' ] ) ?>.<br>
+				Your request took <?= round( ( microtime( true ) - $_SERVER[ 'REQUEST_TIME_FLOAT' ] ) * 1000, 2 ) ?>ms to process after being received on <?= $requestReceivedPretty ?>.<br>
 
-				<?php if ( isset( $_SERVER[ 'REDIRECT_STATUS' ] ) !== TRUE ) { ?>
-					The content on this page was last modified on <?= date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( $_SERVER[ 'CONFIG_CONTENT_DIRECTORY' ] . '/' . $_SERVER[ 'PAGE' ] . '.md' ) ) ?>. <a href="/changelog?page=<?= base64URLEncode( $_SERVER[ 'PAGE' ] ); ?>">[Edit History]</a><br>
+				<?php if ( !$isErrorPage ) { ?>
+					The content on this page was last modified on <?= $contentLastModified ?>. <a href="<?= $contentChangelogLink ?>">[Edit History]</a><br>
 				<?php } ?>
 
-				The code of this website was last modified on <?= date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( __FILE__ ) ) ?>. <a href="/changelog">[Changelog]</a><br>
+				The code of this website was last modified on <?= $codeLastModified ?>. <a href="/changelog">[Changelog]</a><br>
 
-				<?php if ( $page[ 'signature' ] === TRUE ) { ?>
+				<?php if ( $isPageSigned ) { ?>
 					The content on this page has been digitally signed. <a href="?format=text">[Download Signature]</a> <a href="/public.txt">[Download Public Key]</a><br>
 				<?php } ?>
 
