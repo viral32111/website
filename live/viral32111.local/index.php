@@ -14,6 +14,9 @@ require( 'php/utility.php' );
 Define variables for later use
 ****************************************************************/
 
+// Error
+$isErrorPage = isset( $_SERVER[ 'REDIRECT_STATUS' ] );
+
 /******** EMAIL PROTECTION ********/
 
 // TODO: Rewrite me & php/protect.php
@@ -79,10 +82,32 @@ if ( array_key_exists( $_GET[ 'format' ] ?? '', $formats ) === TRUE ) {
 }
 
 // Fetch the page's content as HTML
-$page = parseContent( $_SERVER[ 'CONFIG_CONTENT_DIRECTORY' ] . '/' . $_SERVER[ 'PAGE' ] . '.md', $requestedFormat );
+$page = parseContent( $_SERVER[ 'CONFIG_GIT_DIRECTORY' ] . '/content/' . $_SERVER[ 'PAGE' ] . '.md', $requestedFormat );
 
 // Fetch all of the announcements which are going to be displayed
-$announcements = fetchAnnouncements( $_SERVER[ 'CONFIG_CONTENT_DIRECTORY' ] . '/announcements' );
+$announcements = fetchAnnouncements( $_SERVER[ 'CONFIG_GIT_DIRECTORY' ] . '/content/announcements' );
+
+/******** ARCHIVER ********/
+
+// The directory with the archives of this page
+$pageDirectory = $_SERVER[ 'CONFIG_GIT_DIRECTORY' ] . '/archive/' . $_SERVER[ 'PAGE' ];
+$archivePath = $pageDirectory . '/' . $page[ 'checksum' ] . '.md';
+
+// Does the directory not exist?
+if ( is_dir( $pageDirectory ) !== TRUE ) {
+
+	// Create the directory
+	mkdir( $pageDirectory, 0755, TRUE );
+
+}
+
+// Does this archive not exist?
+if ( is_file( $archivePath ) !== TRUE ) {
+
+	// Archive the file by copying it
+	copy( $_SERVER[ 'CONFIG_GIT_DIRECTORY' ] . '/content/' . $_SERVER[ 'PAGE' ] . '.md', $archivePath );
+
+}
 
 /******** NAVIGATION BAR ********/
 
@@ -144,10 +169,9 @@ $url = $_SERVER[ 'SCRIPT_URI' ];
 Things for footer
 ****************************************************************/
 
-$isErrorPage = isset( $_SERVER[ 'REDIRECT_STATUS' ] );
 $isPageSigned = $page[ 'signature' ];
 
-$contentLastModified = date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( $_SERVER[ 'CONFIG_CONTENT_DIRECTORY' ] . '/' . $_SERVER[ 'PAGE' ] . '.md' ) );
+$contentLastModified = date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( $_SERVER[ 'CONFIG_GIT_DIRECTORY' ] . '/content/' . $_SERVER[ 'PAGE' ] . '.md' ) );
 $contentChangelogLink = '/changelog?page=' . base64URLEncode( $_SERVER[ 'PAGE' ] );
 
 $codeLastModified = date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( __FILE__ ) );

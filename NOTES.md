@@ -71,12 +71,6 @@
 * The reason most goals are not achieved is because we spend our time doing second things first.
 * Have you come this far to only come this far?'
 
-## Code for page edit hash
-
-```php
-substr( hash( 'sha3-512', $thePageContent[ 'markdown' ] ), 0, 32 );
-```
-
 ## Node.js content markdown parsing script
 
 ```js

@@ -162,7 +162,11 @@ function parseContent( $path, $format ) {
 
 	/******** PARSE CONTENT ********/
 
+	// Parse the content
 	$response[ 'content' ] = $formats[ $format ]( $raw, $content, $lines );
+
+	// Get the checksum of the raw content
+	$response[ 'checksum' ] = substr( hash( 'sha3-512', $raw ), 0, 32 );
 
 	/******** FINALISE ********/
 
