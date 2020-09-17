@@ -1,3 +1,39 @@
+## RWBY shit
+
+```
+01-ruby_rose.mp4 : ef347272eecd435eedc80266b2d10402f75f7b55.mp4
+02-the_shining_beacon.mp4 : 793119bbdc9c0a58cd4e996d07190776a5a51009.mp4
+03-the_shining_beacon_part_2.mp4 : db5723095f643cec9f9cf966e42797958cab5476.mp4
+04-the_first_step.mp4 : 788eb03b93aa005834dae142991d28173868ca6d.mp4
+05-the_first_step_part_2.mp4 : 55defb638624d2ed897049b22e2cf03d19195525.mp4
+06-the_emerald_forest.mp4 : 2361181de03d68cc1a952c588552de4bd1af709e.mp4
+07-the_emerald_forest_part_2.mp4 : 1a90f6e16c431b6f6463fc22c6a3283ec445eb01.mp4
+08-players_and_pieces.mp4 : 7bed9bcc5d5315b9142c1c6930ffc0866a87a68c.mp4
+09-the_badge_and_the_burden.mp4 : 2f350e6f9c8e58da74e011c68fd714f50f18976e.mp4
+10-the_badge_and_the_burden_part_2.mp4 : c20dc0381f50cb1aebc79d30ab4447f358abfa8d.mp4
+11-jaunedice.mp4 : b7e2fcd81625b17d56112943bdd0dd033cadff3a.mp4
+12-jaunedice_part_2.mp4 : a861c9ede1bd90f355799936ee9aae5ab380ee97.mp4
+13-forever_fall.mp4 : ece9463954d9810104e5fd86abaca79451ffa794.mp4
+14-forever_fall_part_2.mp4 : a138779ccd8455b1f783a0e268882b8187d9a5e8.mp4
+```
+
+```bash
+NOW=$(date) && sudo date -s "2020-11-07 17:30:00 +0000" && touch ef347272eecd435eedc80266b2d10402f75f7b55.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2020-11-14 17:30:00 +0000" && touch 793119bbdc9c0a58cd4e996d07190776a5a51009.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2020-11-21 17:30:00 +0000" && touch db5723095f643cec9f9cf966e42797958cab5476.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2020-12-28 17:30:00 +0000" && touch 788eb03b93aa005834dae142991d28173868ca6d.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2020-12-05 17:30:00 +0000" && touch 55defb638624d2ed897049b22e2cf03d19195525.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2020-12-12 17:30:00 +0000" && touch 2361181de03d68cc1a952c588552de4bd1af709e.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2020-12-19 17:30:00 +0000" && touch 1a90f6e16c431b6f6463fc22c6a3283ec445eb01.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2020-12-26 17:30:00 +0000" && touch 7bed9bcc5d5315b9142c1c6930ffc0866a87a68c.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2021-01-02 17:30:00 +0000" && touch 2f350e6f9c8e58da74e011c68fd714f50f18976e.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2021-01-09 17:30:00 +0000" && touch c20dc0381f50cb1aebc79d30ab4447f358abfa8d.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2021-01-16 17:30:00 +0000" && touch b7e2fcd81625b17d56112943bdd0dd033cadff3a.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2021-01-23 17:30:00 +0000" && touch a861c9ede1bd90f355799936ee9aae5ab380ee97.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2021-01-30 17:30:00 +0000" && touch ece9463954d9810104e5fd86abaca79451ffa794.mp4 && sudo date -s "$NOW"
+NOW=$(date) && sudo date -s "2021-02-06 17:30:00 +0000" && touch a138779ccd8455b1f783a0e268882b8187d9a5e8.mp4 && sudo date -s "$NOW"
+```
+
 ## Directory Structure
 
 ```

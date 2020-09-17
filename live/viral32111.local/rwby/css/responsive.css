@@ -1,0 +1,10 @@
+@media ( max-width: 650px ) {
+	body {
+		width: 94%;
+	}
+
+	img[src="img/selfie.png"] {
+		display: none;
+	}
+	
+}

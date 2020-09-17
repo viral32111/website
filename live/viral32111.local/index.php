@@ -236,11 +236,11 @@ if ( $requestedFormat === 'text' ) {
 		<?php if ( count( $announcements ) > 0 ) {
 			echo( '<div id="announcements">' . "\n" );
 			foreach ( $announcements as $index => $name ) {
-				$announcement = parseContent( $announcementsPath . '/' . $name, 'html' );
+				$announcement = parseContent( $_SERVER[ 'CONFIG_GIT_DIRECTORY' ] . '/content/announcements/' . $name, 'html' );
 				echo( '<div class="announcement">' . "\n" );
 				echo( '<h2>' . $announcement[ 'metadata' ][ 'title' ] . '</h2>' . "\n" );
 				echo( '<p>' . $announcement[ 'metadata' ][ 'summary' ] . ' <em><a href="/announcements/' . pathinfo( $name, PATHINFO_FILENAME ) . '">Continue reading...</a></em></p>' . "\n" );
-				echo( '<footer>' . date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( $announcementsPath . '/' . $name ) ) . '</footer>' . "\n" );
+				echo( '<footer>' . date( $_SERVER[ 'CONFIG_DATETIME_FORMAT_REGULAR' ], filemtime( $_SERVER[ 'CONFIG_GIT_DIRECTORY' ] . '/content/announcements/' . $name ) ) . '</footer>' . "\n" );
 				echo( '</div>' . "\n" );
 			}
 			echo( '</div>' . "\n" );
