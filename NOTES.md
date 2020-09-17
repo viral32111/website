@@ -1,3 +1,38 @@
+## Directory Structure
+
+```
+viral32111.local/
+	archive/
+	content/
+		announcements/
+		blog/
+		guides/
+		legal/
+		about.md
+		community.md
+		contact.md
+		donate.md
+		index.md
+		projects.md
+	processor/
+		gnupg/
+		templates/
+			base.php
+			header.php
+			footer.php
+		main.php
+		announcements.php
+		error.php
+		protect.php
+		utility.php
+		virtualhost.conf
+	docroot/
+		public-key.txt
+		sitemap.php
+	.gitignore
+	NOTES.md
+```
+
 ## Common User-Agents
 
 * Firefox: Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0
