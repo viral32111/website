@@ -1,0 +1,17 @@
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.expired {
+	cursor: not-allowed;
+	text-decoration: line-through;
+	color: #0000EE;
+}
+
+a.unreleased {
+	text-decoration: none;
+}
