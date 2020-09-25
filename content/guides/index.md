@@ -1,9 +1,0 @@
-;title=Guides
-;summary=Learn stuff, be smort.
-;changenote=Created the page.
-
-I like teaching the future generations, take my words & work, learn from it.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor et ante in commodo. Integer mauris felis, congue id metus fermentum, rhoncus malesuada metus. Nulla facilisi. Donec pretium arcu bibendum mi luctus, dignissim condimentum nulla tincidunt. Quisque tincidunt varius placerat. Donec posuere nibh in tempor sodales. Quisque tincidunt felis non enim finibus, vitae volutpat enim rutrum. Aenean accumsan aliquam orci, a consequat nunc imperdiet id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam sit amet vulputate odio. Sed pulvinar, risus quis varius venenatis, orci dolor sodales nisi, sit amet facilisis nulla ex quis lorem. Vivamus euismod tristique dolor, eu rhoncus diam. Aliquam placerat justo a orci consectetur tristique. In hac habitasse platea dictumst. Duis et augue eros. Aliquam erat volutpat.
-
-Quisque volutpat vel nisi ac blandit. Curabitur elementum eros nec leo aliquam lobortis. Duis vel ante arcu. Nullam nunc est, rutrum pulvinar elementum sit amet, auctor quis mauris. Nullam ac sollicitudin sem. Duis vitae velit sed justo interdum maximus. Praesent ac nisi massa. Proin euismod nunc non elementum fringilla. Duis ullamcorper augue hendrerit consequat cursus. Suspendisse in ornare lectus. Donec nibh turpis, porta et lorem quis, tristique vestibulum purus.
