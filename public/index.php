@@ -1,32 +1,10 @@
 <?php
-// Set the name of the session cookie
-session_name( '__Secure-ID' );
 
-// Set the options of the session cookie
-session_set_cookie_params( [
+// Include necessary files
+require_once( '../private/include/session.php' );
 
-	// Last for 10 years
-	'lifetime' => 315576000,
+sleep( 10 );
 
-	// Send the cookie to every path
-	'path' => '/',
-
-	// Send the cookie to all of this server
-	'domain' => '.' . $_SERVER[ 'SERVER_NAME' ],
-
-	// Only send over secure connections
-	'secure' => true,
-
-	// Prevent JavaScript from accessing this cookie
-	'httponly' => true,
-
-	// Strictly only send to the same site
-	'samesite' => 'Strict'
-
-] );
-
-// Start the session for the client
-session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,6 +12,14 @@ session_start();
 		<title>Home</title>
 	</head>
 	<body>
-
+		<p>This is an amazing website!</p>
+		<hr><pre><?php var_dump( $_GET ); ?></pre>
+		<hr><pre><?php var_dump( $_POST ); ?></pre>
+		<hr><pre><?php var_dump( $_FILES ); ?></pre>
+		<hr><pre><?php var_dump( $_COOKIE ); ?></pre>
+		<hr><pre><?php var_dump( $_SESSION ); ?></pre>
+		<hr><pre><?php var_dump( $_REQUEST ); ?></pre>
+		<hr><pre><?php var_dump( $_ENV ); ?></pre>
+		<hr><pre><?php var_dump( $_SERVER ); ?></pre>
 	</body>
 </html>
