@@ -11,13 +11,6 @@ session_start();
 	</head>
 	<body>
 		<p>This is an amazing website!</p>
-		<hr><pre><?php var_dump( $_GET ); ?></pre>
-		<hr><pre><?php var_dump( $_POST ); ?></pre>
-		<hr><pre><?php var_dump( $_FILES ); ?></pre>
-		<hr><pre><?php var_dump( $_COOKIE ); ?></pre>
-		<hr><pre><?php var_dump( $_SESSION ); ?></pre>
-		<hr><pre><?php var_dump( $_REQUEST ); ?></pre>
-		<hr><pre><?php var_dump( $_ENV ); ?></pre>
-		<hr><pre><?php var_dump( $_SERVER ); ?></pre>
+		<img src="/test.jpg" width="100px">
 	</body>
 </html>
