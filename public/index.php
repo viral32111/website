@@ -1,9 +1,7 @@
 <?php
 
-// Include necessary files
-require_once( '../private/include/session.php' );
-
-sleep( 10 );
+// Start the session
+session_start();
 
 ?>
 <!DOCTYPE html>
