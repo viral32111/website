@@ -79,21 +79,30 @@ $errorMessages = [
 
 $status = $_SERVER[ 'REDIRECT_STATUS' ];
 $message = $errorMessages[ $status ];
-echo( '<h1>' . $status . ': ' . $message . '</h1>' );
-
-echo( '<pre>' );
-echo( 'REDIRECT_STATUS: ' . $_SERVER[ 'REDIRECT_STATUS' ] . "\n" );
-echo( 'REDIRECT_REQUEST_METHOD: ' . $_SERVER[ 'REDIRECT_REQUEST_METHOD' ] . "\n" );
-echo( 'REDIRECT_SCRIPT_URL: ' . $_SERVER[ 'REDIRECT_SCRIPT_URL' ] . "\n" );
-echo( 'REQUEST_URI: ' . $_SERVER[ 'REQUEST_URI' ] . "\n" );
-echo( '</pre><hr><pre>' );
-var_dump( $_GET );
-echo( '</pre><hr><pre>' );
-var_dump( $_POST );
-echo( '</pre><hr><pre>' );
-var_dump( $_COOKIE );
-echo( '</pre><hr><pre>' );
-var_dump( $_SERVER );
-echo( '</pre>' );
 
 ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><?= $status . ' - ' . $message ?></title>
+	</head>
+	<body>
+		<h1><?= $status . ' - ' . $message ?></h1>
+		<?php
+			echo( '<pre>' );
+			echo( 'REDIRECT_STATUS: ' . $_SERVER[ 'REDIRECT_STATUS' ] . "\n" );
+			echo( 'REDIRECT_REQUEST_METHOD: ' . $_SERVER[ 'REDIRECT_REQUEST_METHOD' ] . "\n" );
+			echo( 'REDIRECT_SCRIPT_URL: ' . $_SERVER[ 'REDIRECT_SCRIPT_URL' ] . "\n" );
+			echo( 'REQUEST_URI: ' . $_SERVER[ 'REQUEST_URI' ] . "\n" );
+			echo( '</pre><hr>$_GET<pre>' );
+			var_dump( $_GET );
+			echo( '</pre><hr>$_POST<pre>' );
+			var_dump( $_POST );
+			echo( '</pre><hr>$_COOKIE<pre>' );
+			var_dump( $_COOKIE );
+			echo( '</pre><hr>$_SERVER<pre>' );
+			var_dump( $_SERVER );
+			echo( '</pre>' );
+		?>
+	</body>
+</html>
