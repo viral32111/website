@@ -1,5 +1,9 @@
 <?php
 
+// Start the session
+session_start();
+
+// Dictionary of error messages
 $errorMessages = [
 
 	// Informational
@@ -77,6 +81,7 @@ $errorMessages = [
 
 ];
 
+// Variables for later use
 $status = $_SERVER[ 'REDIRECT_STATUS' ];
 $message = $errorMessages[ $status ];
 
