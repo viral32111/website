@@ -1,4 +1,4 @@
-/* Headings */
+/* Heading */
 header h1 {
 	margin: 0px 0px 10px 0px;
 	text-align: center;
@@ -6,21 +6,23 @@ header h1 {
 	font-weight: normal;
 }
 
-header h1 img {
-	vertical-align: text-bottom;
-	margin-right: 10px;
-}
+	/* Avatar */
+	header h1 img {
+		vertical-align: text-bottom;
+		margin-right: 10px;
+	}
 
 /* Navigation */
 header nav {
 	text-align: center;
 }
 
-header nav a {
-	display: inline-block;
-	margin: 0px 10px 0px 10px;
-}
+	/* Links */
+	header nav a {
+		display: inline-block;
+		margin: 0px 10px 0px 10px;
+	}
 
-header nav a.selected {
-	font-weight: bold;
-}
+		header nav a.selected {
+			font-weight: bold;
+		}

@@ -27,11 +27,11 @@ session_start();
 
 		<!-- Information for embeds -->
 		<meta name="og:type" content="website">
-		<meta name="og:url" content="https://viral32111.local/">
+		<meta name="og:url" content="https://viral32111.local">
 		<meta name="og:site_name" content="viral32111's website">
 		<meta name="og:title" content="Home">
 		<meta name="og:description" content="Welcome to my website!">
-		<meta name="og:image" content="/img/avatar.jpg">
+		<meta name="og:image" content="/img/avatar-circle-448.webp">
 		<meta name="og:image:type" content="image/png">
 		<meta name="og:image:alt" content="viral32111's avatar">
 		<meta name="og:locale" content="en_gb">
@@ -43,7 +43,7 @@ session_start();
 		<link rel="stylesheet" href="/css/footer.css" type="text/css">
 
 		<!-- Tab icon -->
-		<link rel="icon" href="/img/avatar.png" type="image/png">
+		<link rel="icon" href="/img/avatar-circle-128.webp" type="image/png">
 
 		<!-- Web crawlers/search engine indexers -->
 		<meta name="robots" content="index,follow,noarchive,noimageindex">
@@ -52,7 +52,7 @@ session_start();
 		<!-- Header -->
 		<header>
 			<!-- Title -->
-			<h1><img src="/img/avatar.png" alt="viral32111's avatar" height="29px">viral32111's website</h1>
+			<h1><img src="/img/avatar-circle-448.webp" alt="viral32111's avatar" height="29px">viral32111's website</h1>
 
 			<!-- Navigation -->
 			<nav>

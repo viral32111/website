@@ -9,10 +9,10 @@ footer p {
 	margin-bottom: 2px;
 }
 
-footer p:first-of-type {
-	margin-top: 0px;
-}
+	footer p:first-of-type {
+		margin-top: 0px;
+	}
 
-footer p:last-of-type {
-	margin-bottom: 0px;
-}
+	footer p:last-of-type {
+		margin-bottom: 0px;
+	}

@@ -81,33 +81,84 @@ $errorMessages = [
 
 ];
 
-// Variables for later use
-$status = $_SERVER[ 'REDIRECT_STATUS' ];
-$message = $errorMessages[ $status ];
-
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en-gb">
 	<head>
-		<title><?= $status . ' - ' . $message ?></title>
+		<!-- Tab title -->
+		<title><?= $_SERVER[ 'REDIRECT_STATUS' ] ?> - viral32111's website</title>
+	
+		<!-- Viewport for mobile viewers -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<!-- Generic information -->
+		<meta name="url" content="https://viral32111.local/">
+		<meta name="description" content="Welcome to my website!">
+		<meta name="subject" content="My personal website.">
+		<meta name="keywords" content="viral32111,programmer,developer,programming,coding,developing,freelance,conspiracy servers,community">
+		<meta name="language" content="en_gb">
+
+		<!-- My information -->
+		<meta name="author" content="viral32111,contact@viral32111.com">
+		<meta name="owner" content="viral32111,contact@viral32111.com">
+		<meta name="copyright" content="viral32111,contact@viral32111.com">
+
+		<!-- Information for embeds -->
+		<meta name="og:type" content="website">
+		<meta name="og:url" content="https://viral32111.local">
+		<meta name="og:site_name" content="viral32111's website">
+		<meta name="og:title" content="Home">
+		<meta name="og:description" content="Welcome to my website!">
+		<meta name="og:image" content="/img/avatar-circle-448.webp">
+		<meta name="og:image:type" content="image/png">
+		<meta name="og:image:alt" content="viral32111's avatar">
+		<meta name="og:locale" content="en_gb">
+
+		<!-- Required stylesheets -->
+		<link rel="stylesheet" href="/css/global.css" type="text/css">
+		<link rel="stylesheet" href="/css/header.css" type="text/css">
+		<link rel="stylesheet" href="/css/content.css" type="text/css">
+		<link rel="stylesheet" href="/css/footer.css" type="text/css">
+
+		<!-- Tab icon -->
+		<link rel="icon" href="/img/avatar-circle-128.webp" type="image/png">
+
+		<!-- Web crawlers/search engine indexers -->
+		<meta name="robots" content="index,follow,noarchive,noimageindex">
 	</head>
 	<body>
-		<h1><?= $status . ' - ' . $message ?></h1>
-		<?php
-			echo( '<pre>' );
-			echo( 'REDIRECT_STATUS: ' . $_SERVER[ 'REDIRECT_STATUS' ] . "\n" );
-			echo( 'REDIRECT_REQUEST_METHOD: ' . $_SERVER[ 'REDIRECT_REQUEST_METHOD' ] . "\n" );
-			echo( 'REDIRECT_SCRIPT_URL: ' . $_SERVER[ 'REDIRECT_SCRIPT_URL' ] . "\n" );
-			echo( 'REQUEST_URI: ' . $_SERVER[ 'REQUEST_URI' ] . "\n" );
-			echo( '</pre><hr>$_GET<pre>' );
-			var_dump( $_GET );
-			echo( '</pre><hr>$_POST<pre>' );
-			var_dump( $_POST );
-			echo( '</pre><hr>$_COOKIE<pre>' );
-			var_dump( $_COOKIE );
-			echo( '</pre><hr>$_SERVER<pre>' );
-			var_dump( $_SERVER );
-			echo( '</pre>' );
-		?>
+		<!-- Header -->
+		<header>
+			<!-- Title -->
+			<h1><img src="/img/avatar-circle-448.webp" alt="viral32111's avatar" height="29px">viral32111's website</h1>
+
+			<!-- Navigation -->
+			<nav>
+				<a href="/">[Home]</a><a href="/about">[About]</a><a href="/projects">[Projects]</a><a href="/blog">[Blog]</a><a href="/guides">[Guides]</a><a href="/community">[Community]</a><a href="/contact">[Contact]</a><a href="/donate">[Donate]</a>
+			</nav>
+		</header>
+
+		<!-- Divider -->
+		<hr>
+
+		<!-- Content -->
+		<main>
+			<p>This page does not exist.</p>
+			<p>Feel free to <a href="/contact">contact me</a> if you believe there is meant to be a page here.</p>
+			</p>
+		</main>
+
+		<!-- Divider -->
+		<hr>
+
+		<!-- Footer -->
+		<footer>
+			<!-- Legal -->
+			<p>Copyright &copy; 2016 - <?= date( 'Y' ) ?> viral32111. All rights reserved unless stated otherwise.</p>
+			<a href="/legal/tos">[Terms of Service]</a>
+			<a href="/legal/privacy">[Privacy Policy]</a>
+			<a href="/legal/cookies">[Cookie Policy]</a>
+			<a href="/legal/thirdparty">[Thirdparty Notices]</a>
+		</footer>
 	</body>
 </html>
