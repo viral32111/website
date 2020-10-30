@@ -32,7 +32,7 @@ session_start();
 		<meta name="og:title" content="Home">
 		<meta name="og:description" content="Welcome to my website!">
 		<meta name="og:image" content="/img/avatar-circle-448.webp">
-		<meta name="og:image:type" content="image/png">
+		<meta name="og:image:type" content="image/webp">
 		<meta name="og:image:alt" content="viral32111's avatar">
 		<meta name="og:locale" content="en_gb">
 
@@ -43,7 +43,7 @@ session_start();
 		<link rel="stylesheet" href="/css/footer.css" type="text/css">
 
 		<!-- Tab icon -->
-		<link rel="icon" href="/img/avatar-circle-128.webp" type="image/png">
+		<link rel="icon" href="/img/avatar-circle-128.webp" type="image/webp">
 
 		<!-- Web crawlers/search engine indexers -->
 		<meta name="robots" content="index,follow,noarchive,noimageindex">
@@ -81,10 +81,10 @@ session_start();
 		<footer>
 			<!-- Legal -->
 			<p>Copyright &copy; 2016 - <?= date( 'Y' ) ?> viral32111. All rights reserved unless stated otherwise.</p>
-			<a href="/legal/tos">[Terms of Service]</a>
-			<a href="/legal/privacy">[Privacy Policy]</a>
-			<a href="/legal/cookies">[Cookie Policy]</a>
-			<a href="/legal/thirdparty">[Thirdparty Notices]</a>
+			<!-- <a href="/legal/tos">[Terms of Service]</a> -->
+			<!-- <a href="/legal/privacy">[Privacy Policy]</a> -->
+			<!-- <a href="/legal/cookies">[Cookie Policy]</a> -->
+			<!-- <a href="/legal/thirdparty">[Thirdparty Notices]</a> -->
 		</footer>
 	</body>
 </html>
