@@ -26,6 +26,7 @@ session_start();
 		<meta name="copyright" content="viral32111,contact@viral32111.com">
 
 		<!-- Information for embeds -->
+		<meta name="theme-color" content="#aea49a">
 		<meta name="og:type" content="website">
 		<meta name="og:url" content="https://viral32111.local">
 		<meta name="og:site_name" content="viral32111's website">
@@ -68,10 +69,43 @@ session_start();
 			<p>Welcome to my website!</p>
 			
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor et ante in commodo. Integer mauris felis, congue id metus fermentum, rhoncus malesuada metus. Nulla facilisi. Donec pretium arcu bibendum mi luctus, dignissim condimentum nulla tincidunt. Quisque tincidunt varius placerat. Donec posuere nibh in tempor sodales. Quisque tincidunt felis non enim finibus, vitae volutpat enim rutrum. Aenean accumsan aliquam orci, a consequat nunc imperdiet id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam sit amet vulputate odio. Sed pulvinar, risus quis varius venenatis, orci dolor sodales nisi, sit amet facilisis nulla ex quis lorem.</p>
-				
+
 			<p>Vivamus euismod tristique dolor, eu rhoncus diam. Aliquam placerat justo a orci consectetur tristique. In hac habitasse platea dictumst. Duis et augue eros. Aliquam erat volutpat.</p>
 			
 			<p>Quisque volutpat vel nisi ac blandit. Curabitur elementum eros nec leo aliquam lobortis. Duis vel ante arcu. Nullam nunc est, rutrum pulvinar elementum sit amet, auctor quis mauris. Nullam ac sollicitudin sem. Duis vitae velit sed justo interdum maximus. Praesent ac nisi massa. Proin euismod nunc non elementum fringilla. Duis ullamcorper augue hendrerit consequat cursus. Suspendisse in ornare lectus. Donec nibh turpis, porta et lorem quis, tristique vestibulum purus.</p>
+
+			<!--
+			Programming languages (experience - highest to lowest):
+				* Python
+				* Lua (Garry's Mod)
+				* PHP
+				* C# (.NET Core, .NET Framework)
+				* HTML/CSS
+				* JavaScript (Web, Node.js)
+				* C
+				* C++
+				* Java (Android)
+
+			Social links/online profiles:
+				* GitHub: https://github.com/viral32111
+				* Twitter: https://twitter.com/i/user/3297614254
+				* Steam: https://steamcommunity.com/profiles/76561198168833275
+				* Reddit: https://www.reddit.com/user/viral32111
+				* DeviantArt: https://www.deviantart.com/viral32111
+				* YouTube: https://www.youtube.com/channel/UCgnd0UhrusfKlz1VJWmjEFQ
+				* Twitch: https://www.twitch.tv/viral32111
+				* MyAnimeList: https://myanimelist.net/profile/viral32111
+				* GameTracker: https://www.gametracker.com/viral32111
+				* GmodStore: https://www.gmodstore.com/users/76561198168833275
+				* Minecraft: https://namemc.com/profile/a51dccb5-7ffa-426b-833b-1a9ce3a31446
+
+			Misc links:
+				* Donate: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KNG58KQ5TPT3Q
+				* Steam Trade: https://steamcommunity.com/tradeoffer/new/?partner=208567547&token=Yi9zjz8t
+				* Garry's Mod Workshop Addons: https://steamcommunity.com/id/viral32111/myworkshopfiles/?appid=4000&numperpage=30
+				* Community Discord: https://conspiracyservers.com/discord
+			-->
+
 		</main>
 
 		<!-- Divider -->

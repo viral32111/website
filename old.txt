@@ -1,0 +1,96 @@
+About Me
+	Hi! I'm viral32111. I'm a multi-language programmer who loves to code random things and experiment with new ideas. I'm strong in Lua, C#, PHP and Python. I also do a bit of developing here and there for servers and communities on Garry's Mod. I also map for Garry's Mod and a bit of Team Fortress 2 in Hammer, but I rarley do this anymore and I'm definetly not an expert at the software.
+
+Programming
+	Languages I would consider myself an expert in:
+	• Lua
+	• Python
+	• C#
+	• PHP
+	
+	Languages I've coded in a few times before, but still have things to learn:
+	• JavaScript
+	• Java (Specifically Node.js)
+	• C++
+	• VB.NET
+	• HTML & CSS
+	• Batch & PowerShell Script
+	• SourcePawn
+	
+	I code Discord Bots, mainly in Python, a few in C# & Node.js, so if you need one made for a server or a friend hit me up and I'll see what I can do.
+	I'm happy to help you if you've got a programming issue or you're stuck somewhere with some random half-ass error that is completley incorrect at displaying whats accually going wrong.
+	I can design and code games in Unity 3D and GameMaker: Studio.
+	Visual Studio is my preferred IDE when programming in C#/.NET.
+	I use Sublime Text 3 to program all other languages.
+
+Developing
+	I may develop for your Garry's Mod server or Discord server if I'm feeling up for it, I have a list of rules though I'd gladly apprechiate if you followed if I am.
+	• Don't randomly send me shit (messages, images) while im working.
+	• Only call me if its about working, or a serious matter.
+	• Don't spam me with your ideas, I will do them one by one.
+	• The price I sell the work at will depend on how complicated the addon is and how long it took to code. (If it's simple its free)
+	• If you ask you may join my Testing Server to see your addons progress.
+	• If you wish for your addon to be on the workshop I can do that to.
+
+Dev Past
+	• I currently own my own community called Conspiracy Servers with Sandbox and Spacebuild servers. 
+	• I've previously co-owned a community called LoneNetworks. (DarkRP)
+	•  I've assisted A.C.E Gaming. (DarkRP)
+	• I've developed for GoldenNetworks, Brother Gaming, Electrum Gaming and Redux Community. (All DarkRP)
+	• Created Car Keys. (currently has 16,000+ downloads/subscriptions, 300+ thumbs up.)
+	• Contributor to CAP and Spacebuild. (2 popular Garry's Mod addons)
+
+Contact
+	Wanna get in touch with me? Use the provided information below (I recommend Discord)
+	• Discord: Dr. Emilia Crossford#0001
+	• Steam: viral32111
+
+=========================================================================================================================================================================
+
+About Me
+	Hi! I'm viral32111. I'm a multi-language programmer who loves to code random things and experiment with new ideas. I'm strong in Lua, C#, PHP and Python. I also do a bit of developing here and there for servers/communities mainly on Garry's Mod. I also map for Garry's Mod and a bit of Team Fortress 2 in Hammer, but I rarley do this anymore and I'm definetly not an expert at the software, I lack a bit of creativity when it comes to those kind of things :/
+
+Programming
+	You already know what languages I'm good at programming in, so I'll skip to the ones I have programmed but rarley use (Meaning I have limited knowledge and experience in them)
+	• JavaScript: Websites.
+	• C++: Software.
+	• VB.NET: Software.
+	• HTML/CSS: Website Designing.
+	• Batch: Automating shit.
+	• SourcePawn: Team Fortress 2 Plugins.
+	
+	I program Discord Bots, mainly in Python, a few in C# so if you need one made for a server or a friend hit me up and I'll see what I can do.
+	I'm happy to help you if you've got a programming issue or you're stuck somewhere with some random half-ass error that is completley incorrect at displaying whats accually going wrong.
+	I can design and program games in Unity 3D and GameMaker: Studio.
+	Visual Studio is my preferred IDE when programming in C#/.NET.
+	I use Sublime Text 3 to program most other languages. (Tab Size 4)
+
+Developing
+	I may develop for your Garry's Mod server or Discord server if I'm feeling up for it, I have a list of rules though I'd gladly apprechiate if you followed if I am.
+	• Don't randomly send me shit (messages, images) while im working.
+	• Only call me if its about working, or a serious matter.
+	• Don't spam me with your ideas, I will do them one by one.
+	• The price I sell the work at will depend on how complicated the addon is and how long it took to code. (If it's simple its free)
+	• If you ask you may join my Testing Server to see your addons progress.
+	• If you wish for your addon to be on the workshop I can do that to.
+
+Dev Past
+	• I currently own my own community called Conspiracy Servers with Sandbox, Spacebuild and DarkRP servers. 
+	• I've previously co-owned a community called LoneNetworks. (DarkRP)
+	• I've developed for A.C.E Gaming, GoldenNetworks, Brother Gaming, Electrum Gaming and Redux Community. (All DarkRP)
+	• Created Car Keys (currently has 14,000+ downloads/subscriptions).
+	• Contributor to CAP and Spacebuild (Two popular Garry's Mod addons).
+
+Useless Information
+	• I love linux and I'm experienced with it! Even though I use Windows 10 as my primary OS, I daily use Linux and have used a variety of distrubutions, ranging from Ubuntu, Arch, Kali, Puppy and many others.
+	• I'm dyslexic.
+	• I own my own Garry's Mod community called .
+	• I enjoy building/space/puzzle/story-driven related games, I'm not to keen on shoot-em-up/first person shooter titles, Although I will occasionally play them.
+	• I'm pretty experienced in sound and network engineering.
+	• Much prefer text over voice chat, It's effort to talk and I distract myself when I do.
+	• I Love Anime and Nightcore!
+
+Contact
+	Wanna get in touch with me? Use the provided information below (I recommend Discord)
+	• Discord: Emilia Crossford#9306
+	• Steam: viral32111
