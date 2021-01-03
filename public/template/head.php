@@ -1,5 +1,5 @@
 <!-- Tab title -->
-<title>viral32111's website</title>
+<title><?= isset( $pageTitle ) ? $pageTitle . ' - ' : ''; ?>viral32111's website</title>
 	
 <!-- Viewport for mobile viewers -->
 <meta name="viewport" content="width=device-width,initial-scale=1">

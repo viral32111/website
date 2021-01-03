@@ -4,17 +4,7 @@
 session_start();
 
 // The title of this page
-$pageTitle = $_SERVER[ 'REDIRECT_STATUS' ];
-
-// HTTP status messages
-$statusMessages = [
-	307 => 'Temporary Redirect',
-	308 => 'Permanent Redirect',
-	403 => 'Forbidden',
-	404 => 'Not Found',
-	410 => 'Gone',
-	500 => 'Internal Server Error'
-];
+$pageTitle = 'Guides';
 
 ?>
 <!DOCTYPE html>
@@ -29,7 +19,7 @@ $statusMessages = [
 
 		<!-- Content -->
 		<main>
-			<p><strong><?= $_SERVER[ 'REDIRECT_STATUS' ] ?></strong> <?= $statusMessages[ $_SERVER[ 'REDIRECT_STATUS' ] ] ?></p>
+			<p>Coming soon!</p>
 		</main>
 
 		<!-- Footer -->

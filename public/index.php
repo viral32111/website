@@ -3,26 +3,26 @@
 // Start the session
 session_start();
 
+// The title of this page
+$pageTitle = 'Home';
+
 ?>
 <!DOCTYPE html>
 <html lang="en-gb">
 	<head>
 		<!-- Head -->
-		<?php include( 'template/head.html' ); ?>
+		<?php include( 'template/head.php' ); ?>
 	</head>
 	<body>
 		<!-- Header -->
-		<?php include( 'template/header.html' ); ?>
+		<?php include( 'template/header.php' ); ?>
 
 		<!-- Content -->
 		<main>
-			<p>Welcome to my website!</p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor et ante in commodo. Integer mauris felis, congue id metus fermentum, rhoncus malesuada metus. Nulla facilisi. Donec pretium arcu bibendum mi luctus, dignissim condimentum nulla tincidunt. Quisque tincidunt varius placerat. Donec posuere nibh in tempor sodales. Quisque tincidunt felis non enim finibus, vitae volutpat enim rutrum. Aenean accumsan aliquam orci, a consequat nunc imperdiet id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam sit amet vulputate odio. Sed pulvinar, risus quis varius venenatis, orci dolor sodales nisi, sit amet facilisis nulla ex quis lorem.</p>
-
-			<p>Vivamus euismod tristique dolor, eu rhoncus diam. Aliquam placerat justo a orci consectetur tristique. In hac habitasse platea dictumst. Duis et augue eros. Aliquam erat volutpat.</p>
-			
-			<p>Quisque volutpat vel nisi ac blandit. Curabitur elementum eros nec leo aliquam lobortis. Duis vel ante arcu. Nullam nunc est, rutrum pulvinar elementum sit amet, auctor quis mauris. Nullam ac sollicitudin sem. Duis vitae velit sed justo interdum maximus. Praesent ac nisi massa. Proin euismod nunc non elementum fringilla. Duis ullamcorper augue hendrerit consequat cursus. Suspendisse in ornare lectus. Donec nibh turpis, porta et lorem quis, tristique vestibulum purus.</p>
+			<p>Welcome to my new & improved website!</p>
+			<p>I know it might not look like much right now, but I have many more features planned for the future (blog system, onionsite, announcements, native dark mode, etc). The majority of my work over the last 6 months has been programming, configuring and optimising the backend system that runs the website.</p>
+			<p>My previous website <a href="https://web.archive.org/web/20200310153357/https://viral32111.com/">(2019-2020)</a>, and the one before that <a href="https://web.archive.org/web/20180826152843/https://viral32111.com/">(2016-2019)</a>, were not that great due to my lack of experience in properly setting up and configuring a website. The first website had plenty of detailed content that explained who I am, showed off some of my projects, etc. The second website however, didn't have any of that and instead was simply my avatar with a dozen or so links below it to my various online profiles on different websites. Sort of pointless, considering I always told people to go to my website if they want to find information about who I am :/</p>
+			<p>This website that you're reading right now, launched at the start of 2021, is hopefully going to be my last major redesign & recreation of my website, thanks to all the knowledge and experience I've learned/gained over the last 4-5 years. I intend for this website to be a centralised place where I can describe who I am, showcase my projects & achievements, direct people to my other online profiles, talk to the rest of the Internet through blog posts or guides, allow others to easily personally speak to me, etc.</p>
 		</main>
 
 		<!-- Footer -->
