@@ -1,8 +1,0 @@
-/* Paragraphs */
-main p:first-of-type {
-	margin-top: 0px;
-}
-
-main p:last-of-type {
-	margin-bottom: 0px;
-}
