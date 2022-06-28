@@ -1,0 +1,76 @@
+/* Paragraphs */
+main p:first-of-type {
+	margin-top: 0px;
+}
+
+main p:last-of-type {
+	margin-bottom: 0px;
+}
+
+/* Donation table */
+main h1.donation-title {
+	text-align: center;
+	text-decoration: underline;
+}
+
+main table {
+	width: 100%;
+}
+
+main th, main td {
+	padding: 3px;
+	text-align: center;
+}
+
+main table, main th, main td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+main td.donation-private {
+	color: #545454;
+	font-style: italic;
+	cursor: not-allowed;
+}
+
+main td.donation-none {
+	color: #545454;
+	font-style: italic;
+}
+
+main p.donation-note {
+	margin-top: 4px;
+	font-style: italic;
+	text-align: right;
+}
+
+/* Lists */
+main p.list-title {
+	margin-bottom: 0px;
+}
+
+main ul {
+	margin-top: 0px;
+}
+
+main ul li {
+	margin-left: -25px;
+}
+
+/* Forms */
+main form textarea {
+	width: 100%;
+	resize: none;
+}
+
+main form input {
+	width: 100%;
+}
+
+/* Codeblocks */
+main code {
+	display: inline;
+	padding: 0px 3px 0px 3px;
+	font-family: monospace;
+	background-color: #e8e8e8;
+}
