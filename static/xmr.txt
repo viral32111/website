@@ -1,0 +1,17 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+My Monero address for donations is 429dx3XdBUCDFCMrDFmjZjjfnZhvDvkKjAkPMRANAzwPAh38n7x2imh73QuTRAKnjzZpFjft4PBqTBLNNyRYVHaxK2Fktnj.
+
+If your wallet supports OpenAlias then you can use xmr.viral32111.com.
+
+Do not trust any other addresses that claim to be mine but are not listed on:
+ * https://viral32111.com/xmr.txt
+ * http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion/xmr.txt
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCYUiePwAKCRDwIE9Zol6n
+Lz8fAQDg8SRaVwkdPL4fM0BRTcvzHHheW+62j7ep+5Dy2hRecAD+NqiSfflCjl5f
+U5q1GQNRWBRa0JTrtYCXAxhcGTh8tgQ=
+=FT/w
+-----END PGP SIGNATURE-----

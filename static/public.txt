@@ -1,0 +1,130 @@
+The following public key is valid from 06/09/2021 until 05/09/2026.
+It is used for signing/encrypting my email and GitHub commits.
+
+The key's identifier is F0204F59A25EA72F.
+The key's fingerprint is 2440B42609FA45164D776C4FF0204F59A25EA72F.
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEYTVlQRYJKwYBBAHaRw8BAQdA4FAFKpOdcgCxypqt9dJDgX1L/EJaPUq84lCZ
+6dRfZiy0QnZpcmFsMzIxMTEgKEdpdEh1YikgPDE5NTEwNDAzK3ZpcmFsMzIxMTFA
+dXNlcnMubm9yZXBseS5naXRodWIuY29tPoiWBBMWCAA+FiEEJEC0Jgn6RRZNd2xP
+8CBPWaJepy8FAmE1ZWwCGwMFCQlmAYAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AA
+CgkQ8CBPWaJepy+CRAD/czGwnwhMNedwYQmOQeHWt8DQPgMtWAOkdz3SHJPrUm4B
+ALiz9vW0Ggiq+37+52d9ueomFes3GIQs/LB2tOt/pIUPtCp2aXJhbDMyMTExIChN
+YWlsKSA8Y29udGFjdEB2aXJhbDMyMTExLmNvbT6ImQQTFggAQQIbAwUJCWYBgAUL
+CQgHAgYVCgkICwIEFgIDAQIeAQIXgBYhBCRAtCYJ+kUWTXdsT/AgT1miXqcvBQJh
+NWWJAhkBAAoJEPAgT1miXqcvMdsBAIndAIAMLepqVJfwekKwQiNOC2YZzXim/ifD
+IgRrXYZRAQCJ0dslrg37RGHluelLL8+eklcGp1LPfCRTXc95Z5LyA7g4BGE1ZUES
+CisGAQQBl1UBBQEBB0B06q60R3IGyYceGVhyvbcjVf96QjtxAeFJOHq3QkmcawMB
+CAeIfgQYFggAJhYhBCRAtCYJ+kUWTXdsT/AgT1miXqcvBQJhNWVBAhsMBQkJZgGA
+AAoJEPAgT1miXqcvCNEA/RSc0lSGsrh4SyfpiDAaIG1+1XsFx51IxYfnKcx+m96s
+AP0SKDbtAiMalxOOrekpjKZxdoSpDK0JOoRIsqZWh0fxAA==
+=kIp6
+-----END PGP PUBLIC KEY BLOCK-----
+
+
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~= Below is my previous key history, my current key is above =~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+
+
+The following public key is valid from 25/02/2020.
+It was used for signing/encrypting my email.
+
+The key's identifier is 1EF3D5216ABCC4F9.
+The key's fingerprint is 6CA588695A357491172A6B8A1EF3D5216ABCC4F9.
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: OpenPGP.js v4.10.8
+Comment: https://openpgpjs.org
+
+xjMEXlWa0hYJKwYBBAHaRw8BAQdAlxpNeQ2Bsm51L4DX/w2c27eqHhx5/LRF
+knoJ4CWwxKjNL2NvbnRhY3RAdmlyYWwzMjExMS5jb20gPGNvbnRhY3RAdmly
+YWwzMjExMS5jb20+wngEEBYKACAFAl5VmtIGCwkHCAMCBBUICgIEFgIBAAIZ
+AQIbAwIeAQAKCRAe89UharzE+ZtsAQDhUNh1NH3Nz/9qcFpl6SBgVEYHw839
+nTnEBjxOBgIlwgD/VglUST8qA9RuhC6rVYa0cvxhIvyJyR33ZgJrVZyB9wHO
+OAReVZrSEgorBgEEAZdVAQUBAQdAOCzWk4IDV3aZxAIfwEU3BKYpAy19oKTi
+k3XoSN/j600DAQgHwmEEGBYIAAkFAl5VmtICGwwACgkQHvPVIWq8xPnv1gD/
+edS3gpoQC2pJszK2DoPgxPa+clj2hOT050N3Vy26He4A/RAHVjpqCWCItyXV
+jGGA4Ra4uqBexTOPYIXr5IYp/gwH
+=Vx3U
+-----END PGP PUBLIC KEY BLOCK-----
+
+The above key was superseded on 06/09/2021, the official revocation follows.
+Emails signed and/or encrypted with this key before the above date should still be considered genuine.
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: This is a revocation certificate
+
+iOgEIBYIAJAWIQRspYhpWjV0kRcqa4oe89UharzE+QUCYTXmbnIdAVRoaXMga2V5
+IGlzIG9sZCBoYXMgYmVlbiBzdXBlcnNlZGVkIGJ5IG15IG5ldyBrZXkgd2l0aCB0
+aGUgZmluZ2VycHJpbnQgMjQ0MEI0MjYwOUZBNDUxNjRENzc2QzRGRjAyMDRGNTlB
+MjVFQTcyRi4ACgkQHvPVIWq8xPmIGAD/T8bqFJmeeCZzsGBkZ/rCT8pVwgdx+4iI
+/KadGuGbUJkBAJi9yHytXTj6bg3t5aXvlSKk3+a42kDOVfLWW0PFLoMB
+=RLuo
+-----END PGP PUBLIC KEY BLOCK-----
+
+
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+
+
+The following public key is valid from 19/04/2020 until 19/05/2022.
+It was used for signing my GitHub commits.
+
+The key's identifier is C3978A7C377D9F5E.
+The key's fingerprint is D468E26877F53A2AD33EE929C3978A7C377D9F5E.
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQINBF6co/kBEAD3lJiceCgkuiQE1NA3DwUkiRW3ZhZd4hq7Pcowl9mv7coEr04N
+RzBWH9IskWBBGXxEg1FLoSyUeHyLxxFRZcwvtg0bAQsdXFj88WQATSkJNgkW/Dev
+xJUFDqVljOx5hFTtjGGRIRYZn0b6wmEuJcbBc+y/sME0bTd/Slhcnac17VX0IS03
+7yUhKYOUmcIK0eBkF3+r/zhuFyDmM/30YoR8W3WSeSSJHp2iZJnuvxOs5jyXgDZX
+LpKX4+qzhkxNsWVUbJuJdvtEmjaejOJf4wHZ3wX1Vz/ND2VD5iv7bFBQ3kiXYwMo
+e1kfQCiWhKFtLb/aEQ00ywuAmOX72IY3ZBSBZlOs0qk/4rDagqoiUoHp6mJxX1dH
+h3l0rdONW+XrYb0/VCpTjuUmY0kLJ+bWkVsx09rSjqew3bv+SMl9CgkEI9Iz1jDr
+iD+u61huZ/f3i/IXMMtEcGEj6wm1LR6IjwS/FTio5YdbRo8XP/UVVixry1dC+IHb
+qoOBmgod0zsxTjmci64DjIfU+LMpXlvjvkfAQ/w3xpNdnqhZO97+MhprLHDkUa2A
+rbkbAs3CKHwSLPmdCW8GiaFb+arYftyfPYIkoNrbebQnWNAfqalclphu7XL19W+/
+EetJswnTIJZ+rDlcSMu6oriYWSWmKc7dhffNq73BlcTAaeHrQqb48dKBMwARAQAB
+tDl2aXJhbDMyMTExIDwxOTUxMDQwMyt2aXJhbDMyMTExQHVzZXJzLm5vcmVwbHku
+Z2l0aHViLmNvbT6JAk4EEwEKADgCGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AW
+IQTUaOJod/U6KtM+6SnDl4p8N32fXgUCX4l2HwAKCRDDl4p8N32fXo2SEADPzR4j
+LYI2Wn0mcQUDHV/omQE/ccsruSrRhlbSYRgxFzlxW4ents+QWiJe8nUv8iUlZWPZ
+s6SQReTBz0ojHkOqC4wBeDMAd1vtPthyHYlfwin++8onApJTi8p1n67Vcfq/qbr1
+ngF/9H9/tdAomiJal2WEQqWYOBjJtlU+903s3jaiV4yjueq+sdya2BUkXjPHHZ8L
+6NX96Sig/UHu51G6FoRNWeGjnqO5uA68OGgcgGbFltSe8ZEd4S+JwfdKdPptEiwV
+jse5+m6YiNqzCKAhMfmSWys5oN27spyzwfKFY/VJ9+l287DmZx4TCqN1+w0euHEk
+LMjdNXKqrKEyKne6e0OSSDpGQvzYRqo1cGAxQrD0TgNyB0tKVJOTwnrmhSy19CPq
+Wyg3HUZCdAKE5DGYvnmv+mHgjuMR4anCP4lmFYBipUWvHJkvl6lEnxCl07PWJX8b
+Usy02xtmpcEVF3qzP93UjfNBFdAP7Iwl0wZNurHJ2+4HB5bgdBWpQhBPHPSwO7uR
+hdQSR5Af5AmjCrL3tn7nUhHjTSEgDpOANR+W3dKzKPLakc7p3GLSlc1rJBHXG/Sc
+ogHtixHm9UnE+eNVB8fcF6x/eydnwqr+n9WqWs5M/bG2MKj+7iqLoKk05nyjdHoi
+FyPicqzsbsbDuxqNLjXHQ7iYhZyBny2YLy9kQw==
+=gS1s
+-----END PGP PUBLIC KEY BLOCK-----
+
+The above key was superseded on 06/09/2021, the official revocation follows.
+GitHub commits signed with this key before the above date should still be considered genuine.
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: This is a revocation certificate
+
+iQKmBCABCgCQFiEE1GjiaHf1OirTPukpw5eKfDd9n14FAmE15BNyHQFUaGlzIGtl
+eSBpcyBvbGQgaGFzIGJlZW4gc3VwZXJzZWRlZCBieSBteSBuZXcga2V5IHdpdGgg
+dGhlIGZpbmdlcnByaW50IDI0NDBCNDI2MDlGQTQ1MTY0RDc3NkM0RkYwMjA0RjU5
+QTI1RUE3MkYuAAoJEMOXinw3fZ9er7MQALjBKp50JUj8L2Vdc8NYhL2r+hUvDqnC
+FkYuor3UWAmjhWSjXXXcJ+9f7h5JX648xsws/EIt/fPtoNBxiR4nmD+1QYjBN8EC
+PKP+UJ6tENCaVKzL1aiS/QbZHFm0JDB19fBZVZ9QCg+q3apW9kXXanv9KQ5dAwy0
+MYJcbjwMjvJGiUzsCn9/7s7qU7Atde3b6Y9rCBN+apMqq9Ix9oSD5d1fMJRPs0fz
+Ksz7hRdPxUgKIjF3lcJvJrS9BT0q7ofe/TvBkPbBln7Czt85PFjy3I1U1sKxSwO8
+MY66cgTyU2fHHsZSq407onqRd71F+L4uMa4km7VQ46XhznqNkrye7R3prdorZi5Z
+qBqgS1eM8D40fJ9DpBbH4XaqF+BHlOZlpUXjkxihSIY0n4qMJ7jq+RUHAVF9ouZU
+H9GCaTKb/O2E1r2Mz2Do8yTkRAbu7k//gNPlVl2sVLsur2dxv0mkLYDdIwoYX5xb
+8GTUwBYVK/uDGs1nXtO+7Jdo24ok+a2ZDVenVm7Vo42TT2mHyLGFd6j1kE3pYAzc
+5NIpmO3lvVKX8tW/5wohj7KgYpPrmUrFAFowZGBThXspJogQCS8bSV3V/7Aw0KwZ
+N0HPtioFGz+Qdggv8Y2SabiUOfsLbEYbMU0BC0VbQGFSHb+r8/BbtvfXoaUJYJkK
+weLH3NA+/zuq
+=KY9E
+-----END PGP PUBLIC KEY BLOCK-----

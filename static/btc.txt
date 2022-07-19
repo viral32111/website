@@ -1,0 +1,17 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+My Bitcoin address for donations is bc1qnze9zdu50p44w673757sk3h9hxjwkm9jdct5ky.
+
+If your wallet supports OpenAlias then you can use btc.viral32111.com.
+
+Do not trust any other addresses that claim to be mine but are not listed on:
+ * https://viral32111.com/btc.txt
+ * http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion/btc.txt
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCYUidZAAKCRDwIE9Zol6n
+Lz9vAQCxIilDdNFsD8S8mEwkYxLozUbhbsmum9lDs8xisV17fwEAsOiGvCu2+XfD
+iE+ZGBE+HdXHVhTlrwOZD986iilaXQg=
+=y90y
+-----END PGP SIGNATURE-----

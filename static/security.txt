@@ -1,0 +1,30 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+# Got a security issue or vulnerability to report?
+
+# My contact information
+Contact: contact@viral32111.com
+Contact: https://viral32111.com/contact
+Contact: http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion/contact
+
+# My public key for secure communication
+Encryption: https://viral32111.com/public.txt
+Encryption: http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion/public.txt
+
+# I only speak English
+Preferred-Languages: en
+
+# This information will only ever be available here
+Canonical: https://viral32111.com/security.txt
+Canonical: http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion/security.txt
+
+# Consider this information stale after the date & time below
+Expires: Sat, 5 Sep 2026 00:00:00 +0000
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCYUie8QAKCRDwIE9Zol6n
+L4aeAQCrXG9wzRXN1gQhM7h2CYrklzuoAbdq8DwBHDt0LiQFsAD+M46fdZA+FRxk
+N/FY1r+9omeKKLQCRuAeVvMeS/LI+gM=
+=KvXf
+-----END PGP SIGNATURE-----

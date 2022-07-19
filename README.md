@@ -10,6 +10,68 @@ This repository only contains the source for the *"minimal"* version of my websi
 
 Any previous websites I had, including older versions of my personal ones (`viralstudios.phy.sx`, `viral32111.phy.sx`, etc.) and all of my community ones (`conspiracyservers.gaming.bz`, `conspiracyservers.co.uk`, `conspiracyservers.com`, etc.), are not available.
 
+## Structure
+
+### Static
+
+Static content is served by NGINX.
+
+```
+static/
+  stylesheet/
+    global.css
+    content.css
+    header.css
+    footer.css
+    dark.css
+  image/
+    avatar/
+      circle-128.webp
+      circle-448.webp
+    steam-default-avatar.png
+  download/ (do not include in Git)
+    minecraft-1.16.5-world.tar.xz
+    minecraft-1.18-snapshot-world.zip
+    minecraft-1.18-world.zip
+  robots.txt
+  humans.txt
+  public.txt
+  security.txt
+  btc.txt
+  xmr.txt
+  ads.txt
+```
+
+### Dynamic
+
+Dynamically-generated content is served by Apache.
+
+```
+dynamic/
+  include/
+    template/
+      header.php
+      footer.php
+    credentials.php
+    handlers.php
+  script/
+    index.php
+    error.php
+  page/
+    legal/
+      terms-of-service.md
+      privacy-policy.md
+      thirdparty-notices.md
+    home.md
+    about.md
+    projects.md
+    guides.md
+    blog.md
+    community.md
+    contact.md
+    donate.md
+```
+
 ## License
 
 Copyright (C) 2020-2022 [viral32111](https://viral32111.com).

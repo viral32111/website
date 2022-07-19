@@ -1,0 +1,23 @@
+Hey you, amazing visitor!
+
+Pretty much everything on this website was created by me, viral32111!
+I started this website in early 2016 with the intention of having a central hub for information about me, a place to showcase my work & projects, etc.
+Over the years it has been through so many redesigns and changes to accommodate for all the new skills I've learned & projects I've started.
+
+However, it wouldn't have been possible without these awesome people who helped me further develop it!
+        weebi (https://github.com/weebi): Assisted in resolving errors, picked the .onion domain.
+
+This website runs on the following open-source software, so a big thanks to the great developers behind them!
+        Apache: https://httpd.apache.org
+        PHP: https://www.php.net
+        MySQL: https://www.mysql.com
+        Debian: https://www.debian.org
+
+This website was coded using the following open-source software, thank you to the teams that made them possible!
+        GNU nano: https://www.nano-editor.org
+        Visual Studio Code: https://code.visualstudio.com
+
+Finally, I want to say a huge thanks to you for visiting my website, you're the most important part of it <3
+
+
+"Helping one person might not change the whole world, but it could change the whole world for one person" :)

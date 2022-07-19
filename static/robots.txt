@@ -1,0 +1,30 @@
+# Deny these bots access to everything
+User-agent: CuteStat
+User-agent: Mediapartners-Google
+User-agent: AdsBot-Google-Mobile
+User-agent: AdsBot-Google
+User-agent: AdsBot-Google-Mobile-Apps
+Disallow: /
+
+# Deny all bots to access private resources
+User-agent: *
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /stylesheets/
+Disallow: /sandbox/
+Disallow: /report/
+
+# Allow all bots to access public pages
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /projects
+Allow: /blog
+Allow: /guides
+Allow: /community
+Allow: /contact
+Allow: /donate
+Allow: /public.txt
+Allow: /security.txt
+Allow: /humans.txt
+Allow: /ads.txt
