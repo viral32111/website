@@ -1,18 +1,27 @@
-/* Everything */
-footer * {
+/* Smaller font */
+/*footer * {
 	font-size: 11px;
 }
 
-/* Paragraphs */
-footer p {
+/* Spacing between each footer line */
+/*footer p {
 	margin-top: 2px;
 	margin-bottom: 2px;
 }
 
-	footer p:first-of-type {
-		margin-top: 0px;
-	}
+/* Smaller font */
+footer * { font-size: 11px; }
 
-	footer p:last-of-type {
-		margin-bottom: 0px;
-	}
+/* Decrease margins */
+footer p { margin: 3px 0px 3px 0px; }
+
+/* No spacing for first or last line */
+footer :first-child { margin-top: 0px; }
+footer :last-child { margin-bottom: 0px; }
+
+/* Brackets around links */
+footer p a::before { content: "["; }
+footer p a::after { content: "]"; }
+
+/* Spacing between the links */
+footer p a { margin-right: 5px; }

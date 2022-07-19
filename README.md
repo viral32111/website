@@ -1,20 +1,18 @@
 # Website
 
-This is the client-side and most of the dynamic server-side code of my personal website.
-
-This does ***not*** include web server configuration files responsible for some server-side behaviour and redirect links, nor does it include the statically served plain-text files ([it used to, though](https://github.com/viral32111/website/tree/97112bc0af546a18bb101ea2c216911c30ef7e76)).
+This is the source code & web server configurations for my personal website.
 
 ## History
 
-This repository only contains the source for the *"minimal"* version of my website on the `viral32111.com` domain (so the current one).
+This repository only contains the source code for the *"minimal"* version of my website on the `viral32111.com` domain (so the current one).
 
-Any previous websites I had, including older versions of my personal ones (`viralstudios.phy.sx`, `viral32111.phy.sx`, etc.) and all of my community ones (`conspiracyservers.gaming.bz`, `conspiracyservers.co.uk`, `conspiracyservers.com`, etc.), are not available.
+Any previous websites I had, including older versions of my personal ones (`viralstudios.phy.sx`, `viral32111.phy.sx`, etc.) and all of my community ones (`conspiracyservers.gaming.bz`, `conspiracyservers.co.uk`, `conspiracyservers.com`, etc.), are not available in this repository.
 
-## Structure
+## Structure Notes
 
 ### Static
 
-Static content is served by NGINX.
+Static content is served by NGINX in production.
 
 ```
 static/
@@ -28,8 +26,7 @@ static/
     avatar/
       circle-128.webp
       circle-448.webp
-    steam-default-avatar.png
-  download/ (do not include in Git)
+  download/
     minecraft-1.16.5-world.tar.xz
     minecraft-1.18-snapshot-world.zip
     minecraft-1.18-world.zip
@@ -44,24 +41,24 @@ static/
 
 ### Dynamic
 
-Dynamically-generated content is served by Apache.
+Dynamically-generated content is served by Apache in production.
 
 ```
 dynamic/
   include/
-    template/
-      header.php
-      footer.php
     credentials.php
-    handlers.php
+    markdown.php
+    error.php
   script/
+    .htaccess
     index.php
     error.php
   page/
     legal/
       terms-of-service.md
       privacy-policy.md
-      thirdparty-notices.md
+      cookie-policy.md
+      third-party-notices.md
     home.md
     about.md
     projects.md
@@ -71,6 +68,30 @@ dynamic/
     contact.md
     donate.md
 ```
+
+## Backwards Compatibility Notes
+
+`steam-default-avatar.png` can just be got externally from `https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg`
+
+### Aliases
+
+* `/stylesheets/` -> `/stylesheet/`
+* `/images/avatars/` -> `/image/avatar`
+* `/images/` -> `/image/`
+* `/minecraft-1.16.5-world.tar.xz` -> `/downloads/minecraft-1.16.5-world.tar.xz`
+* `/minecraft-1.18-snapshot-world.zip` -> `/downloads/minecraft-1.18-snapshot-world.zip`
+* `/minecraft-1.18-world.zip` -> `/downloads/minecraft-1.18-world.zip`
+
+### Deprecations
+
+* `/report/csp`
+* `/report/csp.php`
+* `/report/hpkp`
+* `/report/hpkp.php`
+* `/report/transparency`
+* `/report/transparency.php`
+* `/report/xss`
+* `/report/xss.php`
 
 ## License
 

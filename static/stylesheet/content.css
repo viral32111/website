@@ -1,76 +1,146 @@
-/* Paragraphs */
-main p:first-of-type {
-	margin-top: 0px;
+/* Remove empty space above and below the first and last content element */
+main :first-child { margin-top: 0px; }
+main :last-child { margin-bottom: 0px; }
+
+/* Inline code */
+code {
+	display: inline;
+	font-family: monospace;
+	background-color: #f6f6f6;
+	padding: 1px 3px 1px 3px;
 }
 
-main p:last-of-type {
-	margin-bottom: 0px;
+/* Code blocks */
+pre code {
+	display: block;
+	white-space: pre-wrap;
+	tab-size: 2;
+	padding: 3px 3px 5px 3px; /* Bottom looks weird without extra */
 }
 
-/* Donation table */
+/* Make tables occupy the entire width of the page */
+main table {
+	width: 100%;
+	table-layout: fixed;
+	margin: 13px 0px 13px 0px;
+}
+
+/* Table titles */
+main table caption {
+	text-align: left;
+	text-decoration: underline;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+/* Table subtitles */
+main table caption aside {
+	color: #545454;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: italic;
+	float: right;
+}
+
+/* Slightly dimmer background color for every other table row */
+main table tr:nth-child( even ) { background-color: #f6f6f6; }
+
+/* Disable borders on table cells */
+main table, main table tr th, main table tr td { border-collapse: collapse; }
+
+/* Add padding inside table cells */
+main table tr th, main table tr td {
+	padding: 2px 4px 2px 4px;
+	text-align: left;
+}
+
+/* Remove table cell padding on the edges of the page */
+main table tr th:first-of-type, main table tr td:first-of-type { padding-left: 0px; }
+main table tr th:last-of-type, main table tr td:last-of-type { padding-right: 0px; }
+
+/* Table headers */
+main table tr th {
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+/* Truncate table text instead of overflowing */
+main table tr td {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* Right align the last two columns of the projects table */
+main table.projects tr th:nth-child( 3 ), main table.projects tr td:nth-child( 3 ) { text-align: right; }
+main table.projects tr th:nth-child( 4 ), main table.projects tr td:nth-child( 4 ) { text-align: right; }
+
+/* Move lists closer to the edge of the content */
+main ul li { margin-left: -25px; }
+
+/* Hyphens for list bullets */
+main ul { list-style-type: "- "; }
+
+/* Remove spacing between paragraphs and lists */
+/* TODO: This is an awful way of doing it, but I have no idea how to select paragraph tag that is followed by an unordered list */
+p + ul {
+	margin-top: -10px;
+}
+
+/*abbr {
+	position: relative;
+	cursor: help;
+	text-decoration: underline;
+	text-decoration-style: dashed;
+}
+
+[tooltip]:hover::before {
+	content: attr( tooltip );
+	position: absolute;
+	bottom: -26px;
+	display: inline-block;
+	padding: 3px 6px;
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	font-family: sans-serif;
+	white-space: nowrap;
+}*/
+
+/*
 main h1.donation-title {
 	text-align: center;
 	text-decoration: underline;
 }
-
 main table {
 	width: 100%;
 }
-
 main th, main td {
 	padding: 3px;
 	text-align: center;
 }
-
 main table, main th, main td {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
-
 main td.donation-private {
 	color: #545454;
 	font-style: italic;
 	cursor: not-allowed;
 }
-
 main td.donation-none {
 	color: #545454;
 	font-style: italic;
 }
-
 main p.donation-note {
 	margin-top: 4px;
 	font-style: italic;
 	text-align: right;
-}
+}*/
 
-/* Lists */
-main p.list-title {
-	margin-bottom: 0px;
-}
-
-main ul {
-	margin-top: 0px;
-}
-
-main ul li {
-	margin-left: -25px;
-}
-
-/* Forms */
-main form textarea {
+/*main form textarea {
 	width: 100%;
 	resize: none;
 }
-
 main form input {
 	width: 100%;
-}
-
-/* Codeblocks */
-main code {
-	display: inline;
-	padding: 0px 3px 0px 3px;
-	font-family: monospace;
-	background-color: #e8e8e8;
-}
+}*/

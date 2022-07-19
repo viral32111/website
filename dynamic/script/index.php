@@ -1,79 +1,162 @@
 <?php
 
-$pagesDirectory = $_SERVER[ "DOCUMENT_ROOT" ] . "/pages";
+require( 'error.php' );
+require( 'markdown.php' );
 
-function showErrorPage( int $statusCode, string $message = null ) {
-	header( "Content-Type: text/plain" );
-	http_response_code( $statusCode );
-
-	if ( !empty( $message ) ) {
-		error_log( $message );
-		exit( $message );
-	}
-}
-
-function parseMarkdownToHTML( string $markdownContent ) : string {
-	$markdownLines = explode( "\n", $markdownContent );
-	$parsedHTML = "";
-
-	foreach ( $markdownLines as $markdownLine ) {
-
-		if ( empty( $markdownLine ) ) continue;
-
-		if ( strncmp( $markdownLine, "# ", 2 ) === 0 ) {
-			$title = trim( substr( $markdownLine, 2 ) );
-			$parsedHTML .= "<h1>" . $title . "</h1>\n";
-
-		} elseif ( strncmp( $markdownLine, "## ", 3 ) === 0 ) {
-			$title = trim( substr( $markdownLine, 3 ) );
-			$parsedHTML .= "<h2>" . $title . "</h2>\n";
-
-		} elseif ( strncmp( $markdownLine, "### ", 4 ) === 0 ) {
-			$title = trim( substr( $markdownLine, 4 ) );
-			$parsedHTML .= "<h3>" . $title . "</h3>\n";
-
-			
-
-		} else {
-			$markdownLine = preg_replace( '/\*\*(.+?)\*\*/', '<strong>${1}</strong>', $markdownLine );
-			$markdownLine = preg_replace( '/\*(.+?)\*/', '<em>${1}</em>', $markdownLine );
-			$markdownLine = preg_replace( '/`(.+?)`/', '<code>${1}</code>', $markdownLine );
-			$markdownLine = preg_replace( '/\[(.+?)\]\((.+?)\)/', '<a href="${2}">${1}</a>', $markdownLine );
-
-			$parsedHTML .= "<p>" . $markdownLine . "</p>\n";
-		}
-
-	}
-
-	return $parsedHTML;
-}
+$PAGE_DIRECTORY = getenv( "PAGE_DIRECTORY" );
 
 $pageName = $_GET[ "page" ];
-if ( empty( $pageName ) ) showErrorPage( 400, "No page specified." );
+if ( empty( $pageName ) ) showErrorPage( 400, "No page requested." );
 
 $pageFileName = $pageName . ".md";
-if ( !is_file( $pagesDirectory . "/" . $pageFileName ) ) showErrorPage( 404, "Specified page does not exist." );
+if ( !is_file( $PAGE_DIRECTORY . "/" . $pageFileName ) ) showErrorPage( 404, "The requested page does not exist." );
 
 ob_start();
-require( $pagesDirectory . "/" . $pageFileName );
+require( $PAGE_DIRECTORY . "/" . $pageFileName );
 $pageContent = ob_get_clean();
 
-$pageHTML = parseMarkdownToHTML( $pageContent );
+$pageTitle = ucfirst( $pageName );
+$pageDescription = "Placeholder description.";
+$siteName = "viral32111's website"; // TODO: Set this in configuration
+$siteUrl = "https://viral32111.com"; // TODO: Get this automatically
+
+$navigationPages = [
+	'home',
+	'about',
+	'projects',
+	'tools',
+	'blog',
+	'guides',
+	'community',
+	'contact',
+	'donate'
+];
+
+$pageHTML = MarkdownToHTML::ConvertString( $pageContent );
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en-gb">
 	<head>
-		<title><?= $pageName ?></title>
+
+		<!-- The title in the tab -->
+		<title><?= $pageTitle ?> - <?= $siteName ?></title>
+
+		<!-- The character encoding for this page -->
 		<meta charset="utf-8">
+
+		<!-- Compatibility with mobile viewers -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<!-- Generic data for browsers & search engines -->
+		<meta name="url" content="<?= $siteUrl ?>">
+		<meta name="description" content="<?= $pageDescription ?>">
+		<meta name="subject" content="Personal website.">
+		<meta name="keywords" content="viral32111,conspiracy servers,brother gaming,programmer,programming,developer,developing,coding,freelance,community">
+		<meta name="language" content="en_gb">
+		<meta name="author" content="viral32111 <contact@viral32111.com>">
+		<meta name="owner" content="viral32111 <contact@viral32111.com>">
+		<meta name="copyright" content="viral32111 <contact@viral32111.com>">
+
+		<!-- Data for embeds on other websites -->
+		<meta name="theme-color" content="#aea49a"> <!-- Majority color of my avatar -->
+		<meta name="og:type" content="website">
+		<meta name="og:url" content="<?= $siteUrl ?>">
+		<meta name="og:site_name" content="<?= $siteName ?>">
+		<meta name="og:title" content="<?= $pageTitle ?>">
+		<meta name="og:description" content="<?= $pageDescription ?>">
+		<meta name="og:image" content="image/avatar/circle-448.webp">
+		<meta name="og:image:type" content="image/webp">
+		<meta name="og:image:alt" content="viral32111's avatar">
+		<meta name="og:locale" content="en_gb">
+
+		<!-- Import Highlight.js GitHub-themed stylesheet -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css" type="text/css">
+
+		<!-- Import the required stylesheets -->
+		<link rel="stylesheet" href="stylesheet/global.css" type="text/css">
+		<link rel="stylesheet" href="stylesheet/header.css" type="text/css">
+		<link rel="stylesheet" href="stylesheet/footer.css" type="text/css">
+		<link rel="stylesheet" href="stylesheet/content.css" type="text/css">
+
+		<!-- The icon in the tab -->
+		<link rel="icon" href="image/avatar/circle-128.webp" type="image/webp">
+
+		<!-- Allow search engines to crawl and index this page -->
+		<meta name="robots" content="index,follow,noarchive,noimageindex">
+
+		<!-- Remove Highlight.js bullshit -->
 		<style>
-			body {
-				font-family: 'Verdana';
-				font-size: 13px;
+			pre code.hljs {
+				padding: 3px 3px 5px 3px;
+				background-color: #f6f6f6;
+			}
+
+			pre code.hljs * {
+				font-family: monospace;
 			}
 		</style>
+
 	</head>
 	<body>
-		<?= $pageHTML ?>
+
+		<!-- Header above the content -->
+		<header>
+
+			<!-- Title -->
+			<h1><img src="image/avatar/circle-448.webp" alt="viral32111's avatar" height="29px"><?= $siteName; ?></h1>
+
+			<!-- Navigation -->
+			<nav>
+				<?php foreach ( $navigationPages as $navigationPageName ) {
+					if ( is_file( $PAGE_DIRECTORY . "/" . $navigationPageName . ".md" ) ) {
+						echo( '<a ' . ( $navigationPageName === $pageName ? ' class="current"' : '' ) . ' href="/' . $navigationPageName . '">' . ucfirst( $navigationPageName ) . '</a>' );
+					} else {
+						echo( '<a>' . ucfirst( $navigationPageName ) . '</a>' );
+					}
+				} ?>
+			</nav>
+
+		</header>
+
+		<!-- Divider -->
+		<hr>
+
+		<!-- The content -->
+		<main>
+
+			<!-- Display the parsed Markdown content -->
+			<?= $pageHTML ?>
+
+		</main>
+
+		<!-- Divider -->
+		<hr>
+
+		<!-- Footer below the content -->
+		<footer>
+
+			<!-- Copyright notice -->
+			<p>Copyright &copy; 2016 - <?= date( 'Y' ) ?> viral32111. All rights reserved unless stated otherwise.</p>
+
+			<!-- Legal pages -->
+			<p>
+				<a>Terms of Service</a>
+				<a>Privacy Policy</a>
+				<a>Cookie Policy</a>
+				<a>Third-Party Notices</a>
+			</p>
+
+			<!-- No JavaScript easter egg -->
+			<noscript>
+				<p style="color: #fc2a2e; margin-top: 15px; font-style: italic"><code style="padding: 3px;">// NOTE: Syntax highlighting for code blocks is unavailable while JavaScript is disabled :c</code></p>
+			</noscript>
+
+		</footer>
+
 	</body>
+
+	<!-- Apply Highlight.js styling -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
 </html>

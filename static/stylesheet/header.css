@@ -1,28 +1,28 @@
-/* Heading */
+/* Large title */
 header h1 {
-	margin-top: 0px;
-	margin-bottom: 10px;
-	text-align: center;
 	font-size: 24px;
 	font-weight: normal;
-}
-
-	/* Avatar */
-	header h1 img {
-		vertical-align: text-bottom;
-		margin-right: 10px;
-	}
-
-/* Navigation */
-header nav {
 	text-align: center;
-	display: flex;
-	justify-content: space-between;
-	margin-left: 30px;
-	margin-right: 30px;
+	margin: 0px 0px 10px 0px;
 }
 
-	/* Links */
-	header nav a.selected {
-		font-weight: bold;
-	}
+/* Centered avatar */
+header h1 img {
+	vertical-align: text-bottom;
+	margin-right: 10px;
+}
+
+/* Spaced-out navigation links */
+header nav {
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
+	margin: 0px 10px 0px 10px;
+}
+
+/* Brackets around navigation links */
+header nav a::before { content: "["; }
+header nav a::after { content: "]"; }
+
+/* Bold navigation link for current page */
+header nav a.current { font-weight: bold; }

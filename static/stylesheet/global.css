@@ -1,28 +1,28 @@
-/* Everything */
+/* Font across every page */
 * {
 	font-family: "Verdana";
 	font-size: 13px;
 }
 
-/* Body */
-body {
-	width: 675px;
+/* Maximum page width */
+body { width: 675px; }
+
+/* Responsive maximum page width */
+@media ( max-width: 675px ) {
+	body { width: 100%; }
 }
 
-/* Dividers */
+/* Minimalistic dividers for header & footer */
 hr {
 	height: 1px;
+	border: none;
 	background: #000000;
-	border: 0px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin: 10px 0px 10px 0px;
 }
 
-/* Links */
-a {
-	text-decoration: none;
-}
+/* Links with destinations that underline on hover */
+a { text-decoration: none; }
+a[ href ]:hover { text-decoration: underline; }
 
-	a:hover {
-		text-decoration: underline;
-	}
+/* Disable links with no destination */
+a:not( [ href ] ) { color: #545454; }

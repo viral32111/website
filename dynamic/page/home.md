@@ -1,4 +1,8 @@
-# Test
+# Hello World!
+
+Welcome to my website!
+
+## Test
 
 This is a testing page to demonstrate executing PHP code inside of a Markdown file.
 
