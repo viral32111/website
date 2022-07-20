@@ -41,7 +41,7 @@ static/
 
 ### Dynamic
 
-Dynamically-generated content is served by Apache in production.
+Dynamically-generated content is served by Apache.
 
 ```
 dynamic/
@@ -52,7 +52,6 @@ dynamic/
   script/
     .htaccess
     index.php
-    error.php
   page/
     legal/
       terms-of-service.md
@@ -72,26 +71,6 @@ dynamic/
 ## Backwards Compatibility Notes
 
 `steam-default-avatar.png` can just be got externally from `https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg`
-
-### Aliases
-
-* `/stylesheets/` -> `/stylesheet/`
-* `/images/avatars/` -> `/image/avatar`
-* `/images/` -> `/image/`
-* `/minecraft-1.16.5-world.tar.xz` -> `/downloads/minecraft-1.16.5-world.tar.xz`
-* `/minecraft-1.18-snapshot-world.zip` -> `/downloads/minecraft-1.18-snapshot-world.zip`
-* `/minecraft-1.18-world.zip` -> `/downloads/minecraft-1.18-world.zip`
-
-### Deprecations
-
-* `/report/csp`
-* `/report/csp.php`
-* `/report/hpkp`
-* `/report/hpkp.php`
-* `/report/transparency`
-* `/report/transparency.php`
-* `/report/xss`
-* `/report/xss.php`
 
 ## License
 
