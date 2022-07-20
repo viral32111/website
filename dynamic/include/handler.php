@@ -6,12 +6,12 @@ function showErrorPage( int $statusCode, string $userMessage = null ) {
 
 	http_response_code( $statusCode );
 
-	//$_SERVER[ 'REDIRECT_STATUS' ] = $statusCode;
-	//setenv( "ERROR_USER_MESSAGE", $userMessage );
+	//$_GET = [ 'error' => $statusCode ];
+	//include( '../script/index.php' );
 
-	include( '../script/error.php' );
+	header( 'Content-Type: text/plain' );
 
-	exit();
+	exit( "HTTP $statusCode\n\n$userMessage" );
 
 }
 

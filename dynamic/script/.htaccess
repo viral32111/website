@@ -1,8 +1,8 @@
 # Custom error pages
-ErrorDocument 403 /error.php
-ErrorDocument 404 /error.php
-ErrorDocument 410 /error.php
-ErrorDocument 500 /error.php
+ErrorDocument 403 /index.php?error=403
+ErrorDocument 404 /index.php?error=404
+ErrorDocument 410 /index.php?error=410
+ErrorDocument 500 /index.php?error=500
 
 # Session storage & cookie configuration
 php_value session.name __Secure-ID
@@ -19,6 +19,8 @@ php_value session.cookie_domain .${SERVER_NAME}
 php_value include_path ../include
 
 # Configuration for PHP scripts
+SetEnv SITE_NAME "viral32111's website"
+SetEnv SITE_DOMAIN ${SERVER_NAME}
 SetEnv PAGE_DIRECTORY ../page
 
 # Enable advanced redirects
@@ -57,3 +59,21 @@ RewriteRule ^(\w+)$ index.php?page=$1 [QSA,L]
 # Allow accessing pages without the .php extension
 #RewriteCond ${DIRECTORY_WEBSITE}/${SERVER_NAME}/pages%{REQUEST_URI}.php -f
 #RewriteRule ^ %{REQUEST_URI}.php [L]
+
+<IfModule substitute_module>
+
+	# Rules for all documents
+	<Files *>
+
+		# Only apply to HTML content
+		AddOutputFilterByType SUBSTITUTE text/html
+
+		# Remove HTML comments
+		Substitute s/<!--.*-->//q
+
+		# Remove leading whitespace and empty lines
+		Substitute s/^\s+//q
+
+	</Files>
+
+</IfModule>

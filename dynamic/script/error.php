@@ -1,6 +1,6 @@
 <?php
 
-$statusMessages = [
+$statusCodeMessages = [
 	403 => 'Forbidden',
 	404 => 'Not Found',
 	410 => 'Gone',
@@ -8,14 +8,9 @@ $statusMessages = [
 	501 => 'Not Implemented'
 ];
 
-/*$statusCode = $_SERVER[ "REDIRECT_STATUS" ];
-$statusMessage = $statusMessages[ $statusCode ];
+$userMessage = $userMessage ?? $statusCodeMessages[ $statusCode ];
 
-$userMessage = getenv( "ERROR_USER_MESSAGE" ) ?? $statusMessage;*/
-
-$userMessage = $userMessage ?? $statusMessages[ $statusCode ];
-
-$PAGE_DIRECTORY = getenv( "PAGE_DIRECTORY" );
+$PAGE_DIRECTORY = $_SERVER[ "PAGE_DIRECTORY" ];
 $pageName = "error";
 $pageTitle = ucfirst( $pageName );
 $siteName = "viral32111's website";
