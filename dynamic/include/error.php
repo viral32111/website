@@ -1,6 +1,18 @@
 <?php
 
+$statusCodeMessages = [
+	403 => 'Forbidden',
+	404 => 'Not Found',
+	410 => 'Gone',
+	500 => 'Internal Server Error',
+	501 => 'Not Implemented'
+];
+
 function showErrorPage( int $statusCode, string $userMessage = null ) {
+
+	global $statusCodeMessages;
+
+	$errorMessage = $userMessage ?? $statusCodeMessages[ $statusCode ];
 
 	ob_clean();
 
@@ -11,7 +23,7 @@ function showErrorPage( int $statusCode, string $userMessage = null ) {
 
 	header( 'Content-Type: text/plain' );
 
-	exit( "HTTP $statusCode\n\n$userMessage" );
+	exit( "HTTP $statusCode\n\n$errorMessage" );
 
 }
 

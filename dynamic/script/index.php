@@ -1,7 +1,7 @@
 <?php
 
 // Import required scripts
-require_once( 'handler.php' );
+require_once( 'error.php' );
 require_once( 'markdown.php' );
 
 // Start a session if one does not exist
@@ -13,15 +13,7 @@ if ( isset( $_GET[ "error" ] ) ) {
 
 	if ( empty( $errorCode ) ) showErrorPage( 400, "No error code provided." );
 
-	$statusCodeMessages = [
-		403 => 'Forbidden',
-		404 => 'Not Found',
-		410 => 'Gone',
-		500 => 'Internal Server Error',
-		501 => 'Not Implemented'
-	];
-
-	showErrorPage( $errorCode, $statusCodeMessages[ $errorCode ] );
+	showErrorPage( $errorCode );
 }
 
 // Get the name of the requested page
@@ -30,7 +22,7 @@ $pageName = $_GET[ "page" ];
 
 // Check if the requested page exists
 $pageFile = $pageName . ".md";
-if ( !is_file( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $pageFile ) ) showErrorPage( 404, "The requested page does not exist." );
+if ( !is_file( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $pageFile ) ) showErrorPage( 404 );
 
 // Capitalise the name of the page to use as the title
 $pageTitle = ucfirst( $pageName );

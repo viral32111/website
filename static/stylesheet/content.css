@@ -2,8 +2,12 @@
 main :first-child { margin-top: 0px; }
 main :last-child { margin-bottom: 0px; }
 
+/* Headings (h3 to h6 are global font size)*/
+main h1 { font-size: 15px; }
+main h2 { font-size: 14px; }
+
 /* Inline code */
-code {
+main code {
 	display: inline;
 	font-family: monospace;
 	background-color: #f6f6f6;
@@ -11,7 +15,7 @@ code {
 }
 
 /* Code blocks */
-pre code {
+main pre code {
 	display: block;
 	white-space: pre-wrap;
 	tab-size: 2;
