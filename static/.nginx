@@ -1,0 +1,60 @@
+# This site will never have favicon.ico
+location = /favicon.ico { return 410; }
+
+# Add a few persistent redirects
+location = /twitter { return 308 https://twitter.com/viral32111; }
+location = /steam { return 308 https://steamcommunity.com/profiles/76561198168833275; }
+location = /reddit { return 308 https://reddit.com/user/viral32111; }
+location = /deviantart { return 308 https://www.deviantart.com/viral32111; }
+location = /youtube { return 308 https://www.youtube.com/channel/UCgnd0UhrusfKlz1VJWmjEFQ; }
+location = /twitch { return 308 https://www.twitch.tv/viral32111; }
+location = /namemc { return 308 https://namemc.com/profile/a51dccb5-7ffa-426b-833b-1a9ce3a31446; }
+location = /myanimelist { return 308 https://myanimelist.net/profile/viral32111; }
+location = /github { return 308 https://github.com/viral32111; }
+location = /gmodstore { return 308 https://www.gmodstore.com/users/76561198168833275; }
+location = /discord { return 308 https://discord.com/invite/PdzSFsh; }
+location = /steamgroup { return 308 https://steamcommunity.com/groups/conspiracyservers; }
+
+# Respond with gone for deprecated redirects
+location = /paypal { return 410 'Redirect no longer available'; }
+location = /apply { return 410 'Redirect no longer available'; }
+location = /map-vote { return 410 'Redirect no longer available'; }
+location = /join-sandbox { return 410 'Redirect no longer available'; }
+location = /ttt { return 410 'Redirect no longer available'; }
+location = /sandbox-addon-vote { return 410 'Redirect no longer available'; }
+location = /spacebuild-vote { return 410 'Redirect no longer available'; }
+location = /appeal { return 410 'Redirect no longer available'; }
+location = /sandbox { return 410 'Redirect no longer available'; }
+location = /spacebuild { return 410 'Redirect no longer available'; }
+location = /report { return 410 'Redirect no longer available'; }
+
+# Add redirects for easier access to pages
+location = /xmr { return 308 /xmr.txt; }
+location = /btc { return 308 /btc.txt; }
+location = /.well-known/security.txt { return 308 /security.txt; }
+
+# Respond with gone for deprecated pages
+location = /link { return 410 'Page no longer available'; }
+location = /steamuser { return 410 'Page no longer available'; }
+location = /staff { return 410 'Page no longer available'; }
+location = /members { return 410 'Page no longer available'; }
+location = /advertisement { return 410 'Page no longer available'; }
+
+# ------ Added in rewrite ------
+
+location = /report/csp { return 410 'Page no longer available'; }
+location = /report/csp.php { return 410 'Page no longer available'; }
+location = /report/hpkp { return 410 'Page no longer available'; }
+location = /report/hpkp.php { return 410 'Page no longer available'; }
+location = /report/transparency { return 410 'Page no longer available'; }
+location = /report/transparency.php { return 410 'Page no longer available'; }
+location = /report/xss { return 410 'Page no longer available'; }
+location = /report/xss.php { return 410 'Page no longer available'; }
+
+# Add redirects for backwards compatibility
+location = /stylesheets/ { return 308 /stylesheet/; }
+location = /images/avatars { return 308 /image/avatar/; }
+location = /images/ { return 308 /image/; }
+location = /minecraft-1.16.5-world.tar.xz { return 308 /download/minecraft-1.16.5-world.tar.xz; }
+location = /minecraft-1.18-snapshot-world.zip { return 308 /download/minecraft-1.18-snapshot-world.zip; }
+location = /minecraft-1.18-world.zip { return 308 /download/minecraft-1.18-world.zip; }
