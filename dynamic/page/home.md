@@ -1,26 +1,7 @@
-# Hello World!
+Welcome to my new & improved website!
 
-Welcome to my website!
+I know it might not look like much right now, but I have [many more features planned for the future](https://github.com/users/viral32111/projects/2). The majority of my work over the last 6 months has been programming, configuring and optimising the backend system that runs the website.
 
-## Test
+My previous website [(2019-2020)](https://web.archive.org/web/20200310153357/https://viral32111.com/), and the one before that [(2016-2019)](https://web.archive.org/web/20180826152843/https://viral32111.com/), were not that great due to my lack of experience in properly setting up and configuring a website. The first website had plenty of detailed content that explained who I am, showed off some of my projects, etc. The second website however, didn't have any of that and instead was simply my avatar with a dozen or so links below it to my various online profiles on different websites. Sort of pointless, considering I always told people to go to my website if they want to find information about who I am :/
 
-This is a testing page to demonstrate executing PHP code inside of a Markdown file.
-
-I want to revisit the concept of storing each page as a Markdown file, then parsing and rendering it as HTML for browser visitors.
-Command-line visitors *(i.e. cURL)* will show the page in either a plain-text or Markdown format.
-
-Pages *(Markdown files)* without PHP code can also be [GPG signed](https://gnupg.org), as their content is static. This is another feature I tried out in the past, but scrapped in the final release of the website.
-
-For example, the name of the virtual host handling this request is `<?php echo( $_SERVER[ 'SERVER_NAME' ] ); ?>`.
-
-## Why?
-
-Markdown works well for my website, as it has been designed in a minimalistic, plain-text-eske style.
-
-It makes each page easier to edit too, and **removes the need for all the boilerplate template code on each page**.
-
-Headers *(title, navigation bar)* and footers *(copyright notice)* will be automatically added to the rendered HTML.
-
-The navigation bar will automatically change when pages *(Markdown files)* are added, removed or renamed *(the file name will be used as the page title)*.
-
-Pages *(Markdown files)* will be stored in a separate directory. Likely outside of the document root, as they will not be directly accessed, instead parsed by a main PHP script responsible for handling all requests.
+This website that you're reading right now, launched at the start of 2021, is hopefully going to be my last major redesign & recreation of my website, thanks to all the knowledge and experience I've learned/gained over the last 4-5 years. I intend for this website to be a centralised place where I can describe who I am, showcase my projects & achievements, direct people to my other online profiles, talk to the rest of the Internet through blog posts or guides, allow others to easily personally speak to me, etc.

@@ -2,17 +2,17 @@ Hey, I am a programmer and developer from the United Kingdom that has decent exp
 
 I also like to play around with embedded electronics and microsystems in my free time, such as Arduino's, Raspberry Pi's, etc. Though I have not really made anything worth sharing yet, since it is still a small hobby I am actively getting better at.
 
-My programming experience over the years has primarily been in C#, Lua, PHP, Python, JavaScript and more recently C. However, like mentioned I have pretty much dabbled with every popular language which is helpful as it makes going into a new language quite easy since the concepts are usually very similar, I just have to learn the syntax.
+My programming experience over the years has primarily been in C#, Lua, PHP, Python, JavaScript and more recently Java & C/C++. However, like mentioned I have pretty much dabbled with every popular language which is helpful as it makes going into a new language quite easy since the concepts are usually very similar, I just have to learn the syntax.
 
-In case you are trying to find out information about me, I will save you the trouble and give you my online profiles below, though you are not going to find very much on them.
+In case you are trying to find out information about me, I will save you the trouble and give you my online profiles below.
 
-* [GitHub](/github)
+* [Twitter](/twitter)
 * [Steam](/steam)
+* [Reddit](/reddit)
+* [DeviantArt](/deviantart)
 * [YouTube](/youtube)
 * [Twitch](/twitch)
-* [Twitter](/twitter)
-* [Reddit](/reddit)
-* [NameMC](/namemc)
-* [DeviantArt](/deviantart)
+* [Minecraft](/namemc)
 * [MyAnimeList](/myanimelist)
+* [GitHub](/github)
 * [GmodStore](/gmodstore)
