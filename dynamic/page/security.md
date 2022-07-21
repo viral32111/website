@@ -18,9 +18,19 @@ A common misconception is that website traffic is secured with the HTTPS "protoc
 
 This server's OpenSSL cipher suite preference is configured as `ECDHE:!ECDHE-ECDSA-AES256-SHA384:!ECDHE-ECDSA-CAMELLIA256-SHA384:!ECDHE-ECDSA-AES128-SHA256:!ECDHE-ECDSA-CAMELLIA128-SHA256:HIGH:!MEDIUM:!LOW:!aNULL:!eNULL:!SHA1:!MD5:!TLSv1.0:!SSLv3:!EXP`.
 
-This priorities [EC](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) ciphers that support [Perfect Forward Secrecy (PFS)](https://en.wikipedia.org/wiki/Forward_secrecy) and TLS 1.3 ciphers using AES-GCM and CHACHA20-POLY1305 algorithms with 256-bit keys. It removes support for all protocols, ciphers and hashes considered weak (`LOW`, `SHA1`, `MD5`, `TLSv1.0`, `SSLv3`), without authentication (`aNULL`), or without encryption (`eNULL`). It also removes all export ciphers (`EXP`).
+This priorities [Elliptic Curve (EC)](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) ciphers that support [Perfect Forward Secrecy (PFS)](https://en.wikipedia.org/wiki/Forward_secrecy) and TLS 1.3 ciphers using AES-GCM and CHACHA20-POLY1305 algorithms with 256-bit keys. It removes support for all protocols, ciphers and hashes considered weak (`LOW`, `SHA1`, `MD5`, `TLSv1.0`, `SSLv3`), without authentication (`aNULL`), or without encryption (`eNULL`). It also removes all export ciphers (`EXP`).
 
 Fast ciphers are not prioritised as it is not necessary on a website this minimal.
+
+## Certificate
+
+The TLS certificate used to authenticate this web server is provided by [Let's Encrypt](https://letsencrypt.org/), a trusted non-profit certificate authority.
+
+The certificate is valid for the current primary domain `viral32111.com` and `*.viral32111.com` for any subdomains, though at present there are no subdomains.
+
+The certificate uses a 384-bit elliptic curve (NIST P-384 curve) key.
+
+See [crt.sh](https://crt.sh/?q=viral32111.com), a certificate transparency database, for the history of certificates issued for this domain.
 
 ## Headers
 
@@ -33,7 +43,7 @@ While HTTP headers do not improve the strength of the underlying cryptography, t
 * [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) prevents informing other websites that you came from this website.
 * [`Strict-Transport-Security`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) enforces encrypted requests to this website for future visits.
 
-As an additional benefit to the last header, this website is in the [HSTS Preload List](https://hstspreload.org/?domain=viral32111.com) to ensure all modern web browsers know to only ever visit this website over HTTPS.
+In addition to the last header, this website is in the [HSTS Preload List](https://hstspreload.org/?domain=viral32111.com) to ensure all modern web browsers know to only ever visit this website over HTTPS.
 
 ## Cookies
 

@@ -7,6 +7,7 @@ These are acknowledgements for the use of publicly available software, libraries
 * [Let's Encrypt](https://letsencrypt.org/) as the certificate authority signing the TLS certificate.
 * [Mozilla Observatory](https://observatory.mozilla.org/) for providing security enhacing recommendations.
 * [Hardenize](https://www.hardenize.com/) for analysing the strength of the web server's configuration.
+* [MDN Web Docs](https://developer.mozilla.org/en-US/) as the documentation referenced in various pages.
 * [NGINX](https://nginx.org/) as the web server for serving the static content.
 * [Apache HTTP Server](https://httpd.apache.org/) as the web server for serving the dynamic pages.
 * [GitHub](https://github.com/) as the host for the publicly available source code.
