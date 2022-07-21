@@ -7,7 +7,8 @@ main h1 { font-size: 15px; }
 main h2 { font-size: 14px; }
 
 /* Inline code */
-main code {
+/* NOTE: No main tag because we use inline code in the footer for the easter egg */
+code {
 	display: inline;
 	font-family: monospace;
 	background-color: #f6f6f6;
@@ -81,15 +82,21 @@ main table.projects tr th:nth-child( 4 ), main table.projects tr td:nth-child( 4
 
 /* Move lists closer to the edge of the content */
 main ul li { margin-left: -25px; }
+main ol li { margin-left: -18px; }
 
 /* Hyphens for list bullets */
 main ul { list-style-type: "- "; }
 
 /* Remove spacing between paragraphs and lists */
-/* TODO: This is an awful way of doing it, but I have no idea how to select paragraph tag that is followed by an unordered list */
-p + ul {
-	margin-top: -10px;
-}
+p + ul { margin-top: -10px; }
+p + ol { margin-top: -10px; }
+
+/* Remove spacing between headings and lists */
+:is( h1, h2, h3, h4, h4, h5, h6 ) + ul { margin-top: -10px; }
+:is( h1, h2, h3, h4, h4, h5, h6 ) + ol { margin-top: -10px; }
+
+/* Less spacing between headings and paragraphs */
+:is( h1, h2, h3, h4, h4, h5, h6 ) + p { margin-top: -8px; }
 
 /*abbr {
 	position: relative;

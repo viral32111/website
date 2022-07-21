@@ -1,7 +1,29 @@
-Welcome to my new & improved website!
+# Home
 
-I know it might not look like much right now, but I have [many more features planned for the future](https://github.com/users/viral32111/projects/2). The majority of my work over the last 6 months has been programming, configuring and optimising the backend system that runs the website.
+Welcome to my personal corner of the world-wide web where I can discuss myself, showcase my projects, and highlight my achievements from over the many years I have been programming.
 
-My previous website [(2019-2020)](https://web.archive.org/web/20200310153357/https://viral32111.com/), and the one before that [(2016-2019)](https://web.archive.org/web/20180826152843/https://viral32111.com/), were not that great due to my lack of experience in properly setting up and configuring a website. The first website had plenty of detailed content that explained who I am, showed off some of my projects, etc. The second website however, didn't have any of that and instead was simply my avatar with a dozen or so links below it to my various online profiles on different websites. Sort of pointless, considering I always told people to go to my website if they want to find information about who I am :/
+See the [about page](/about) for more information around who I am and what I do.
 
-This website that you're reading right now, launched at the start of 2021, is hopefully going to be my last major redesign & recreation of my website, thanks to all the knowledge and experience I've learned/gained over the last 4-5 years. I intend for this website to be a centralised place where I can describe who I am, showcase my projects & achievements, direct people to my other online profiles, talk to the rest of the Internet through blog posts or guides, allow others to easily personally speak to me, etc.
+## Source
+
+I open-sourced the code for this website in July of 2022. It is available on [GitHub](https://github.com/viral32111/website) under [GNU AGPLv3](https://www.gnu.org/licenses/agpl-3.0.en.html).
+
+I used the repository for the development of this design, which is why it is over 2 years old despite the recent release to the public.
+
+## History
+
+This website has undergone dozens of redesigns, rewrites and domain changes over the five years it has been operational.
+
+I plan for this *minimalist* design, launched at the start of 2021, to be the last major redesign of my website. Thanks to all the experience I have gained over the last few years from hosting my community forum, personal websites and University projects, I believe I have got to the point where there is no longer the warrant for a complete redesign whenever I learn a new topic in website design and development.
+
+The inspiration behind this design stems from wanting to create a fast, minimalistic website that would work well across any device from any time. It does not require any weird CSS hacks or browser-specific selectors, nor does it violate any HTML standards. The layout is easy to manage and adapts well to new content using my on-the-fly Markdown to HTML converter.
+
+The only exception to "*any device from any time*" is security. This web server requires clients to support TLS 1.2 or 1.3, EC certificates, and strong cipher suites. See the [security page](/security) for more details about the security of this website.
+
+### Archives
+
+The only archives of my previous designs are [here](https://web.archive.org/web/20200310153357/https://viral32111.com/) (2019 to 2020) and [here](https://web.archive.org/web/20180826152843/https://viral32111.com/) (2018 to 2019). Nothing of the former `viralstudios.phy.sx` and `viral32111.phy.sx` domains (2016 to 2018) was archived.
+
+My previous design from 2019 was not ideal as it only served as a portal to my profiles. Though I did prefer the aesthetic of it compared to the design before it from 2018.
+
+See the [community page](/community) for history about my community website, including the old forum.

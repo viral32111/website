@@ -74,22 +74,22 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageContent );
 		<meta name="og:site_name" content="<?= $_SERVER[ "SITE_NAME" ] ?>">
 		<meta name="og:title" content="<?= $pageTitle ?>">
 		<meta name="og:description" content="<?= $pageDescription ?>">
-		<meta name="og:image" content="image/avatar/circle-448.webp">
+		<meta name="og:image" content="/image/avatar/circle-448.webp">
 		<meta name="og:image:type" content="image/webp">
 		<meta name="og:image:alt" content="viral32111's avatar">
 		<meta name="og:locale" content="en_gb">
 
 		<!-- Import Highlight.js GitHub-themed stylesheet -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css" type="text/css" integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY=" crossorigin="anonymous">
 
 		<!-- Import the required stylesheets -->
-		<link rel="stylesheet" href="stylesheet/global.css" type="text/css">
-		<link rel="stylesheet" href="stylesheet/header.css" type="text/css">
-		<link rel="stylesheet" href="stylesheet/footer.css" type="text/css">
-		<link rel="stylesheet" href="stylesheet/content.css" type="text/css">
+		<link rel="stylesheet" href="/stylesheet/global.css" type="text/css">
+		<link rel="stylesheet" href="/stylesheet/header.css" type="text/css">
+		<link rel="stylesheet" href="/stylesheet/footer.css" type="text/css">
+		<link rel="stylesheet" href="/stylesheet/content.css" type="text/css">
 
 		<!-- The icon in the tab -->
-		<link rel="icon" href="image/avatar/circle-128.webp" type="image/webp">
+		<link rel="icon" href="/image/avatar/circle-128.webp" type="image/webp">
 
 		<!-- Search engine crawling and indexing -->
 		<?php if ( isset( $errorCode ) ) { ?>
@@ -117,7 +117,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageContent );
 		<header>
 
 			<!-- Title -->
-			<h1><img src="image/avatar/circle-448.webp" alt="viral32111's avatar" height="29px"><?= $_SERVER[ "SITE_NAME" ]; ?></h1>
+			<h1><img src="/image/avatar/circle-448.webp" alt="viral32111's avatar" height="29px"><?= $_SERVER[ "SITE_NAME" ]; ?></h1>
 
 			<!-- Navigation -->
 			<nav>
@@ -160,14 +160,14 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageContent );
 			<!-- Legal pages -->
 			<p>
 				<a>Terms of Service</a>
-				<a>Privacy Policy</a>
-				<a>Cookie Policy</a>
-				<a>Third-Party Notices</a>
+				<a href="/legal/privacy-policy">Privacy Policy</a>
+				<a href="/legal/cookie-policy">Cookie Policy</a>
+				<a href="/legal/third-party-notices">Third-Party Notices</a>
 			</p>
 
 			<!-- No JavaScript easter egg -->
 			<noscript>
-				<p style="color: #fc2a2e; margin-top: 15px; font-style: italic"><code style="padding: 3px;">// NOTE: Syntax highlighting for code blocks is unavailable while JavaScript is disabled :c</code></p>
+				<p style="color: #fc2a2e; margin-top: 15px; font-style: italic"><code style="padding: 3px;">// NOTE: Syntax highlighting for code blocks is unavailable while JavaScript is disabled.</code></p>
 			</noscript>
 
 		</footer>
@@ -175,7 +175,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageContent );
 	</body>
 
 	<!-- Apply Highlight.js styling -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" type="text/javascript" integrity="sha256-4v2jQZxK6PbZEeZ2xl2ziov6NHMksBFgBlxtMZVYbQk=" crossorigin="anonymous"></script>
 	<script>hljs.highlightAll();</script>
 
 </html>

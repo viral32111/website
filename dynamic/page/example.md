@@ -16,13 +16,16 @@ __This text is underlined__.
 
 #### Code (Heading 4)
 
-`This is inline code`
+`This is inline code, which cannot span multiple lines.`
 
 ```
-This is a code block.
+This is a code block with no language.
+
+Code blocks can span...
+   ...multiple lines!
 ```
 
-C++
+This is a code block with C++ syntax highlighting.
 
 ```cpp
 #include <iostream>
@@ -34,7 +37,7 @@ int main() {
 }
 ```
 
-JavaScript
+This is a code block with JavaScript syntax highlighting.
 
 ```js
 const myValue = 57;
@@ -84,4 +87,5 @@ The name of the virtual-host handling this website is `<?php echo( $_SERVER[ 'SE
 ### Software
 
 1. Server: `<?= $_SERVER[ 'SERVER_SOFTWARE' ] ?>`
-1. PHP: `<?= phpversion() ?>`
+2. PHP: `<?= phpversion() ?>`
+3. You!

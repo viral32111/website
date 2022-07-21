@@ -7,25 +7,3 @@ The projects that I collaborate on with other people, have published, or have co
 If there is a project you have heard me discussing but it is not listed, then it means I have not got around to making it ready for the public, or it is one of the few projects I want to keep private.
 
 Use `git clone https://viral32111.com/projects/*repository*` to clone a local repo.
-
-This is some example code in C:
-```c
-#include <stdio.h>
-
-int main() {
-	printf( "Hello World!\n" );
-
-	return 0;
-}
-```
-
-This is some more example code in JavaScript:
-```js
-const myValue = 57;
-
-function helloWorld()
-	console.log( "Hello World!", myValue );
-}
-
-helloWorld();
-```

@@ -21,19 +21,43 @@ class MarkdownToHTML {
 
 			$lineChanged = false;
 
-			// Block-level (only one can be applied per line)
+			//////////////// Block (only one per line) ////////////////
+
+			// Headings
 			[ $markdownLine, $headingChange ] = self::ConvertHeading( $markdownLine );
+
+			// Lists
 			[ $markdownLine, $unorderedListChange ] = self::ConvertUnorderedList( $markdownLine, $followingLines, $precedingLines );
-			// TODO: Ordered List
+			[ $markdownLine, $orderedListChange ] = self::ConvertOrderedList( $markdownLine, $followingLines, $precedingLines );
+
 			// TODO: Table
+
+			// Code Blocks
 			[ $markdownLine, $codeBlockChange, $skipLines ] = self::ConvertCodeBlock( $markdownLine, $followingLines );
 
 			if ( empty( $markdownLine ) ) continue;
 
-			// Inline-level (many can be applied per line)
-			$markdownLine = self::ConvertStyling( $markdownLine );
+			//////////////// Inline (many per line) ////////////////
 
-			if ( $headingChange || $unorderedListChange || $codeBlockChange ) {
+			// Bold
+			$markdownLine = preg_replace( '/\*\*(.+?)\*\*/', '<strong>${1}</strong>', $markdownLine );
+				
+			// Italic
+			$markdownLine = preg_replace( '/\*(.+?)\*/', '<em>${1}</em>', $markdownLine );
+
+			// Underline
+			$markdownLine = preg_replace( '/__(.+?)__/', '<u>${1}</u>', $markdownLine );
+
+			// Code
+			$markdownLine = preg_replace( '/`(.+?)`/', '<code>${1}</code>', $markdownLine );
+
+			// Images
+			$markdownLine = preg_replace( '/!\[(.+?)\]\((.+?)\)/', '<img src="${2}" alt="${1}">', $markdownLine );
+
+			// Links
+			$markdownLine = preg_replace( '/\[(.+?)\]\((.+?)\)/', '<a href="${2}">${1}</a>', $markdownLine );
+
+			if ( $headingChange || $unorderedListChange || $orderedListChange || $codeBlockChange ) {
 				array_push( $htmlLines, $markdownLine );
 			} else {
 				array_push( $htmlLines, "<p>$markdownLine</p>" );
@@ -86,6 +110,23 @@ class MarkdownToHTML {
 	
 	}
 
+	private static function ConvertOrderedList( string $markdownLine, array $followingLines, array $precedingLines ) : array {
+
+		$previousLine = ( count( $precedingLines ) > 0 ? $precedingLines[ count( $precedingLines ) - 1 ] : "" );
+		$nextLine = ( count( $followingLines ) > 0 ? $followingLines[ 0 ] : "" );
+
+		if ( preg_match( '/^\d\. (.+)$/', $markdownLine, $listMatch ) === 1 ) {
+
+			$value = trim( $listMatch[ 1 ] );
+
+			return [ ( empty( $previousLine ) ? "<ol>\n" : "" ) . "<li>$value</li>" . ( empty( $nextLine ) ? "\n</ol>" : "" ), true ];
+			
+		}
+
+		return [ $markdownLine, false ];
+	
+	}
+
 	private static function ConvertCodeBlock( string $markdownLine, array $followingLines ) : array {
 
 		if ( strncmp( $markdownLine, "```", 3 ) === 0 ) {
@@ -103,7 +144,7 @@ class MarkdownToHTML {
 
 					$code = self::EscapeTagSymbols( $code );
 
-					return [ "<pre><code" . ( !empty( $language ) ? " class=\"language-$language\">$code" : "" ) . "</code></pre>", true, count( $codeLines ) + 2 ];
+					return [ "<pre><code class=\"language-" . ( empty( $language ) ? "text" : $language ) . "\">$code</code></pre>", true, count( $codeLines ) + 2 ];
 
 				}
 
@@ -115,24 +156,6 @@ class MarkdownToHTML {
 
 		return [ $markdownLine, false, 0 ];
 
-	}
-	
-	private static function ConvertStyling( string $markdownLine ) : string {
-	
-		// Bold
-		$markdownLine = preg_replace( '/\*\*(.+?)\*\*/', '<strong>${1}</strong>', $markdownLine );
-	
-		// Italic
-		$markdownLine = preg_replace( '/\*(.+?)\*/', '<em>${1}</em>', $markdownLine );
-	
-		// Code
-		$markdownLine = preg_replace( '/`(.+?)`/', '<code>${1}</code>', $markdownLine );
-	
-		// Links
-		$markdownLine = preg_replace( '/\[(.+?)\]\((.+?)\)/', '<a href="${2}">${1}</a>', $markdownLine );
-	
-		return $markdownLine;
-	
 	}
 
 	private static function EscapeTagSymbols( string $markdownLine ) : string { 

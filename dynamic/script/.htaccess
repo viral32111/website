@@ -6,9 +6,9 @@ ErrorDocument 500 /index.php?error=500
 
 # Session storage & cookie configuration
 php_value session.name __Secure-ID
-php_value session.cache_limiter private_no_expire
+php_value session.cache_limiter private
 php_value session.cache_expire 60
-php_value session.cookie_lifetime 315576000
+php_value session.cookie_lifetime 0
 php_value session.cookie_path /
 php_value session.cookie_samesite Strict
 php_flag session.cookie_secure On
@@ -32,27 +32,28 @@ RewriteRule ^ /home [R=308,L]
 
 # If the request path is not empty, then internally redirect it to the PHP script
 RewriteCond %{REQUEST_URI} !^/$ [NC]
-RewriteRule ^(\w+)$ index.php?page=$1 [QSA,L]
+RewriteRule ^([\w-/]+)$ index.php?page=$1 [QSA,L]
 
 # Make the PHP script not exist when directly requested
 RewriteCond %{REQUEST_URI} ^/index.php [NC]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^ - [R=404,L]
 
-<IfModule substitute_module>
+# This breaks code blocks
+#<IfModule substitute_module>
 
 	# Rules for all documents
-	<Files *>
+#	<Files *>
 
 		# Only apply to HTML content
-		AddOutputFilterByType SUBSTITUTE text/html
+#		AddOutputFilterByType SUBSTITUTE text/html
 
 		# Remove HTML comments
-		Substitute s/<!--.*-->//q
+#		Substitute s/<!--.*-->//q
 
 		# Remove leading whitespace and empty lines
-		Substitute s/^\s+//q
+#		Substitute s/^\s+//q
 
-	</Files>
+#	</Files>
 
-</IfModule>
+#</IfModule>
