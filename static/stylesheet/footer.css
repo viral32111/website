@@ -23,8 +23,5 @@ footer :first-child { margin-top: 0px; }
 footer :last-child { margin-bottom: 0px; }
 
 /* Brackets around links */
-footer p a::before { content: "["; }
-footer p a::after { content: "]"; }
-
-/* Spacing between the links */
-footer p a { margin-right: 5px; }
+footer p a:not( .nobrackets )::before { content: "["; }
+footer p a:not( .nobrackets )::after { content: "]"; }

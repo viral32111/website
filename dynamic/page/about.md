@@ -1,3 +1,9 @@
+# About
+
+*TO-DO*
+
+
+
 Hey, I am a programmer and developer from the United Kingdom that has decent experience in nearly every major programming language, and a few various minor ones. I enjoy working on my [numerous projects](/projects), and honestly has fun coding and learning new things all-round!
 
 I also like to play around with embedded electronics and microsystems in my free time, such as Arduino's, Raspberry Pi's, etc. Though I have not really made anything worth sharing yet, since it is still a small hobby I am actively getting better at.

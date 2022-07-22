@@ -1,6 +1,14 @@
 # This site will never have favicon.ico
 location = /favicon.ico { return 410; }
 
+# Show directory listings for downloads, stylesheets and images
+location ~ "^/(download|stylesheet|image)/" {
+	autoindex on;
+	autoindex_format html;
+	autoindex_exact_size off;
+	autoindex_localtime off;
+}
+
 # Add a few persistent redirects
 location = /twitter { return 308 https://twitter.com/viral32111; }
 location = /steam { return 308 https://steamcommunity.com/profiles/76561198168833275; }
@@ -14,6 +22,9 @@ location = /github { return 308 https://github.com/viral32111; }
 location = /gmodstore { return 308 https://www.gmodstore.com/users/76561198168833275; }
 location = /discord { return 308 https://discord.com/invite/PdzSFsh; }
 location = /steamgroup { return 308 https://steamcommunity.com/groups/conspiracyservers; }
+location = /matrix { return 308 https://matrix.to/#/#viral32111:matrix.org; }
+location = /teamspeak { return 308 https://tmspk.gg/uhy9DJwL; }
+location = /revolt { return 308 https://app.revolt.chat/invite/axj330h2; }
 
 # Respond with gone for deprecated redirects
 location = /paypal { return 410 'Redirect no longer available'; }
@@ -39,9 +50,6 @@ location = /steamuser { return 410 'Page no longer available'; }
 location = /staff { return 410 'Page no longer available'; }
 location = /members { return 410 'Page no longer available'; }
 location = /advertisement { return 410 'Page no longer available'; }
-
-# ------ Added in rewrite ------
-
 location = /report/csp { return 410 'Page no longer available'; }
 location = /report/csp.php { return 410 'Page no longer available'; }
 location = /report/hpkp { return 410 'Page no longer available'; }

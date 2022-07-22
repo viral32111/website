@@ -29,6 +29,8 @@ function showErrorPage( int $statusCode, string $userMessage = null ) {
 
 function onFatalError( int $errorCode, string $errorMessage, string $sourcePath, int $sourceLine ) : bool {
 
+	error_log( $errorMessage );
+
 	showErrorPage( 500 );
 
 	return true;

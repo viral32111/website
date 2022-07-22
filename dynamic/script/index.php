@@ -2,6 +2,7 @@
 
 // Import required scripts
 require_once( 'error.php' );
+require_once( 'pgp.php' );
 require_once( 'markdown.php' );
 
 // Start a session if one does not exist
@@ -34,14 +35,25 @@ $pageDescription = "This is a placeholder.";
 // The pages to show in the navigation bar
 $navigationPages = [ 'home', 'about', 'projects', 'tools', 'blog', 'guides', 'community', 'contact', 'donate' ];
 
+// Things used within markdown pages
+$requestHeaders = array_change_key_case( apache_request_headers(), CASE_LOWER );
+function getRequestHeader( string $name, string $default = "Unknown" ) : string {
+	global $requestHeaders;
+	return $requestHeaders[ strtolower( $name ) ] ?? $default;
+}
+
 // Get the Markdown content of the requested page
 // NOTE: This will evaluate any PHP code within the Markdown file
 ob_start();
 require( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $pageFile );
 $pageContent = ob_get_clean();
 
+// Remove the PGP signature
+[ $pageMarkdown, $hasSignature ] = PGP::StripSignature( $pageContent );
+//$pageMarkdown = $pageContent;
+
 // Convert the Markdown content to HTML
-$pageHTML = MarkdownToHTML::ConvertString( $pageContent );
+$pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 
 ?>
 <!DOCTYPE html>
@@ -155,7 +167,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageContent );
 		<footer>
 
 			<!-- Copyright notice -->
-			<p>Copyright &copy; 2016 - <?= date( 'Y' ) ?> viral32111. All rights reserved unless stated otherwise.</p>
+			<p>Copyright &copy; 2016 - <?= date( 'Y' ) ?> viral32111, under the <a class="nobrackets" href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License Version 3</a>.</p>
 
 			<!-- Legal pages -->
 			<p>

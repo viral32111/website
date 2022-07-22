@@ -1,9 +1,19 @@
-I have created, developed, maintained and published hundreds of programming and scripting projects in a wide variety of languages since I started roughly 8 years ago.</p>
+# Projects
 
-I host the majority of my personal projects here as public [git repositories](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) under open-source licences in the hope that it will help other people in the future. However, most of these end up going unfinished and being abandoned shortly after starting due to lack of motivation. Sometimes though, I come back to them after a long while, and rewrite them using any new skills I have learnt, then finally finish them off.
+The majority of these projects are hosted on [GitHub](https://github.com/viral32111?tab=repositories) under open-source licences in the hope that they will help other developers in the future.
 
-The projects that I collaborate on with other people, have published, or have contributed to can be found on my [GitHub profile](/github), along with any public kanban boards for managing my projects.
+There are hundreds of repositories on my account, but only a couple dozen are publicly available. I am attempting to go through them all and make them suitable for public release, but it has proven to be quite a time-consuming task.
 
-If there is a project you have heard me discussing but it is not listed, then it means I have not got around to making it ready for the public, or it is one of the few projects I want to keep private.
+## Showcase
 
-Use `git clone https://viral32111.com/projects/*repository*` to clone a local repo.
+My most successful project to date is my [*Car Keys*](https://steamcommunity.com/sharedfiles/filedetails/?id=864523561) addon for [Garry's Mod](https://store.steampowered.com/app/4000/Garrys_Mod/). It has over 30,000 unique visitors on the Steam Workshop page, over 22,000 current subscribers, 1,500 current favourites, and is in around 10,000 player collections.
+
+My other two Garry's Mod addons, [*Viral's Scoreboard*](https://steamcommunity.com/sharedfiles/filedetails/?id=1154615469) and [*Black Hole Cache*](https://steamcommunity.com/sharedfiles/filedetails/?id=1300331014), are not as successful but do have roughly 2,300 current subscribers across each of them.
+
+My favourite projects though is my [website](https://github.com/viral32111/website), [community Discord bot](https://github.com/viral32111/discordbot), [Discord relay Minecraft mod](https://github.com/viral32111/DiscordRelay), and [Twitch chat bot](https://github.com/viral32111/TwitchBot).
+
+## Repositories
+
+This section will eventually be updated to show a table of repositories on my self-hosted Git server.
+
+Most of these repositories will be unaccessible as they are for private projects, the ones that are not though will be downloadable via `git clone https://viral32111.com/projects/name` without the need for authentication.

@@ -54,8 +54,12 @@ class MarkdownToHTML {
 			// Images
 			$markdownLine = preg_replace( '/!\[(.+?)\]\((.+?)\)/', '<img src="${2}" alt="${1}">', $markdownLine );
 
-			// Links
-			$markdownLine = preg_replace( '/\[(.+?)\]\((.+?)\)/', '<a href="${2}">${1}</a>', $markdownLine );
+			// Self Links
+			$markdownLine = preg_replace( '/\[(.+?)\]\((\/.+?)\)/', '<a href="${2}">${1}</a>', $markdownLine );
+
+			// External Links
+			// NOTE: Target opens in new tab, rel prevents new tabs from modifying the original tab
+			$markdownLine = preg_replace( '/\[(.+?)\]\((.+?)\)/', '<a href="${2}" target="_blank" rel="noopener noreferrer">${1}</a>', $markdownLine );
 
 			if ( $headingChange || $unorderedListChange || $orderedListChange || $codeBlockChange ) {
 				array_push( $htmlLines, $markdownLine );

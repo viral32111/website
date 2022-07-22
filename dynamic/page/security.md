@@ -67,19 +67,21 @@ Syntax highlighting for code blocks using the [Highlight.js](https://highlightjs
 
 I own the physical server that runs this web server, it is not hosted by a third-party provider, thus I have absolute control over it.
 
-The server runs in-memory, so temporary data such as caches and runtime files are never written to disk. The only data kept on disk is the configuration files for the web server and logs for requests, responses and errors. Those logs are kept for 90 days then permanently erased.
+The server runs in-memory, so temporary data such as caches and runtime files are never written to disk. The only data kept on disk is the configuration files for the web server and logs for requests, responses and errors.
 
 Strong disk encryption is utilised to ensure that nothing can be read if the physical server is ever compromised.
+
+See the [privacy policy](/legal/privacy-policy) for more information about how HTTP request logs are stored.
 
 ## Yourself
 
 This is what your web browser is using when sending requests to this website.
 
-* [SNI](https://www.cloudflare.com/en-gb/learning/ssl/what-is-sni/): `<?= apache_request_headers()[ 'X-SSL-Name' ] ?? 'Unknown' ?>`
-* Protocol: `<?= apache_request_headers()[ 'X-SSL-Protocol' ] ?? 'Unknown' ?>`
-* Cipher: `<?= apache_request_headers()[ 'X-SSL-Cipher' ] ?? 'Unknown' ?>`
-* Elliptic Curve: `<?= apache_request_headers()[ 'X-SSL-Curve' ] ?? 'Unknown' ?>`
-* Request Scheme: `<?= apache_request_headers()[ 'X-Forwarded-Proto' ] ?? 'Unknown' ?>`
-* TCP Port: `<?= apache_request_headers()[ 'X-Forwarded-Port' ] ?? 'Unknown' ?>`
+* [SNI](https://www.cloudflare.com/en-gb/learning/ssl/what-is-sni/): `<?= getRequestHeader( 'X-SSL-Name' ) ?>`
+* Protocol: `<?= getRequestHeader( 'X-SSL-Protocol' ) ?>`
+* Cipher: `<?= getRequestHeader( 'X-SSL-Cipher' ) ?>`
+* Elliptic Curve: `<?= getRequestHeader( 'X-SSL-Curve' ) ?>`
+* Request Scheme: `<?= getRequestHeader( 'X-Forwarded-Proto' ) ?>`
+* TCP Port: `<?= getRequestHeader( 'X-Forwarded-Port' ) ?>`
 
-Your [SSL session identifier](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#var_ssl_session_id) is `<?= apache_request_headers()[ 'X-SSL-Session' ] ?? 'Unknown' ?>`.
+Your [SSL session identifier](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#var_ssl_session_id) is `<?= getRequestHeader( 'X-SSL-Session' ) ?>`.

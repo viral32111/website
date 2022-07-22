@@ -1,8 +1,8 @@
-# Example
+# Example (Heading 1)
 
 This is the [example page](/example) to demonstrate Markdown features and evaluation of inline PHP code.
 
-## Markdown
+## Markdown (Heading 2)
 
 Hello World!
 
@@ -73,18 +73,18 @@ No. | Name | Car | City
 4 | Armando | Mazda | Camilaca
 5 | Chucho | Chrysler | Wawer
 
-## PHP code
+## PHP code (Heading 2)
 
-The name of the virtual-host handling this website is `<?php echo( $_SERVER[ 'SERVER_NAME' ] ); ?>`.
+The name of the virtual-host handling this website is `<?= $_SERVER[ 'SERVER_NAME' ] ?>`.
 
-### Request
+### Request (Heading 3)
 
 * Method: `<?= $_SERVER[ 'REQUEST_METHOD' ] ?>`
 * Path: `<?= $_SERVER[ 'REQUEST_URI' ] ?>`
 * Timestamp: `<?= $_SERVER[ 'REQUEST_TIME' ] ?>`
 * User-Agent: `<?= $_SERVER[ 'HTTP_USER_AGENT' ] ?>`
 
-### Software
+### Software (Heading 3)
 
 1. Server: `<?= $_SERVER[ 'SERVER_SOFTWARE' ] ?>`
 2. PHP: `<?= phpversion() ?>`

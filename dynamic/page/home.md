@@ -6,7 +6,7 @@ See the [about page](/about) for more information around who I am and what I do.
 
 ## Source
 
-I open-sourced the code for this website in July of 2022. It is available on [GitHub](https://github.com/viral32111/website) under [GNU AGPLv3](https://www.gnu.org/licenses/agpl-3.0.en.html).
+I open-sourced the code for this website in July of 2022, it is available on [GitHub](https://github.com/viral32111/website) for free.
 
 I used the repository for the development of this design, which is why it is over 2 years old despite the recent release to the public.
 
@@ -18,7 +18,7 @@ I plan for this *minimalist* design, launched at the start of 2021, to be the la
 
 The inspiration behind this design stems from wanting to create a fast, minimalistic website that would work well across any device from any time. It does not require any weird CSS hacks or browser-specific selectors, nor does it violate any HTML standards. The layout is easy to manage and adapts well to new content using my on-the-fly Markdown to HTML converter.
 
-The only exception to "*any device from any time*" is security. This web server requires clients to support TLS 1.2 or 1.3, EC certificates, and strong cipher suites. See the [security page](/security) for more details about the security of this website.
+The only exception to "*any device from any time*" is security. This web server requires clients to support TLS v1.2 or newer, EC certificates, and strong cipher suites. See the [security page](/security) for more details about the security of this website.
 
 ### Archives
 
