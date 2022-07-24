@@ -38,22 +38,3 @@ RewriteRule ^([\w-/]+)$ index.php?page=$1 [QSA,L]
 RewriteCond %{REQUEST_URI} ^/index.php [NC]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^ - [R=404,L]
-
-# This breaks code blocks
-#<IfModule substitute_module>
-
-	# Rules for all documents
-#	<Files *>
-
-		# Only apply to HTML content
-#		AddOutputFilterByType SUBSTITUTE text/html
-
-		# Remove HTML comments
-#		Substitute s/<!--.*-->//q
-
-		# Remove leading whitespace and empty lines
-#		Substitute s/^\s+//q
-
-#	</Files>
-
-#</IfModule>

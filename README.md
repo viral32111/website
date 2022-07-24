@@ -4,73 +4,53 @@ This is the source code & web server configurations for my personal website.
 
 ## History
 
-This repository only contains the source code for the *"minimal"* version of my website on the `viral32111.com` domain (so the current one).
+This repository only contains the source code for the *minimalist* design of my website.
 
-Any previous websites I had, including older versions of my personal ones (`viralstudios.phy.sx`, `viral32111.phy.sx`, etc.) and all of my community ones (`conspiracyservers.gaming.bz`, `conspiracyservers.co.uk`, `conspiracyservers.com`, etc.), are not available in this repository.
+Previous websites that I have operated are not available in this repository. This includes older versions of my personal ones and all of my community ones.
 
-## Structure Notes
+* `viralstudios.phy.sx`
+* `viral32111.phy.sx`
+* `conspiracyservers.gaming.bz`
+* `conspiracyservers.co.uk`
+* `conspiracyservers.com`
 
-### Static
+## To-Do List
 
-Static content is served by NGINX in production.
-
-```
-static/
-  stylesheet/
-    global.css
-    content.css
-    header.css
-    footer.css
-    dark.css
-  image/
-    avatar/
-      circle-128.webp
-      circle-448.webp
-  download/
-    minecraft-1.16.5-world.tar.xz
-    minecraft-1.18-snapshot-world.zip
-    minecraft-1.18-world.zip
-  robots.txt
-  humans.txt
-  public.txt
-  security.txt
-  btc.txt
-  xmr.txt
-  ads.txt
-```
-
-### Dynamic
-
-Dynamically-generated content is served by Apache.
-
-```
-dynamic/
-  include/
-    credentials.php
-    markdown.php
-    error.php
-  script/
-    .htaccess
-    index.php
-  page/
-    legal/
-      terms-of-service.md
-      privacy-policy.md
-      cookie-policy.md
-      third-party-notices.md
-    home.md
-    about.md
-    projects.md
-    guides.md
-    blog.md
-    community.md
-    contact.md
-    donate.md
-```
+* Donation history table on the donation page.
+* History information (including forums) on the community page.
+* PGP-signed page verification.
+  * Clearsigned pages should be downloadable for manual verification by visitors.
+* PGP public key fingerprint on the contact page.
+* Styled directory listing for downloads.
+* Stripe support on the donation page.
+* Repository table on the projects page.
+  * Use the existing one I made a while back with the Git HTTP API I made.
+  * Add silkicons to third-party notices.
+* Tools page.
+* Blog system.
+* Guides pages.
+* Live statistics for Steam Workshop projects.
+* Terms of service page.
+  * Not applicable at the moment as no service is provided.
+* Discord bot information for terms of service and privacy policy.
+* User account system
+  * Old community forum accounts?
+    * View old forum posts, shoutbox messages, post comments.
+  * Manage account links to Discord, Steam & Minecraft accounts.
+  * Manage "personal data" for all services I've ever provided.
+    * Garry's Mod servers
+    * Minecraft servers
+    * Discord?
+    * Options for requesting & deleting the data.
+  * For commenting on blog posts and guides.
+  * OAuth support when accounts are linked
+    * Steam
+    * Discord
+  * View previous community reports, ban appeals, staff applications, etc.
 
 ## Backwards Compatibility Notes
 
-`steam-default-avatar.png` can just be got externally from `https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg`
+`steam-default-avatar.png` is available externally from `https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg`
 
 ## License
 
