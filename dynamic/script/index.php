@@ -30,7 +30,7 @@ $pageTitle = ucfirst( $pageName );
 
 // Get the description of the page
 // TODO: This needs to be fetched metadata within the Markdown file
-$pageDescription = "This is a placeholder.";
+$pageDescription = "I'm a programmer & developer from the United Kingdom that has many years of experience in nearly every major programming language.";
 
 // The pages to show in the navigation bar
 $navigationPages = [ 'home', 'about', 'projects', 'tools', 'blog', 'guides', 'community', 'contact', 'donate' ];
