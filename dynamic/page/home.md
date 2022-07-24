@@ -25,5 +25,3 @@ The only exception to "*any device from any time*" is security. This web server 
 The only archives of my previous designs are [here](https://web.archive.org/web/20200310153357/https://viral32111.com/) (2019 to 2020) and [here](https://web.archive.org/web/20180826152843/https://viral32111.com/) (2018 to 2019). Nothing of the former `viralstudios.phy.sx` and `viral32111.phy.sx` domains (2016 to 2018) was archived.
 
 My previous design from 2019 was not ideal as it only served as a portal to my profiles. Though I did prefer the aesthetic of it compared to the design before it from 2018.
-
-See the [community page](/community) for history about my community website, including the old forum.

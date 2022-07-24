@@ -20,34 +20,3 @@ If the links above do not work for you, the invite codes for each platform are:
 * Revolt: `axj330h2`
 
 Before the Discord, we used to host a customised MyBB forum, TeamSpeak 3 voice server, and [Steam group](/steamgroup). All but the last of these are long since gone, though the Steam group is no longer used, so there is no use in joining.
-
-## Notable Members
-
-The community simply would not be what it is today without these members staying around, contributing, and playing games with us.
-
-* Killer1, the founder of Brother Gaming, the former community that mine was built on.
-* Liambus, one of the original admins of Brother Gaming.
-* zackfire, one of the original admins of Brother Gaming.
-* [alex_1001](https://steamcommunity.com/profiles/76561198145551898), one of my best friends and honorary co-founder.
-* [Brander](https://steamcommunity.com/profiles/76561198128427939), the first player to consistently play on and donate to our Garry's Mod servers.
-* [SeanGameZZZ](https://steamcommunity.com/profiles/76561198246004672), the most trustworthy admin we ever had.
-* ToxicI11I, the source of memes and inside jokes that have been going on for years.
-* [DRW](https://steamcommunity.com/profiles/76561198179143498), the hilarious moral support and DarkRP server motivation.
-* [weebi](https://steamcommunity.com/profiles/76561198170063030), the sole person in the universe that is on the same wavelength as me.
-* [Andi1032](https://steamcommunity.com/profiles/76561198314236043), the only sensible admin and friend I will ever have.
-
-## History
-
-*TO-DO*
-
-### Brother Gaming
-
-*TO-DO*
-
-### Conspiracy Servers
-
-*TO-DO*
-
-### viral32111's community
-
-*TO-DO*
