@@ -13,6 +13,9 @@ Disallow: /images/
 Disallow: /stylesheets/
 Disallow: /sandbox/
 Disallow: /report/
+Disallow: /stylesheet/
+Disallow: /image/
+Disallow: /example
 
 # Allow all bots to access public pages
 User-agent: *
@@ -28,3 +31,11 @@ Allow: /public.txt
 Allow: /security.txt
 Allow: /humans.txt
 Allow: /ads.txt
+Allow: /btc.txt
+Allow: /xmr.txt
+Allow: /home
+Allow: /tools
+Allow: /download/
+Allow: /legal/privacy-policy
+Allow: /legal/cookie-policy
+Allow: /legal/third-party-notices
