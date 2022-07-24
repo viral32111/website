@@ -86,7 +86,7 @@ location = /report/xss.php { return 410 'Page no longer available'; }
 
 # Add redirects for backwards compatibility
 location = /stylesheets/ { return 308 /stylesheet/; }
-location = /images/avatars { return 308 /image/avatar/; }
+location = /images/avatars/ { return 308 /image/avatar/; }
 location = /images/ { return 308 /image/; }
 location = /minecraft-1.16.5-world.tar.xz { return 308 /download/minecraft-1.16.5-world.tar.xz; }
 location = /minecraft-1.18-snapshot-world.zip { return 308 /download/minecraft-1.18-snapshot-world.zip; }
