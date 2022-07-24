@@ -183,10 +183,10 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 
 		</footer>
 
-	</body>
+		<!-- Apply Highlight.js styling -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" type="text/javascript" integrity="sha256-4v2jQZxK6PbZEeZ2xl2ziov6NHMksBFgBlxtMZVYbQk=" crossorigin="anonymous"></script>
+		<script nonce="8dc8f752">hljs.highlightAll();</script>
 
-	<!-- Apply Highlight.js styling -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" type="text/javascript" integrity="sha256-4v2jQZxK6PbZEeZ2xl2ziov6NHMksBFgBlxtMZVYbQk=" crossorigin="anonymous"></script>
-	<script nonce="8dc8f752">hljs.highlightAll();</script>
+	</body>
 
 </html>
