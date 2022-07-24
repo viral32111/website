@@ -1,11 +1,11 @@
 # Contact
 
-*TO-DO*
+To get in touch with me about my projects, work, to ask questions, or anything else then contact me [via my email](mailto:contact@viral32111.com). Please refrain from adding me as a friend on social media or chat platforms.
 
+If you wish to discuss something community related, then joining [our Discord server](/discord) would be best.
 
+## Encryption
 
-If you want to get in touch with me about my projects, contracting work, to ask questions or whatever else then I would prefer you contact me [via email](mailto:contact@viral32111.com) because it is more organised and professional.
+If you are familiar with PGP then consider encrypting your messages with [my PGP public key](/public.txt) for secure communication.
 
-Please do not try to add me on Steam because I do not have Steam chat notifications enabled, or Discord because that is more of a personal platform for me. The only exception is if you wish to discuss anything related to my community, in that case you could join [my Discord server](/discord).
-
-If you are privacy-minded like me, then consider encrypting your messages with [my PGP public key](/public.txt) before sending them for secure communication. Make sure to send your public key in the initial message else I will not be able to encrypt my replies!
+Remember to send your public key in your initial message so that I may encrypt my replies.

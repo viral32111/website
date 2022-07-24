@@ -69,7 +69,7 @@ class MarkdownToHTML {
 
 			// Some block-level values are multiple lines
 			$lineNumber += $skipLines;
-	
+
 		}
 
 		return join( "\n", array_filter( $htmlLines ) );

@@ -48,9 +48,8 @@ ob_start();
 require( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $pageFile );
 $pageContent = ob_get_clean();
 
-// Remove the PGP signature
+// Remove the PGP signature, if there is one
 [ $pageMarkdown, $hasSignature ] = PGP::StripSignature( $pageContent );
-//$pageMarkdown = $pageContent;
 
 // Convert the Markdown content to HTML
 $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );

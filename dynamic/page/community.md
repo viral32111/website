@@ -25,18 +25,16 @@ Before the Discord, we used to host a customised MyBB forum, TeamSpeak 3 voice s
 
 The community simply would not be what it is today without these members staying around, contributing, and playing games with us.
 
-REPLACE THESE WITH COMMUNITY IDS
-
 * Killer1, the founder of Brother Gaming, the former community that mine was built on.
 * Liambus, one of the original admins of Brother Gaming.
 * zackfire, one of the original admins of Brother Gaming.
-* [alex_1001](https://steamcommunity.com/id/ConspiracyServersFounder/), one of my best friends and honorary co-founder.
-* [Brander](https://steamcommunity.com/id/ImNotGunnar/), the first player to consistently play on and donate to our Garry's Mod servers.
-* [SeanGameZZZ](https://steamcommunity.com/profiles/76561198246004672/), the most trustworthy admin we ever had.
+* [alex_1001](https://steamcommunity.com/profiles/76561198145551898), one of my best friends and honorary co-founder.
+* [Brander](https://steamcommunity.com/profiles/76561198128427939), the first player to consistently play on and donate to our Garry's Mod servers.
+* [SeanGameZZZ](https://steamcommunity.com/profiles/76561198246004672), the most trustworthy admin we ever had.
 * ToxicI11I, the source of memes and inside jokes that have been going on for years.
-* [DRW](https://steamcommunity.com/id/kill_me_dick/), the hilarious moral support and DarkRP server motivation.
-* [weebi](https://steamcommunity.com/id/mcgoddamnweebi/), the sole person in the universe that is on the same wavelength as me.
-* [Andi1032](https://steamcommunity.com/id/Andilikesanime/), the only sensible admin and friend I will ever have.
+* [DRW](https://steamcommunity.com/profiles/76561198179143498), the hilarious moral support and DarkRP server motivation.
+* [weebi](https://steamcommunity.com/profiles/76561198170063030), the sole person in the universe that is on the same wavelength as me.
+* [Andi1032](https://steamcommunity.com/profiles/76561198314236043), the only sensible admin and friend I will ever have.
 
 ## History
 

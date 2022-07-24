@@ -1,24 +1,59 @@
 # About
 
-*TO-DO*
+I am a programmer and developer from the United Kingdom that has valuable experience in nearly every major programming language and a constant interest in the evergrowing technology industry.
 
+## Hobbies
 
+I enjoy working on personal projects in my free time, which are usually desktop applications for Windows and Linux, websites, Unity games, backend server-side infrastructure, Android applications, and game modding. Though I do still have fun taking on new projects in areas I have never explored before.
 
-Hey, I am a programmer and developer from the United Kingdom that has decent experience in nearly every major programming language, and a few various minor ones. I enjoy working on my [numerous projects](/projects), and honestly has fun coding and learning new things all-round!
+My interests are not just in software though, I am quite knowledgeable in computer hardware too. I have repaired many laptops and desktops, and built my own desktop and home server. I can give great suggestions and advice for hardware choices, and explain the rationales behind why it is ideal for the given use case.
 
-I also like to play around with embedded electronics and microsystems in my free time, such as Arduino's, Raspberry Pi's, etc. Though I have not really made anything worth sharing yet, since it is still a small hobby I am actively getting better at.
+I also like experimenting with embedded electronics and microsystems, such as Arduino's, Raspberry Pi's, etc. Though I have not made anything worth sharing yet, since it is still a small hobby that I am actively trying to get better at.
 
-My programming experience over the years has primarily been in C#, Lua, PHP, Python, JavaScript and more recently Java & C/C++. However, like mentioned I have pretty much dabbled with every popular language which is helpful as it makes going into a new language quite easy since the concepts are usually very similar, I just have to learn the syntax.
+## Experience
 
-In case you are trying to find out information about me, I will save you the trouble and give you my online profiles below.
+My programming experience over the last decade has been in the following languages and areas:
 
-* [Twitter](/twitter)
+* C# for .NET Core & .NET Framework applications, and Unity games.
+* PHP for server-side website development.
+* Python for chat platform bots.
+* Go for utilities & tools.
+* JavaScript for websites & serverless cloud functions.
+* TypeScript (Node.js) for chat platform bots.
+* Java for Minecraft mods & Android applications.
+* Kotlin for Android applications.
+* C++ for Garry's Mod modules & 2D graphical games.
+* C for low-level UEFI applications & utilities.
+* HTML/CSS for website design.
+* Bash & PowerShell for automation scripts.
+
+I also have experience using or integrating with the following software suites and technologies:
+
+* Linux, on both servers and desktops.
+* MySQL, MariaDB, SQLite & Redis databases.
+* Unity for game development & simulations.
+* Grafana & Prometheus for system monitoring & analysis.
+* Windows Server 2016, 2019 & 2022 for AD DS, DNS, DHCP, ISS, etc.
+* WSL, Hyper-V, VirtualBox & QEMU virtualisation.
+* Visual Studio, Visual Studio Code, IntelliJ & Android Studio IDEs.
+* Git for version control.
+* Remote dedicated & virtual private server hosting.
+* Amazon Web Services, Firebase, Cloudflare Workers.
+* PayPal & Stripe for payment processing.
+
+Thanks to my many years of experience with such a large variety of languages and technologies in the computing space, I find it very easy to get started and learn new topics.
+
+## Links
+
+These are my various online profiles. If you come across a profile with my username on it that is not listed below then it is likely not mine.
+
+* [GitHub](/github)
 * [Steam](/steam)
-* [Reddit](/reddit)
-* [DeviantArt](/deviantart)
 * [YouTube](/youtube)
 * [Twitch](/twitch)
+* [Reddit](/reddit)
+* [Twitter](/twitter)
+* [DeviantArt](/deviantart)
 * [Minecraft](/namemc)
 * [MyAnimeList](/myanimelist)
-* [GitHub](/github)
 * [GmodStore](/gmodstore)
