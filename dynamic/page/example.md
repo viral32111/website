@@ -1,6 +1,6 @@
 # Example (Heading 1)
 
-This is the [example page](/example) to demonstrate Markdown features and evaluation of inline PHP code.
+This page is for demonstrating Markdown features and evaluation of inline PHP code.
 
 ## Markdown (Heading 2)
 
@@ -83,9 +83,3 @@ The name of the virtual-host handling this website is `<?= $_SERVER[ 'SERVER_NAM
 * Path: `<?= $_SERVER[ 'REQUEST_URI' ] ?>`
 * Timestamp: `<?= $_SERVER[ 'REQUEST_TIME' ] ?>`
 * User-Agent: `<?= $_SERVER[ 'HTTP_USER_AGENT' ] ?>`
-
-### Software (Heading 3)
-
-1. Server: `<?= $_SERVER[ 'SERVER_SOFTWARE' ] ?>`
-2. PHP: `<?= phpversion() ?>`
-3. You!

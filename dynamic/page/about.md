@@ -33,13 +33,18 @@ I also have experience using or integrating with the following software suites a
 * MySQL, MariaDB, SQLite & Redis databases.
 * Unity for game development & simulations.
 * Grafana & Prometheus for system monitoring & analysis.
-* Windows Server 2016, 2019 & 2022 for AD DS, DNS, DHCP, ISS, etc.
+* Windows Server 2016, 2019 & 2022 for AD DS, AD CS, DNS, DHCP, IIS, etc.
 * WSL, Hyper-V, VirtualBox & QEMU virtualisation.
 * Visual Studio, Visual Studio Code, IntelliJ & Android Studio IDEs.
 * Git for version control.
 * Remote dedicated & virtual private server hosting.
 * Amazon Web Services, Firebase, Cloudflare Workers.
 * PayPal & Stripe for payment processing.
+* Apache HTTP Server & NGINX.
+* Docker containers & image registries.
+* Samba file shares.
+* OpenVPN & WireGuard.
+* ISC BIND 9 & DHCP Server.
 
 Thanks to my many years of experience with such a large variety of languages and technologies in the computing space, I find it very easy to get started and learn new topics.
 

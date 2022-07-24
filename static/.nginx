@@ -9,7 +9,7 @@ location ~* .txt$ { expires 30d; }
 
 # Always add security enhancing headers
 # NOTE: CSP has issues on the Tor hidden service!
-add_header Content-Security-Policy "default-src 'self'; base-uri 'self'; style-src 'self' 'unsafe-inline'; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;" always;
+add_header Content-Security-Policy "default-src 'self'; base-uri 'self'; style-src 'self' 'nonce-0c4c25f6' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-8dc8f752' https://cdnjs.cloudflare.com; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;" always;
 add_header X-XSS-Protection "1; mode=block" always;
 add_header X-Frame-Options "DENY" always;
 add_header X-Content-Type-Options "nosniff" always;
@@ -19,6 +19,9 @@ add_header Strict-Transport-Security "max-age=31557600; includeSubDomains; prelo
 # Inform Tor Browser visitors of the hidden service on successful responses
 # TODO: Do not add this on requests on the Tor hidden service
 add_header Onion-Location "http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion$request_uri";
+
+# Never allow archiving or image indexing
+add_header X-Robots-Tag "noarchive, noimageindex";
 
 # This site will never have favicon.ico
 location = /favicon.ico { return 410; }

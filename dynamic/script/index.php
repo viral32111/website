@@ -106,11 +106,11 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<?php if ( isset( $errorCode ) ) { ?>
 			<meta name="robots" content="noindex,nofollow,noarchive,noimageindex">
 		<?php } else { ?>
-			<meta name="robots" content="index,follow,noarchive,noimageindex">
+			<meta name="robots" content="noarchive,noimageindex">
 		<?php } ?>
 
 		<!-- Remove Highlight.js bullshit -->
-		<style>
+		<style nonce="0c4c25f6">
 			pre code.hljs {
 				padding: 3px 3px 5px 3px;
 				background-color: #f6f6f6;
@@ -187,6 +187,6 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 
 	<!-- Apply Highlight.js styling -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" type="text/javascript" integrity="sha256-4v2jQZxK6PbZEeZ2xl2ziov6NHMksBFgBlxtMZVYbQk=" crossorigin="anonymous"></script>
-	<script>hljs.highlightAll();</script>
+	<script nonce="8dc8f752">hljs.highlightAll();</script>
 
 </html>
