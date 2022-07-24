@@ -166,7 +166,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<footer>
 
 			<!-- Copyright notice -->
-			<p>Copyright &copy; 2016 - <?= date( 'Y' ) ?> viral32111, under the <a class="nobrackets" href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License Version 3</a>.</p>
+			<p>Copyright &copy; 2016 - <?= date( 'Y' ) ?> viral32111, under the <a class="nobrackets" href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">GNU Affero General Public License Version 3</a>.</p>
 
 			<!-- Legal pages -->
 			<p>
