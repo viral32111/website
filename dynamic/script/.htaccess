@@ -28,7 +28,7 @@ RewriteEngine On
 
 # If the request path is empty, then redirect to the homepage
 RewriteCond %{REQUEST_URI} ^/$ [NC]
-RewriteRule ^ /home [R=308,L]
+RewriteRule ^ %{HTTP:X-Forwarded-Proto}://${SERVER_NAME}/home [R=308,L]
 
 # If the request path is not empty, then internally redirect it to the PHP script
 RewriteCond %{REQUEST_URI} !^/$ [NC]
