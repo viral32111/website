@@ -37,7 +37,7 @@ See [crt.sh](https://crt.sh/?q=viral32111.com), a certificate transparency datab
 While HTTP headers do not improve the strength of the underlying cryptography, they do instruct browsers to restrict functionality to minimise the attack surface. The following headers are used:
 
 * [`Content-Security-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) prevents loading content that is not authorised by this website.
-www-community/attacks/xss/) is detected.
+* [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection) disables [cross-site scripting attack](https://owasp.org/www-community/attacks/xss/) filtering.
 * [`X-Frame-Options`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) prevents framing this website on other websites.
 * [`X-Content-Type-Options`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options) prevents requests for unexpected content types.
 * [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) prevents informing other websites that you came from this website.
