@@ -62,6 +62,8 @@ Previous websites that I have operated are not available in this repository. Thi
   * Spaced out navigation links
 * Certificate transparency enforcement
   * `Expect-CT` header
+* HTTP/3
+* Internal caching of Markdown to HTML result (unless client `Cache-Control` overrides)
 
 ## Backwards Compatibility Notes
 
