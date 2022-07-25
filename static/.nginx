@@ -9,7 +9,7 @@ location ~* .txt$ { expires 30d; }
 
 # Always add security enhancing headers
 # NOTE: CSP has issues on the Tor hidden service!
-add_header Content-Security-Policy "default-src 'self'; base-uri 'self'; style-src 'self' 'nonce-0c4c25f6' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-8dc8f752' https://cdnjs.cloudflare.com; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;" always;
+#add_header Content-Security-Policy "default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-56bdb8ffb60f5f20' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-2171ca70460bf02f' https://cdnjs.cloudflare.com; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;" always;
 add_header X-XSS-Protection "1; mode=block" always;
 add_header X-Frame-Options "DENY" always;
 add_header X-Content-Type-Options "nosniff" always;

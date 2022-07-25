@@ -23,6 +23,9 @@ SetEnv SITE_NAME "viral32111's website"
 SetEnv SITE_DOMAIN ${SERVER_NAME}
 SetEnv PAGE_DIRECTORY ../page
 
+# Add basic CSP if it does not exist (e.g. on an error page)
+Header setifempty Content-Security-Policy "default-src 'none'; base-uri 'self'; style-src 'self'; script-src 'self'; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;"
+
 # Enable advanced redirects
 RewriteEngine On
 

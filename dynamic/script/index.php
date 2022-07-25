@@ -42,6 +42,11 @@ function getRequestHeader( string $name, string $default = "Unknown" ) : string 
 	return $requestHeaders[ strtolower( $name ) ] ?? $default;
 }
 
+// Content security policy
+$hjlsStyleNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
+$hjlsScriptNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
+header( "Content-Security-Policy: default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-$hjlsStyleNonce' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-$hjlsScriptNonce' https://cdnjs.cloudflare.com; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;" );
+
 // Get the Markdown content of the requested page
 // NOTE: This will evaluate any PHP code within the Markdown file
 ob_start();
@@ -110,7 +115,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<?php } ?>
 
 		<!-- Remove Highlight.js bullshit -->
-		<style nonce="0c4c25f6">
+		<style nonce="<?= $hjlsStyleNonce ?>">
 			pre code.hljs {
 				padding: 3px 3px 5px 3px;
 				background-color: #f6f6f6;
@@ -128,7 +133,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<header>
 
 			<!-- Title -->
-			<h1><img src="/image/avatar/circle-448.webp" alt="viral32111's avatar" height="29px"><?= $_SERVER[ "SITE_NAME" ]; ?></h1>
+			<h1><img src="/image/avatar/circle-448.webp" alt="viral32111's avatar" height="29"><?= $_SERVER[ "SITE_NAME" ]; ?></h1>
 
 			<!-- Navigation -->
 			<nav>
@@ -184,8 +189,8 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		</footer>
 
 		<!-- Apply Highlight.js styling -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" type="text/javascript" integrity="sha256-4v2jQZxK6PbZEeZ2xl2ziov6NHMksBFgBlxtMZVYbQk=" crossorigin="anonymous"></script>
-		<script nonce="8dc8f752">hljs.highlightAll();</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" integrity="sha256-4v2jQZxK6PbZEeZ2xl2ziov6NHMksBFgBlxtMZVYbQk=" crossorigin="anonymous"></script>
+		<script nonce="<?= $hjlsScriptNonce ?>">hljs.highlightAll();</script>
 
 	</body>
 
