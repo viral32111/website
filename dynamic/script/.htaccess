@@ -26,6 +26,12 @@ SetEnv PAGE_DIRECTORY ../page
 # Add basic CSP if it does not exist (e.g. on an error page)
 Header setifempty Content-Security-Policy "default-src 'none'; base-uri 'self'; style-src 'self'; script-src 'self'; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;"
 
+# Cache for 1 hour by default
+Header set Cache-Control "max-age=3600, private"
+
+# Remove faulty expires header
+Header unset Expires
+
 # Enable advanced redirects
 RewriteEngine On
 

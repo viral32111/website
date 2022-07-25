@@ -1,15 +1,30 @@
-# Default cache expires after 1 hour
-# NOTE: Shouldn't be used because the proxied Apache content is dynamic
-#expires 1h;
+# Use cache headers from Apache by default
+expires off;
 
-# Cache text files for 30 days
-location ~* .txt$ { expires 30d; }
+# Cache text files for 1 month
+location ~* .txt$ {
+	expires 30d;
+	add_header Cache-Control "public, no-transform";
+}
 
-# TODO: Cache files in /download/, /stylesheet/ & /image/
+# Cache stylesheets and images for 7 days
+location ~* ^/(download|stylesheet|image) {
+	expires 7d;
+	add_header Cache-Control "public, no-transform";
+}
+
+# Cache downloads for 1 month & show directory listings
+location ~* ^/download/ {
+	expires 30d;
+	add_header Cache-Control "public, no-transform";
+
+	autoindex on;
+	autoindex_format html;
+	autoindex_exact_size off;
+	autoindex_localtime off;
+}
 
 # Always add security enhancing headers
-# NOTE: CSP has issues on the Tor hidden service!
-#add_header Content-Security-Policy "default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-56bdb8ffb60f5f20' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-2171ca70460bf02f' https://cdnjs.cloudflare.com; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;" always;
 add_header X-XSS-Protection "0" always;
 add_header X-Frame-Options "DENY" always;
 add_header X-Content-Type-Options "nosniff" always;
@@ -25,14 +40,6 @@ add_header X-Robots-Tag "noarchive, noimageindex";
 
 # This site will never have favicon.ico
 location = /favicon.ico { return 410; }
-
-# Show directory listings for downloads
-location ~ ^/download/ {
-	autoindex on;
-	autoindex_format html;
-	autoindex_exact_size off;
-	autoindex_localtime off;
-}
 
 # Add a few persistent redirects
 location = /twitter { return 308 https://twitter.com/viral32111; }
