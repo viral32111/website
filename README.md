@@ -2,6 +2,15 @@
 
 This is the source code & web server configurations for my personal website.
 
+## Scans
+
+To ensure best practices and modern web standards have been met, the website is periodically scanned by the following services:
+
+* [Mozilla Observatory](https://observatory.mozilla.org/analyze/viral32111.com)
+* [Hardenize](https://www.hardenize.com/report/viral32111.com)
+* [Nu HTML Checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Fviral32111.com)
+* [Qualys SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=viral32111.com&hideResults=on)
+
 ## History
 
 This repository only contains the source code for the *minimalist* design of my website.
@@ -47,6 +56,12 @@ Previous websites that I have operated are not available in this repository. Thi
     * Steam
     * Discord
   * View previous community reports, ban appeals, staff applications, etc.
+* Dark theme using CSS `prefers-color-scheme` media query
+  * Button to toggle it too (e.g. for when fingerprinting resisting is in use), like on the original design
+* Responsive mobile layout.
+  * Spaced out navigation links
+* Certificate transparency enforcement
+  * `Expect-CT` header
 
 ## Backwards Compatibility Notes
 
