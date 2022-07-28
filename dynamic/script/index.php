@@ -45,7 +45,7 @@ function getRequestHeader( string $name, string $default = "Unknown" ) : string 
 // Content security policy
 $hjlsStyleNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
 $hjlsScriptNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
-header( "Content-Security-Policy: default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-$hjlsStyleNonce' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-$hjlsScriptNonce' https://cdnjs.cloudflare.com; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests;" );
+header( "Content-Security-Policy: default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-$hjlsStyleNonce' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-$hjlsScriptNonce' https://cdnjs.cloudflare.com; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none';" ); // upgrade-insecure-requests;
 
 // Get the Markdown content of the requested page
 // NOTE: This will evaluate any PHP code within the Markdown file
