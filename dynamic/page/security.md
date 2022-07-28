@@ -80,7 +80,6 @@ This is what your web browser is using when sending requests to this website.
 * [SNI](https://www.cloudflare.com/en-gb/learning/ssl/what-is-sni/): `<?= getRequestHeader( 'X-SSL-Name' ) ?>`
 * Protocol: `<?= getRequestHeader( 'X-SSL-Protocol' ) ?>`
 * Cipher: `<?= getRequestHeader( 'X-SSL-Cipher' ) ?>`
-* Elliptic Curve: `<?= getRequestHeader( 'X-SSL-Curve' ) ?>`
 * Request Scheme: `<?= getRequestHeader( 'X-Forwarded-Proto' ) ?>`
 * TCP Port: `<?= getRequestHeader( 'X-Forwarded-Port' ) ?>`
 

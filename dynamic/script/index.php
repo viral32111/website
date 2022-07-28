@@ -35,17 +35,23 @@ $pageDescription = "I'm a programmer & developer from the United Kingdom that ha
 // The pages to show in the navigation bar
 $navigationPages = [ 'home', 'about', 'projects', 'tools', 'blog', 'guides', 'community', 'contact', 'donate' ];
 
+// Setup the content security policy
+$hjlsStyleNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
+$hjlsScriptNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
+$contentSecurityPolicy = "default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-$hjlsStyleNonce' 'sha256-FwPDLLk3ItiDGzdbYXDQRcflOk0beRbxGRj0j0RfG+M=' 'sha256-W5EtiT3W5OFrHozYatBNWpbNzRbcX1TLS7gLGYDx4nw=' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-$hjlsScriptNonce' https://cdnjs.cloudflare.com; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none';";
+
+// Add upgrade insecure requests to the content security policy if this is not the hidden service
+if ( preg_match( "/\.onion$/", $_SERVER[ "SERVER_NAME" ] ) === 0 ) $contentSecurityPolicy .= " upgrade-insecure-requests;";
+
+// Set the content security policy
+header( "Content-Security-Policy: $contentSecurityPolicy" );
+
 // Things used within markdown pages
 $requestHeaders = array_change_key_case( apache_request_headers(), CASE_LOWER );
 function getRequestHeader( string $name, string $default = "Unknown" ) : string {
 	global $requestHeaders;
 	return $requestHeaders[ strtolower( $name ) ] ?? $default;
 }
-
-// Content security policy
-$hjlsStyleNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
-$hjlsScriptNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
-header( "Content-Security-Policy: default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-$hjlsStyleNonce' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-$hjlsScriptNonce' https://cdnjs.cloudflare.com; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none';" ); // upgrade-insecure-requests;
 
 // Get the Markdown content of the requested page
 // NOTE: This will evaluate any PHP code within the Markdown file
@@ -74,7 +80,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<!-- Generic data for browsers & search engines -->
-		<meta name="url" content="<?= $_SERVER[ "SERVER_NAME" ] ?>">
+		<meta name="url" content="<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
 		<meta name="description" content="<?= $pageDescription ?>">
 		<meta name="subject" content="<?= $pageDescription ?>">
 		<meta name="keywords" content="viral32111,conspiracy servers,brother gaming,programmer,programming,developer,developing,coding,freelance,community">
@@ -86,7 +92,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<!-- Data for embeds on other websites -->
 		<meta name="theme-color" content="#aea49a"> <!-- Majority color of my avatar -->
 		<meta name="og:type" content="website">
-		<meta name="og:url" content="<?= $_SERVER[ "SERVER_NAME" ] ?>">
+		<meta name="og:url" content="<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
 		<meta name="og:site_name" content="<?= $_SERVER[ "SITE_NAME" ] ?>">
 		<meta name="og:title" content="<?= $pageTitle ?>">
 		<meta name="og:description" content="<?= $pageDescription ?>">
