@@ -1,3 +1,13 @@
+# Default to the normal name
+Define SERVER_NAME viral32111.com
+
+# Set name to hidden service if visiting from it
+<If "%{HTTP_HOST} == 'viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion'">
+    Define SERVER_NAME viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion
+</If>
+
+# Define SERVER_NAME %{HTTP_HOST} ???
+
 # Custom error pages
 ErrorDocument 403 /index.php?error=403
 ErrorDocument 404 /index.php?error=404
