@@ -1,13 +1,3 @@
-# Default to the normal name
-Define SERVER_NAME viral32111.com
-
-# Set name to hidden service if visiting from it
-<If "%{HTTP_HOST} == 'viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion'">
-    Define SERVER_NAME viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion
-</If>
-
-# Define SERVER_NAME %{HTTP_HOST} ???
-
 # Custom error pages
 ErrorDocument 403 /index.php?error=403
 ErrorDocument 404 /index.php?error=404
@@ -23,14 +13,14 @@ php_value session.cookie_path /
 php_value session.cookie_samesite Strict
 php_flag session.cookie_secure On
 php_flag session.cookie_httponly On
-php_value session.cookie_domain .${SERVER_NAME}
+php_value session.cookie_domain .viral32111.com
 
 # Base directory for include() & require()
 php_value include_path ../include
 
 # Configuration for PHP scripts
 SetEnv SITE_NAME "viral32111's website"
-SetEnv SITE_DOMAIN ${SERVER_NAME}
+SetEnv SITE_DOMAIN viral32111.com
 SetEnv PAGE_DIRECTORY ../page
 
 # Add basic CSP if it does not exist (e.g. on an error page)
@@ -57,3 +47,10 @@ RewriteRule ^([\w-/]+)$ index.php?page=$1 [QSA,L]
 RewriteCond %{REQUEST_URI} ^/index.php [NC]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^ - [R=404,L]
+
+<If "%{HTTP_HOST} == 'viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion'">
+	php_value session.cookie_domain .viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion
+
+	SetEnv SITE_NAME "viral32111's hidden service"
+	SetEnv SITE_DOMAIN viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion
+</If>
