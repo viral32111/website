@@ -3,7 +3,7 @@ Hash: SHA256
 
 # Privacy Policy
 
-This policy was last modified on the 22nd of July 2022 at 12:31 UTC.
+This policy was last modified on the 38th of July 2022 at 10:16 UTC.
 
 ## What data is collected?
 
@@ -42,13 +42,13 @@ See the [security page](/security) for more information about the physical serve
 
 Consider using [Tor](https://www.torproject.org/) to access this website if you are concerned about your privacy.
 
-The onion site address is [http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion](http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion). You should be automatically redirected to the hidden service when accessing this website in Tor Browser due to the use of the [`Onion-Location`](https://community.torproject.org/onion-services/advanced/onion-location/) HTTP header.
+The onion site address is [http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion](http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion). You should be automatically redirected to it when accessing this website in Tor Browser due to the use of the [`Onion-Location`](https://community.torproject.org/onion-services/advanced/onion-location/) HTTP header.
 
 This will provide both a benefit to privacy and security as your request is designed to look identical to all other requests before being routed through a circuit of unknown nodes. This makes it impossible for this website to identify you.
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCYtqKtAAKCRDwIE9Zol6n
-L/5kAP9sidl3yCFWwxeS9WMtmX9MKlfEUVwLkgMMZ8//+CptYAEAyRXnUE6vFVID
-Aeu8eN94HmtfxBS03noEqCaLzcBKiAA=
-=YMKn
+iI0EARYIADUWIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCYuJiExccY29udGFjdEB2
+aXJhbDMyMTExLmNvbQAKCRDwIE9Zol6nLxsnAP4yvQWpNrv6X2+brqstOU3sFmru
+hF7n3ZwL83j8K/9owgD/XlmhHGsJwnjSE5lbDISpc3W7CYg5v+krVvr46Snadwo=
+=RpmE
 -----END PGP SIGNATURE-----
