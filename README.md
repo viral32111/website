@@ -65,10 +65,6 @@ Previous websites that I have operated are not available in this repository. Thi
 * HTTP/3
 * Internal caching of Markdown to HTML result (unless client `Cache-Control` overrides)
 
-## Backwards Compatibility Notes
-
-`steam-default-avatar.png` is available externally from `https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg`
-
 ## License
 
 Copyright (C) 2020-2022 [viral32111](https://viral32111.com).
