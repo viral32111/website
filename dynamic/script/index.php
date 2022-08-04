@@ -80,7 +80,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<!-- Generic data for browsers & search engines -->
-		<meta name="url" content="<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
+		<meta name="url" content="https://<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
 		<meta name="description" content="<?= $pageDescription ?>">
 		<meta name="subject" content="<?= $pageDescription ?>">
 		<meta name="keywords" content="viral32111,conspiracy servers,brother gaming,programmer,programming,developer,developing,coding,freelance,community">
@@ -92,7 +92,7 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<!-- Data for embeds on other websites -->
 		<meta name="theme-color" content="#aea49a"> <!-- Majority color of my avatar -->
 		<meta name="og:type" content="website">
-		<meta name="og:url" content="<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
+		<meta name="og:url" content="https://<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
 		<meta name="og:site_name" content="<?= $_SERVER[ "SITE_NAME" ] ?>">
 		<meta name="og:title" content="<?= $pageTitle ?>">
 		<meta name="og:description" content="<?= $pageDescription ?>">
@@ -100,6 +100,9 @@ $pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
 		<meta name="og:image:type" content="image/webp">
 		<meta name="og:image:alt" content="viral32111's avatar">
 		<meta name="og:locale" content="en_gb">
+
+		<!-- The canonical link -->
+		<link rel="canonical" content="https://<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
 
 		<!-- Import Highlight.js GitHub-themed stylesheet -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css" type="text/css" integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY=" crossorigin="anonymous">
