@@ -23,6 +23,19 @@ Previous websites that I have operated are not available in this repository. Thi
 * `conspiracyservers.co.uk`
 * `conspiracyservers.com`
 
+## Requirements
+
+This website requires the following services to operate:
+
+* NGINX
+* Apache
+  * Latest PHP
+    * cURL & MySQLi extensions
+    * GnuPG & Redis PECL extensions
+* MariaDB
+  * phpMyAdmin is useful for management, but not required.
+* Redis
+
 ## To-Do List
 
 * Donation history table on the donation page.
