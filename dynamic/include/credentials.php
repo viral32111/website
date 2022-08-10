@@ -1,16 +1,40 @@
 <?php
 
-// Token of a Discord Bot for fetching user information
-$discordBotToken = '';
+/**** Discord ****/
 
-// API key for Steam for fetching user information
-$steamApiKey = '';
+// https://discord.com/developers/applications
+$discordToken = '';
 
-// Database connection credentials
-$databaseAddress = '';
-$databasePort = 3306;
-$databaseUser = '';
-$databasePass = '';
-$databaseName = '';
+/**** Steam ****/
+
+// https://steamcommunity.com/dev/apikey
+$steamWebKey = '';
+
+/**** MySQL ****/
+
+// Connection
+$mysqlAddress = '';
+$mysqlPort = 3306;
+
+// Credentials
+$mysqlUsername = '';
+$mysqlPassword = '';
+
+// Database
+$mysqlDatabase = '';
+
+/**** Redis ****/
+
+// Connection
+$redisAddress = '';
+$redisPort = 6379;
+
+// Credentials
+$redisUsername = '';
+$redisPassword = '';
+
+// Database
+$redisPrefix = '';
+$redisDatabase = 0;
 
 ?>
