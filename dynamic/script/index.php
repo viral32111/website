@@ -1,12 +1,11 @@
 <?php
 
-//header( 'Content-Type: text/plain' ); var_dump( $_SERVER ); exit();
-
 // Import required scripts
 require_once( 'error.php' );
 require_once( 'utilities.php' );
 require_once( 'cache.php' );
 require_once( 'redis.php' );
+require_once( 'csp.php' );
 
 // Start a session if one does not exist
 if ( session_status() === PHP_SESSION_NONE ) session_start();
@@ -36,16 +35,8 @@ $pageDescription = "I'm a programmer & developer from the United Kingdom that ha
 // The pages to show in the navigation bar
 $navigationPages = [ 'home', 'about', 'projects', 'tools', 'blog', 'guides', 'community', 'contact', 'donate' ];
 
-// Setup the content security policy
-$hjlsStyleNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
-$hjlsScriptNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
-$contentSecurityPolicy = "default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-$hjlsStyleNonce' 'sha256-FwPDLLk3ItiDGzdbYXDQRcflOk0beRbxGRj0j0RfG+M=' 'sha256-W5EtiT3W5OFrHozYatBNWpbNzRbcX1TLS7gLGYDx4nw=' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-$hjlsScriptNonce' https://cdnjs.cloudflare.com; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none';";
-
-// Add upgrade insecure requests to the content security policy if this is not the hidden service
-if ( preg_match( "/\.onion$/", $_SERVER[ "HTTP_HOST" ] ) === 0 ) $contentSecurityPolicy .= " upgrade-insecure-requests;";
-
-// Set the content security policy
-header( "Content-Security-Policy: $contentSecurityPolicy" );
+// Generate & add CSP header
+$nonces = setContentSecurityPolicy( preg_match( "/\.onion$/", $_SERVER[ "HTTP_HOST" ] ) === 0 )
 
 $pageHTML = Cache::GetMarkdownPage( $pageFile );
 
@@ -108,7 +99,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<?php } ?>
 
 		<!-- Remove Highlight.js bullshit -->
-		<style nonce="<?= $hjlsStyleNonce ?>">
+		<style nonce="<?= $nonces[ "HLJS_STYLE" ] ?>">
 			pre code.hljs {
 				padding: 3px 3px 5px 3px;
 				background-color: #f6f6f6;
@@ -183,7 +174,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 
 		<!-- Apply Highlight.js styling -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" integrity="sha256-4v2jQZxK6PbZEeZ2xl2ziov6NHMksBFgBlxtMZVYbQk=" crossorigin="anonymous"></script>
-		<script nonce="<?= $hjlsScriptNonce ?>">hljs.highlightAll();</script>
+		<script nonce="<?= $nonces[ "HLJS_SCRIPT" ] ?>">hljs.highlightAll();</script>
 
 	</body>
 
