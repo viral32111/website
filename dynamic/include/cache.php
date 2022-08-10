@@ -74,7 +74,6 @@ class Cache {
 
 		$fileContent = file_get_contents( $_SERVER[ "PAGE_DIRECTORY" ] . '/' . $pageFile );
 		if ( strpos( $fileContent, '<?php' ) !== false || strpos( $fileContent, '<?=' ) !== false ) {
-			error_log( 'Not caching this page' );
 			return Utilities::ConvertMarkdownToHTML( $pageContent );
 		}
 
@@ -84,16 +83,11 @@ class Cache {
 		$pageHTML = RedisDatabase::Get( $keyName . 'html' );
 
 		if ( ( $pageHash === false || $pageHTML === false ) || $pageHash !== $pageContentHash ) {
-			error_log( 'Page not cached' );
-
 			$pageHash = $pageContentHash;
 			$pageHTML = Utilities::ConvertMarkdownToHTML( $pageContent );
 
 			RedisDatabase::Set( $keyName . 'hash', $pageHash );
 			RedisDatabase::Set( $keyName . 'html', $pageHTML );
-
-		} else {
-			error_log( 'Page was cached' );
 		}
 
 		return $pageHTML;
