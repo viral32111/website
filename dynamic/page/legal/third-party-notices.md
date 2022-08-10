@@ -1,5 +1,7 @@
 # Third-Party Notices
 
+This document was last modified on the 30th of July 2022 at 09:25 UTC.
+
 These are acknowledgements for the use of publicly available software, libraries and other products either on or related to the development of this website that have been created by other people.
 
 * [Highlight.js](https://highlightjs.org/) as the JavaScript library to syntax highlight the code blocks.
@@ -12,5 +14,6 @@ These are acknowledgements for the use of publicly available software, libraries
 * [Apache HTTP Server](https://httpd.apache.org/) as the web server for serving the dynamic pages.
 * [GitHub](https://github.com/) as the host for the publicly available source code.
 * [Git](https://git-scm.com/) as the version control system.
+* [Visual Studio Code](https://code.visualstudio.com) and [GNU nano](https://www.nano-editor.org) as the IDEs.
 
 Many thanks to the communities behind all of these projects ❤

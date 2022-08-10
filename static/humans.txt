@@ -17,7 +17,8 @@ This website was coded using the following open-source software, thank you to th
         GNU nano: https://www.nano-editor.org
         Visual Studio Code: https://code.visualstudio.com
 
-Finally, I want to say a huge thanks to you for visiting my website, you're the most important part of it <3
+See the /legal/third-party-notices for more.
 
+Finally, I want to say a huge thanks to you for visiting my website, you're the most important part of it <3
 
 "Helping one person might not change the whole world, but it could change the whole world for one person" :)

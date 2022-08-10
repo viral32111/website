@@ -3,7 +3,7 @@ Hash: SHA256
 
 # Privacy Policy
 
-This policy was last modified on the 38th of July 2022 at 10:16 UTC.
+This policy was last modified on the 30th of July 2022 at 09:25 UTC.
 
 ## What data is collected?
 
@@ -47,8 +47,8 @@ The onion site address is [http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqh
 This will provide both a benefit to privacy and security as your request is designed to look identical to all other requests before being routed through a circuit of unknown nodes. This makes it impossible for this website to identify you.
 -----BEGIN PGP SIGNATURE-----
 
-iI0EARYIADUWIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCYuJiExccY29udGFjdEB2
-aXJhbDMyMTExLmNvbQAKCRDwIE9Zol6nLxsnAP4yvQWpNrv6X2+brqstOU3sFmru
-hF7n3ZwL83j8K/9owgD/XlmhHGsJwnjSE5lbDISpc3W7CYg5v+krVvr46Snadwo=
-=RpmE
+iI0EARYIADUWIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCYuT4tRccY29udGFjdEB2
+aXJhbDMyMTExLmNvbQAKCRDwIE9Zol6nL9YKAQCl6kYUKRH34/nYH2NKoAWhgnYn
+SV2yaVqRoSCdnOwZkAEAljnYk+uzxBh/j1HsqJTh//tRP+Cifjx2oFp+q1DNZww=
+=LNSW
 -----END PGP SIGNATURE-----

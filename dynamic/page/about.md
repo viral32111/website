@@ -35,14 +35,14 @@ I also have experience using or integrating with the following software suites a
 * Grafana & Prometheus for system monitoring & analysis.
 * Windows Server 2016, 2019 & 2022 for AD DS, AD CS, DNS, DHCP, IIS, etc.
 * WSL, Hyper-V, VirtualBox & QEMU virtualisation.
-* Visual Studio, Visual Studio Code, IntelliJ & Android Studio IDEs.
+* Visual Studio, Visual Studio Code, IntelliJ IDEA & Android Studio IDEs.
 * Git for version control.
 * Remote dedicated & virtual private server hosting.
 * Amazon Web Services, Firebase, Cloudflare Workers.
 * PayPal & Stripe for payment processing.
 * Apache HTTP Server & NGINX.
 * Docker containers & image registries.
-* Samba file shares.
+* SMB & NFS file shares.
 * OpenVPN & WireGuard.
 * ISC BIND 9 & DHCP Server.
 
