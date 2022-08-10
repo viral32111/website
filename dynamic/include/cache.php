@@ -1,5 +1,8 @@
 <?php
 
+require_once( 'utilities.php' );
+require_once( 'pgp.php' );
+require_once( 'markdown.php' );
 require_once( 'steam.php' );
 require_once( 'discord.php' );
 require_once( 'redis.php' );
@@ -56,6 +59,44 @@ class Cache {
 		}
 
 		return $userNames;
+
+	}
+
+	public static function GetMarkdownPage( $pageFile ) {
+
+		$keyName = 'markdown-pages:' . $pageFile . ':';
+
+		// Get the Markdown content of the requested page
+		// NOTE: This will evaluate any PHP code within the Markdown file
+		ob_start();
+		require( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $pageFile );
+		$pageContent = ob_get_clean();
+
+		$fileContent = file_get_contents( $_SERVER[ "PAGE_DIRECTORY" ] . '/' . $pageFile );
+		if ( strpos( $fileContent, '<?php' ) !== false || strpos( $fileContent, '<?=' ) !== false ) {
+			error_log( 'Not caching this page' );
+			return Utilities::ConvertMarkdownToHTML( $pageContent );
+		}
+
+		$pageContentHash = hash( 'sha1', $pageContent, false );
+
+		$pageHash = RedisDatabase::Get( $keyName . 'hash' );
+		$pageHTML = RedisDatabase::Get( $keyName . 'html' );
+
+		if ( ( $pageHash === false || $pageHTML === false ) || $pageHash !== $pageContentHash ) {
+			error_log( 'Page not cached' );
+
+			$pageHash = $pageContentHash;
+			$pageHTML = Utilities::ConvertMarkdownToHTML( $pageContent );
+
+			RedisDatabase::Set( $keyName . 'hash', $pageHash );
+			RedisDatabase::Set( $keyName . 'html', $pageHTML );
+
+		} else {
+			error_log( 'Page was cached' );
+		}
+
+		return $pageHTML;
 
 	}
 

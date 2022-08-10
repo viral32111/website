@@ -77,10 +77,10 @@ See the [privacy policy](/legal/privacy-policy) for more information about how H
 
 This is what your web browser is using when sending requests to this website.
 
-* [SNI](https://www.cloudflare.com/en-gb/learning/ssl/what-is-sni/): `<?= getRequestHeader( 'X-SSL-Name' ) ?>`
-* Protocol: `<?= getRequestHeader( 'X-SSL-Protocol' ) ?>`
-* Cipher: `<?= getRequestHeader( 'X-SSL-Cipher' ) ?>`
-* Request Scheme: `<?= getRequestHeader( 'X-Forwarded-Proto' ) ?>`
-* TCP Port: `<?= getRequestHeader( 'X-Forwarded-Port' ) ?>`
+* [SNI](https://www.cloudflare.com/en-gb/learning/ssl/what-is-sni/): `<?= Utilities::GetRequestHeader( 'X-SSL-Name' ) ?>`
+* Protocol: `<?= Utilities::GetRequestHeader( 'X-SSL-Protocol' ) ?>`
+* Cipher: `<?= Utilities::GetRequestHeader( 'X-SSL-Cipher' ) ?>`
+* Request Scheme: `<?= Utilities::GetRequestHeader( 'X-Forwarded-Proto' ) ?>`
+* TCP Port: `<?= Utilities::GetRequestHeader( 'X-Forwarded-Port' ) ?>`
 
-Your [SSL session identifier](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#var_ssl_session_id) is `<?= getRequestHeader( 'X-SSL-Session' ) ?>`.
+Your [SSL session identifier](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#var_ssl_session_id) is `<?= Utilities::GetRequestHeader( 'X-SSL-Session' ) ?>`.

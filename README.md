@@ -76,7 +76,7 @@ This website requires the following services to operate:
 * Certificate transparency enforcement
   * `Expect-CT` header
 * HTTP/3
-* Internal caching of Markdown to HTML result (unless client `Cache-Control` overrides)
+* Bypass internal Redis caching when HTTP `Cache-Control` request header is set to `no-cache`
 
 ## License
 

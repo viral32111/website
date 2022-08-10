@@ -2,8 +2,9 @@
 
 // Import required scripts
 require_once( 'error.php' );
-require_once( 'pgp.php' );
-require_once( 'markdown.php' );
+require_once( 'utilities.php' );
+require_once( 'cache.php' );
+require_once( 'redis.php' );
 
 // Start a session if one does not exist
 if ( session_status() === PHP_SESSION_NONE ) session_start();
@@ -11,9 +12,7 @@ if ( session_status() === PHP_SESSION_NONE ) session_start();
 // Get the error code (if one was provided)
 if ( isset( $_GET[ "error" ] ) ) {
 	$errorCode = $_GET[ "error" ];
-
 	if ( empty( $errorCode ) ) showErrorPage( 400, "No error code provided." );
-
 	showErrorPage( $errorCode );
 }
 
@@ -46,24 +45,7 @@ if ( preg_match( "/\.onion$/", $_SERVER[ "SERVER_NAME" ] ) === 0 ) $contentSecur
 // Set the content security policy
 header( "Content-Security-Policy: $contentSecurityPolicy" );
 
-// Things used within markdown pages
-$requestHeaders = array_change_key_case( apache_request_headers(), CASE_LOWER );
-function getRequestHeader( string $name, string $default = "Unknown" ) : string {
-	global $requestHeaders;
-	return $requestHeaders[ strtolower( $name ) ] ?? $default;
-}
-
-// Get the Markdown content of the requested page
-// NOTE: This will evaluate any PHP code within the Markdown file
-ob_start();
-require( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $pageFile );
-$pageContent = ob_get_clean();
-
-// Remove the PGP signature, if there is one
-[ $pageMarkdown, $hasSignature ] = PGP::StripSignature( $pageContent );
-
-// Convert the Markdown content to HTML
-$pageHTML = MarkdownToHTML::ConvertString( $pageMarkdown );
+$pageHTML = Cache::GetMarkdownPage( $pageFile );
 
 ?>
 <!DOCTYPE html>
