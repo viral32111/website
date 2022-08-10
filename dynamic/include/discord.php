@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'credentials.php' );
+require_once( 'utilities.php' );
 
 class Discord {
 
@@ -8,17 +8,15 @@ class Discord {
 
 	public static function FetchUserName( $userID ) {
 
-		global $discordToken;
-
 		$apiRequest = curl_init( 'https://' . Discord::$baseUrl . '/users/' . $userID );
 
 		curl_setopt( $apiRequest, CURLOPT_TIMEOUT, 3 );
 		curl_setopt( $apiRequest, CURLOPT_RETURNTRANSFER, true );
 	
-		curl_setopt( $apiRequest, CURLOPT_USERAGENT, "viral32111's website (https://viral32111.com; contact@viral32111.com)" );
+		curl_setopt( $apiRequest, CURLOPT_USERAGENT, Utilities::GetUserAgent() );
 
 		curl_setopt( $apiRequest, CURLOPT_HTTPHEADER, [
-			'Authorization: Bot ' . $discordToken
+			'Authorization: Bot ' . $_SERVER[ 'DISCORD_BOT_TOKEN' ]
 		] );
 
 		$apiResponse = curl_exec( $apiRequest );

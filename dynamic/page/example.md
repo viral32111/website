@@ -75,7 +75,7 @@ No. | Name | Car | City
 
 ## PHP code (Heading 2)
 
-The name of the virtual-host handling this website is `<?= $_SERVER[ 'SERVER_NAME' ] ?>`.
+The name of the virtual-host handling this website is `<?= $_SERVER[ 'HTTP_HOST' ] ?>`.
 
 ### Request (Heading 3)
 

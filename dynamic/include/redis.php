@@ -1,26 +1,22 @@
 <?php
 
-require_once( 'credentials.php' );
-
 class RedisDatabase {
 
 	private static $instance = NULL;
 
 	public static function Connect() : bool {
 
-		global $redisAddress, $redisPort, $redisUsername, $redisPassword, $redisDatabase;
-
 		RedisDatabase::$instance = new Redis();
 
-		if ( RedisDatabase::$instance->connect( $redisAddress, $redisPort, 1.0 ) !== true ) {
+		if ( RedisDatabase::$instance->connect( $_SERVER[ 'REDIS_ADDRESS' ], intval( $_SERVER[ 'REDIS_PORT' ] ), 1.0 ) !== true ) {
 			exit( 'Failed to connect to the Redis server.' );
 		}
 
-		if ( RedisDatabase::$instance->auth( [ $redisUsername, $redisPassword ] ) !== true ) {
+		if ( RedisDatabase::$instance->auth( [ $_SERVER[ 'REDIS_USERNAME' ], $_SERVER[ 'REDIS_PASSWORD' ] ] ) !== true ) {
 			exit( 'Failed to authenticate with the Redis server.' );
 		}
 
-		if ( RedisDatabase::$instance->select( $redisDatabase ) !== true ) {
+		if ( RedisDatabase::$instance->select( intval( $_SERVER[ 'REDIS_DATABASE' ] ) ) !== true ) {
 			exit( 'Failed to switch Redis database.' );
 		}
 
@@ -44,23 +40,19 @@ class RedisDatabase {
 
 	public static function Get( string $name ) : mixed {
 
-		global $redisPrefix;
-
 		if ( RedisDatabase::$instance === NULL ) return NULL;
 		if ( empty( $name ) === true ) return false;
 
-		return RedisDatabase::$instance->get( $redisPrefix . $name );
+		return RedisDatabase::$instance->get( $_SERVER[ 'REDIS_PREFIX' ] . $name );
 
 	}
 
 	public static function Set( string $name, string $value ) : bool {
 
-		global $redisPrefix;
-
 		if ( RedisDatabase::$instance === NULL ) return NULL;
 		if ( empty( $name ) === true ) return false;
 
-		if ( RedisDatabase::$instance->set( $redisPrefix . $name, $value ) !== true ) {
+		if ( RedisDatabase::$instance->set( $_SERVER[ 'REDIS_PREFIX' ] . $name, $value ) !== true ) {
 			exit( 'Failed to set key in Redis database.' );
 		}
 
@@ -70,12 +62,10 @@ class RedisDatabase {
 
 	public static function Delete( string $name ) : bool {
 
-		global $redisPrefix;
-
 		if ( RedisDatabase::$instance === NULL ) return NULL;
 		if ( empty( $name ) === true ) return false;
 
-		if ( RedisDatabase::$instance->del( $redisPrefix . $name ) !== 1 ) {
+		if ( RedisDatabase::$instance->del( $_SERVER[ 'REDIS_PREFIX' ] . $name ) !== 1 ) {
 			exit( 'Failed to delete key in Redis database.' );
 		}
 

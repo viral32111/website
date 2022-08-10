@@ -1,5 +1,7 @@
 <?php
 
+//header( 'Content-Type: text/plain' ); var_dump( $_SERVER ); exit();
+
 // Import required scripts
 require_once( 'error.php' );
 require_once( 'utilities.php' );
@@ -22,7 +24,7 @@ $pageName = $_GET[ "page" ];
 
 // Check if the requested page exists
 $pageFile = $pageName . ".md";
-if ( !is_file( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $pageFile ) ) showErrorPage( 404 );
+if ( !is_file( $_SERVER[ "DIRECTORY_PAGES" ] . "/" . $pageFile ) ) showErrorPage( 404 );
 
 // Capitalise the name of the page to use as the title
 $pageTitle = ucfirst( $pageName );
@@ -40,7 +42,7 @@ $hjlsScriptNonce = bin2hex( openssl_random_pseudo_bytes( 16 ) );
 $contentSecurityPolicy = "default-src 'none'; base-uri 'self'; style-src 'self' 'nonce-$hjlsStyleNonce' 'sha256-FwPDLLk3ItiDGzdbYXDQRcflOk0beRbxGRj0j0RfG+M=' 'sha256-W5EtiT3W5OFrHozYatBNWpbNzRbcX1TLS7gLGYDx4nw=' https://cdnjs.cloudflare.com; script-src 'self' 'nonce-$hjlsScriptNonce' https://cdnjs.cloudflare.com; img-src 'self'; media-src 'self'; frame-ancestors 'none'; form-action 'none';";
 
 // Add upgrade insecure requests to the content security policy if this is not the hidden service
-if ( preg_match( "/\.onion$/", $_SERVER[ "SERVER_NAME" ] ) === 0 ) $contentSecurityPolicy .= " upgrade-insecure-requests;";
+if ( preg_match( "/\.onion$/", $_SERVER[ "HTTP_HOST" ] ) === 0 ) $contentSecurityPolicy .= " upgrade-insecure-requests;";
 
 // Set the content security policy
 header( "Content-Security-Policy: $contentSecurityPolicy" );
@@ -53,7 +55,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 	<head>
 
 		<!-- The title in the tab -->
-		<title><?= $pageTitle ?> - <?= $_SERVER[ "SITE_NAME" ] ?></title>
+		<title><?= $pageTitle ?> - <?= $_SERVER[ "WEBSITE_TITLE" ] ?></title>
 
 		<!-- The character encoding for this page -->
 		<meta charset="utf-8">
@@ -62,7 +64,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<!-- Generic data for browsers & search engines -->
-		<meta name="url" content="https://<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
+		<meta name="url" content="https://<?= $_SERVER[ "HTTP_HOST" ] . $_SERVER[ "REQUEST_URI" ] ?>">
 		<meta name="description" content="<?= $pageDescription ?>">
 		<meta name="subject" content="<?= $pageDescription ?>">
 		<meta name="keywords" content="viral32111,conspiracy servers,brother gaming,programmer,programming,developer,developing,coding,freelance,community">
@@ -74,8 +76,8 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<!-- Data for embeds on other websites -->
 		<meta name="theme-color" content="#aea49a"> <!-- Majority color of my avatar -->
 		<meta name="og:type" content="website">
-		<meta name="og:url" content="https://<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
-		<meta name="og:site_name" content="<?= $_SERVER[ "SITE_NAME" ] ?>">
+		<meta name="og:url" content="https://<?= $_SERVER[ "HTTP_HOST" ] . $_SERVER[ "REQUEST_URI" ] ?>">
+		<meta name="og:site_name" content="<?= $_SERVER[ "WEBSITE_TITLE" ] ?>">
 		<meta name="og:title" content="<?= $pageTitle ?>">
 		<meta name="og:description" content="<?= $pageDescription ?>">
 		<meta name="og:image" content="/image/avatar/circle-448.webp">
@@ -84,7 +86,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<meta name="og:locale" content="en_gb">
 
 		<!-- The canonical link -->
-		<link rel="canonical" content="https://<?= $_SERVER[ "SERVER_NAME" ] . $_SERVER[ "REQUEST_URI" ] ?>">
+		<link rel="canonical" content="https://<?= $_SERVER[ "HTTP_HOST" ] . $_SERVER[ "REQUEST_URI" ] ?>">
 
 		<!-- Import Highlight.js GitHub-themed stylesheet -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css" type="text/css" integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY=" crossorigin="anonymous">
@@ -124,14 +126,14 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<header>
 
 			<!-- Title -->
-			<h1><img src="/image/avatar/circle-448.webp" alt="viral32111's avatar" height="29"><?= $_SERVER[ "SITE_NAME" ]; ?></h1>
+			<h1><img src="/image/avatar/circle-448.webp" alt="viral32111's avatar" height="29"><?= $_SERVER[ "WEBSITE_TITLE" ]; ?></h1>
 
 			<!-- Navigation -->
 			<nav>
 				<?php foreach ( $navigationPages as $navigationPageName ) {
 
 					// Add a clickable link if the file exists
-					if ( is_file( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $navigationPageName . ".md" ) ) {
+					if ( is_file( $_SERVER[ "DIRECTORY_PAGES" ] . "/" . $navigationPageName . ".md" ) ) {
 						echo( '<a ' . ( $navigationPageName === $pageName ? ' class="current"' : '' ) . ' href="/' . $navigationPageName . '">' . ucfirst( $navigationPageName ) . '</a>' );
 
 					// Otherwise, add a disabled link

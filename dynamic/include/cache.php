@@ -69,10 +69,10 @@ class Cache {
 		// Get the Markdown content of the requested page
 		// NOTE: This will evaluate any PHP code within the Markdown file
 		ob_start();
-		require( $_SERVER[ "PAGE_DIRECTORY" ] . "/" . $pageFile );
+		require( $_SERVER[ "DIRECTORY_PAGES" ] . "/" . $pageFile );
 		$pageContent = ob_get_clean();
 
-		$fileContent = file_get_contents( $_SERVER[ "PAGE_DIRECTORY" ] . '/' . $pageFile );
+		$fileContent = file_get_contents( $_SERVER[ "DIRECTORY_PAGES" ] . '/' . $pageFile );
 		if ( strpos( $fileContent, '<?php' ) !== false || strpos( $fileContent, '<?=' ) !== false ) {
 			return Utilities::ConvertMarkdownToHTML( $pageContent );
 		}

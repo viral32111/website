@@ -1,6 +1,5 @@
 <?php
 
-require_once( 'credentials.php' );
 require_once( 'utilities.php' );
 
 class Steam {
@@ -8,20 +7,18 @@ class Steam {
 	private static $baseUrl = 'api.steampowered.com';
 
 	public static function FetchProfileNames( $steamIDs ) {
-
-		global $steamWebKey;
 	
 		$profileNames = [];
 
 		$apiRequest = curl_init( 'https://' . Steam::$baseUrl . '/ISteamUser/GetPlayerSummaries/v2/?' . Utilities::CreateQueryString( [
-			'key' => $steamWebKey,
+			'key' => $_SERVER[ 'STEAM_WEB_API_KEY' ],
 			'steamids' => implode( ',', $steamIDs )
 		] ) );
 
 		curl_setopt( $apiRequest, CURLOPT_TIMEOUT, 3 );
 		curl_setopt( $apiRequest, CURLOPT_RETURNTRANSFER, true );
 	
-		curl_setopt( $apiRequest, CURLOPT_USERAGENT, "viral32111's website (https://viral32111.com; contact@viral32111.com)" );
+		curl_setopt( $apiRequest, CURLOPT_USERAGENT, Utilities::GetUserAgent() );
 
 		$apiResponse = curl_exec( $apiRequest );
 
