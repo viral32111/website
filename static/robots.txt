@@ -1,4 +1,4 @@
-# Deny these bots access to everything
+# Deny specific bots access to everything
 User-agent: CuteStat
 User-agent: Mediapartners-Google
 User-agent: AdsBot-Google-Mobile
@@ -17,7 +17,7 @@ Disallow: /stylesheet/
 Disallow: /image/
 Disallow: /example
 
-# Allow all bots to access public pages
+# Allow all bots to access public resources
 User-agent: *
 Allow: /
 Allow: /home
