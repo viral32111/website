@@ -36,7 +36,7 @@ $pageDescription = "I'm a programmer & developer from the United Kingdom that ha
 $navigationPages = [ 'home', 'about', 'projects', 'tools', 'blog', 'guides', 'community', 'contact', 'donate' ];
 
 // Generate & add CSP header
-$nonces = setContentSecurityPolicy( preg_match( "/\.onion$/", $_SERVER[ "HTTP_HOST" ] ) === 0 )
+$nonces = setContentSecurityPolicy( preg_match( "/\.onion$/", $_SERVER[ "HTTP_HOST" ] ) === 0 );
 
 $pageHTML = Cache::GetMarkdownPage( $pageFile );
 

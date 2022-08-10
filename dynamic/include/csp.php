@@ -4,7 +4,7 @@ function generateNonce( int $bytes = 16 ) {
 	return bin2hex( openssl_random_pseudo_bytes( 16 ) );
 }
 
-function setContentSecurityPolicy( boolean $upgradeInsecureRequests ) : array {
+function setContentSecurityPolicy( bool $upgradeInsecureRequests ) : array {
 
 	$nonces = [
 		"HLJS_STYLE" => generateNonce(),
@@ -21,7 +21,7 @@ function setContentSecurityPolicy( boolean $upgradeInsecureRequests ) : array {
 		"form-action 'none'"
 	];
 
-	if ( $upgradeInsecureRequests ) array_push( $contentSecurityPolicy, "upgrade-insecure-requests" )
+	if ( $upgradeInsecureRequests ) array_push( $contentSecurityPolicy, "upgrade-insecure-requests" );
 
 	header( "Content-Security-Policy:" . join( "; ", $contentSecurityPolicy ) . ";" );
 
