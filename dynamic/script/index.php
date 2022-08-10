@@ -27,7 +27,7 @@ $pageFile = $pageName . ".md";
 if ( !is_file( $_SERVER[ "DIRECTORY_PAGES" ] . "/" . $pageFile ) ) showErrorPage( 404 );
 
 // Capitalise the name of the page to use as the title
-$pageTitle = ucfirst( $pageName );
+$pageTitle = ucwords( str_replace( '-', ' ', basename( $pageName ) ) );
 
 // Get the description of the page
 // TODO: This needs to be fetched metadata within the Markdown file
