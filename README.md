@@ -10,6 +10,8 @@ To ensure best practices and modern web standards have been met, the website is 
 * [Hardenize](https://www.hardenize.com/report/viral32111.com)
 * [Nu HTML Checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Fviral32111.com)
 * [Qualys SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=viral32111.com&hideResults=on)
+* [PageSpeed Insights](https://pagespeed.web.dev/report?url=https://viral32111.com)
+* [CSP Evaluator](https://csp-evaluator.withgoogle.com/)
 
 ## History
 
