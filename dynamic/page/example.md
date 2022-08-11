@@ -53,7 +53,7 @@ helloWorld();
 
 [This is a link](/).
 
-![This is my avatar](/image/avatar/circle-128.webp)
+![This is my avatar](/image/avatar/embed.webp)
 
 ###### Tables (Heading 6)
 

@@ -71,7 +71,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<meta name="og:site_name" content="<?= $_SERVER[ "WEBSITE_TITLE" ] ?>">
 		<meta name="og:title" content="<?= $pageTitle ?>">
 		<meta name="og:description" content="<?= $pageDescription ?>">
-		<meta name="og:image" content="/image/avatar/circle-448.webp">
+		<meta name="og:image" content="/image/avatar/embed.webp">
 		<meta name="og:image:type" content="image/webp">
 		<meta name="og:image:alt" content="viral32111's avatar">
 		<meta name="og:locale" content="en_gb">
@@ -89,7 +89,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<link rel="stylesheet" href="/stylesheet/content.css" type="text/css">
 
 		<!-- The icon in the tab -->
-		<link rel="icon" href="/image/avatar/circle-128.webp" type="image/webp">
+		<link rel="icon" href="/image/avatar/icon.webp" type="image/webp">
 
 		<!-- Search engine crawling and indexing -->
 		<?php if ( isset( $errorCode ) ) { ?>
@@ -117,7 +117,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<header>
 
 			<!-- Title -->
-			<h1><img src="/image/avatar/circle-448.webp" alt="viral32111's avatar" height="29"><?= $_SERVER[ "WEBSITE_TITLE" ]; ?></h1>
+			<h1><img src="/image/avatar/title.webp" alt="viral32111's avatar" width="29" height="29"><?= $_SERVER[ "WEBSITE_TITLE" ]; ?></h1>
 
 			<!-- Navigation -->
 			<nav>
