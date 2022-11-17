@@ -1,0 +1,17 @@
+# Ignore Git files
+.gitignore
+
+# Ignore GitHub files
+.github/
+
+# Ignore documentation
+README.md
+SECURITY.md
+LICENSE.txt
+
+# Ignore scripts
+dev.sh
+
+# Ignore configuration files
+apache.conf
+nginx.conf

@@ -18,12 +18,12 @@ if ( isset( $_GET[ "error" ] ) ) {
 }
 
 // Get the name of the requested page
-if ( !isset( $_GET[ "page"] ) || empty( $_GET[ "page" ] ) ) showErrorPage( 400, "No page requested." );
+if ( !isset( $_GET[ "page" ] ) || empty( $_GET[ "page" ] ) ) showErrorPage( 400, "No page requested." );
 $pageName = $_GET[ "page" ];
 
 // Check if the requested page exists
 $pageFile = $pageName . ".md";
-if ( !is_file( $_SERVER[ "DIRECTORY_PAGES" ] . "/" . $pageFile ) ) showErrorPage( 404 );
+if ( !is_file( $_SERVER[ "DIRECTORY_MARKDOWN_PAGES" ] . "/" . $pageFile ) ) showErrorPage( 404 );
 
 // Capitalise the name of the page to use as the title
 $pageTitle = ucwords( str_replace( '-', ' ', basename( $pageName ) ) );
