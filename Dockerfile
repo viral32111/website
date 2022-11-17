@@ -17,12 +17,12 @@ COPY --chown=0:0 ./config/virtualhost.conf ${APACHE_CONFIG_DIRECTORY}/hosts/webs
 COPY --chown=0:0 ./config/website.conf ${APACHE_CONFIG_DIRECTORY}/website.conf
 COPY --chown=0:0 ./config/environment.conf ${APACHE_CONFIG_DIRECTORY}/environment.conf
 
-# Install required PECL extensions
+# Install required PEAR/PECL extensions
 RUN apt-get update && \
 	apt-get install --no-install-recommends --yes \
 		build-essential autoconf \
 		libgpgme11 libgpgme-dev && \
-	pecl install redis && \
+	pecl install redis gnupg && \
 	apt-get remove --autoremove --purge --yes \
 		build-essential autoconf \
 		libgpgme-dev && \
