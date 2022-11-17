@@ -11,7 +11,3 @@ LICENSE.txt
 
 # Ignore scripts
 dev.sh
-
-# Ignore configuration files
-apache.conf
-nginx.conf
