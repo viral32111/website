@@ -82,7 +82,7 @@ This website requires the following services to operate:
 
 ## License
 
-Copyright (C) 2020-2022 [viral32111](https://viral32111.com).
+Copyright (C) 2020-2023 [viral32111](https://viral32111.com).
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
