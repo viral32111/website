@@ -97,6 +97,7 @@ $pageHTML = Cache::GetMarkdownPage( $pageFile );
 		<?php } else { ?>
 			<meta name="robots" content="noarchive,noimageindex">
 		<?php } ?>
+		<meta name="msvalidate.01" content="53069EE4EE24BB1092C68717474C38A6" />
 
 		<!-- Remove Highlight.js bullshit -->
 		<style nonce="<?= $nonces[ "HLJS_STYLE" ] ?>">
