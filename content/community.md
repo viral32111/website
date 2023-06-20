@@ -1,3 +1,16 @@
+---
+title: "Community"
+description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
+
+date: "2023-06-20T09:00:00Z"
+lastmod: "2023-06-20T12:00:00Z"
+
+navigationBar: true
+navigationBarWeight: 7
+
+draft: false
+---
+
 # Community
 
 I own a small community that I founded in early 2016 with some friends. We have been going on for around 5 years now and have always kept our relaxed & chill approach towards everything we do.

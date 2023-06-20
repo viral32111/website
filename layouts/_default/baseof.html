@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+	<head>
+		<title>{{ .Title }} - {{ .Site.Title }}</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="url" content="{{ .Permalink }}">
+		<meta name="description" content="{{ .Description }}">
+		<meta name="subject" content="{{ .Description }}">
+		<meta name="keywords" content="{{ .Site.Params.searchTags }}">
+		<meta name="language" content="{{ .Site.LanguageCode }}">
+		<meta name="author" content="{{ .Site.Params.authorName }} <{{ .Site.Params.authorEmailAddress }}>">
+		<meta name="owner" content="{{ .Site.Params.authorName }} <{{ .Site.Params.authorEmailAddress }}>">
+		<meta name="copyright" content="{{ .Site.Params.authorName }} <{{ .Site.Params.authorEmailAddress }}>">
+		<meta name="last-modified" content="{{ ( .Lastmod.UTC ).Format "2006-01-02 15:04:05" }}">
+
+		<meta name="theme-color" content="{{ .Site.Params.themeColor }}">
+		<meta name="og:type" content="website">
+		<meta name="og:url" content="{{ .Permalink }}">
+		<meta name="og:site_name" content="{{ .Site.Title }}">
+		<meta name="og:title" content="{{ .Title }}">
+		<meta name="og:description" content="{{ .Description }}">
+		<meta name="og:image" content="/images/avatar/embed.webp">
+		<meta name="og:image:type" content="image/webp">
+		<meta name="og:image:alt" content="viral32111's avatar">
+		<meta name="og:locale" content="{{ .Site.LanguageCode }}">
+
+		<meta name="robots" content="all">
+		<meta name="msvalidate.01" content="53069EE4EE24BB1092C68717474C38A6" />
+
+		<link rel="canonical" content="{{ .Permalink }}">
+
+		<link rel="icon" href="/images/avatar/icon.webp" type="image/webp">
+
+		<link rel="stylesheet" href="/styles/global.css" type="text/css">
+		<link rel="stylesheet" href="/styles/header.css" type="text/css">
+		<link rel="stylesheet" href="/styles/footer.css" type="text/css">
+		<link rel="stylesheet" href="/styles/content.css" type="text/css">
+
+		{{ block "head" . }}{{ end }}
+	</head>
+	<body>
+		<header>
+			<h1><img src="/images/avatar/title.webp" alt="viral32111's avatar" width="29" height="29">{{ .Site.Title }}</h1>
+
+			<nav>
+				{{ $currentPage := . }}
+				{{ range sort ( where .Site.Pages "Params.navigationBar" true ) "Params.navigationBarWeight" "asc" }}
+					{{ if eq 1 ( len ( split .File.Dir "/" ) ) }}
+						<a
+							{{ if not .Draft }}
+								{{ if .Permalink }}
+									{{ if eq .Permalink $currentPage.Permalink }}class="current-page"{{ end }}
+									href="{{ .Permalink }}"
+								{{ end }}
+							{{ end }}
+						>
+							{{ .LinkTitle }}
+						</a>
+					{{ end }}
+				{{ end }}
+			</nav>
+		</header>
+
+		<hr>
+
+		<main>
+			{{ block "main" . }}{{ end }}
+		</main>
+
+		<hr>
+
+		<footer>
+			<!-- Your request took 8.32ms to process from being received on Tuesday 20th July 2023 at 12:30:00.000 UTC. -->
+			<p>This content on this page was last modified on {{ ( .Lastmod.UTC ).Format "January 2 2006 at 15:04:05 MST" }}.</p> <!-- [History] -->
+			<!-- The code for this website was last modified on Tuesday 20th July 2023 at 12:30:00 UTC. [Changelog] -->
+			<!-- This page has been viewed 0 times (0 via Tor, 0 via CLI), 0 of which were unique. -->
+
+			<!-- [Disable CSS] [Dark Theme] -->
+
+			<p>Copyright &copy; 2016 - {{ now.Format "2006" }} {{ .Site.Params.authorName }}, under the <a class="no-brackets" href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">GNU Affero General Public License Version 3</a>.</p>
+
+			<p>
+				<a>Terms of Service</a>
+				<a href="/legal/privacy-policy">Privacy Policy</a>
+				<a href="/legal/cookie-policy">Cookie Policy</a>
+				<a href="/legal/third-party-notices">Third-Party Notices</a>
+			</p>
+
+			{{ block "footer" . }}{{ end }}
+		</footer>
+	</body>
+</html>
