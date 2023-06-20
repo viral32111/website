@@ -1,3 +1,16 @@
+---
+title: "Projects"
+description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
+
+date: "2023-06-20T09:00:00Z"
+lastmod: "2023-06-20T12:00:00Z"
+
+navigationBar: true
+navigationBarWeight: 3
+
+draft: false
+---
+
 # Projects
 
 The majority of these projects are hosted on [GitHub](https://github.com/viral32111?tab=repositories) under open-source licences in the hope that they will help other developers in the future.

@@ -1,3 +1,16 @@
+---
+title: "About"
+description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
+
+date: "2023-06-20T09:00:00Z"
+lastmod: "2023-06-20T12:00:00Z"
+
+navigationBar: true
+navigationBarWeight: 2
+
+draft: false
+---
+
 # About
 
 I am a programmer and developer from the United Kingdom that has valuable experience in nearly every major programming language and a constant interest in the evergrowing technology industry.

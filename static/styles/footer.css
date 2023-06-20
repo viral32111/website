@@ -23,5 +23,5 @@ footer :first-child { margin-top: 0px; }
 footer :last-child { margin-bottom: 0px; }
 
 /* Brackets around links */
-footer p a:not( .nobrackets )::before { content: "["; }
-footer p a:not( .nobrackets )::after { content: "]"; }
+footer p a:not( .no-brackets )::before { content: "["; }
+footer p a:not( .no-brackets )::after { content: "]"; }

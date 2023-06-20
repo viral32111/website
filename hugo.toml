@@ -1,0 +1,18 @@
+# Website configuration
+title = "viral32111's website"
+baseURL = "https://viral32111.com"
+languageCode = "en-gb"
+
+# Allow fetching file modification times from Git, for use below.
+enableGitInfo = true
+
+# Try use file modification times from Git, falling back to front matter, then filesystem, and finally build time.
+[frontmatter]
+lastmod = [ "lastmod", ":git", ":fileModTime", ":default" ]
+
+# Custom parameters.
+[params]
+authorName = "viral32111"
+authorEmailAddress = "contact@viral32111.com"
+searchTags = "viral32111,conspiracy servers,brother gaming,programmer,programming,developer,developing,coding,freelance,community"
+themeColor = "#AEA49A" # Majority color of my avatar

@@ -1,3 +1,16 @@
+---
+title: "Home"
+description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
+
+date: "2023-06-20T09:00:00Z"
+lastmod: "2023-06-20T12:00:00Z"
+
+navigationBar: true
+navigationBarWeight: 1
+
+draft: false
+---
+
 # Home
 
 Welcome to my personal corner of the world-wide web where I can discuss myself, showcase my projects, and highlight my achievements from over the many years I have been programming.
