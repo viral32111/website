@@ -1,0 +1,9 @@
+{{ define "main" }}
+	<p>This is dummy Hugo list page. Visitors should never see this, so please <a href="/contact">contact me</a> if you end up here.</p>
+
+	<ol>
+	{{ range .Paginator.Pages }}
+		<li><a href="{{ strings.TrimSuffix "/" .Permalink }}">{{ .Title }}</a></li>
+	{{ end }}
+	</ol>
+{{ end }}

@@ -16,3 +16,8 @@ authorName = "viral32111"
 authorEmailAddress = "contact@viral32111.com"
 searchTags = "viral32111,conspiracy servers,brother gaming,programmer,programming,developer,developing,coding,freelance,community"
 themeColor = "#AEA49A" # Majority color of my avatar
+
+# Disable taxonomies
+[taxonomies]
+tag = ""
+category = ""
