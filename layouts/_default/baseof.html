@@ -47,18 +47,12 @@
 
 			<nav>
 				{{ $currentPage := . }}
-				{{ range sort ( where .Site.Pages "Params.navigationBar" true ) "Params.navigationBarWeight" "asc" }}
-					{{ if eq 1 ( len ( split .File.Dir "/" ) ) }}
-						<a
-							{{ if not .Draft }}
-								{{ if .Permalink }}
-									{{ if eq .Permalink $currentPage.Permalink }}class="current-page"{{ end }}
-									href="{{ .Permalink }}"
-								{{ end }}
-							{{ end }}
-						>
-							{{ .LinkTitle }}
-						</a>
+
+				{{ range sort ( where .Site.Pages "Params.navigationBar" true ) "Params.navigationBarWeight" }}
+					{{ if .Params.navigationBarDisabled }}
+						<a>{{ .Title }}</a>
+					{{ else }}
+						<a href="{{ strings.TrimSuffix "/" .Permalink }}" {{ if eq .Permalink $currentPage.Permalink }}class="current"{{ end }}>{{ .Title }}</a>
 					{{ end }}
 				{{ end }}
 			</nav>

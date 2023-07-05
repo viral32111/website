@@ -7,8 +7,11 @@ lastmod: "2023-06-20T12:00:00Z"
 
 navigationBar: true
 navigationBarWeight: 5
+navigationBarDisabled: true
 
-draft: true
+draft: false
 ---
 
-Blog
+# Blog
+
+This page is under development, come back another time!

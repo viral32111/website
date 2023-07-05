@@ -85,7 +85,7 @@ main ul li { margin-left: -25px; }
 main ol li { margin-left: -18px; }
 
 /* Hyphens for list bullets */
-main ul { list-style-type: "- "; }
+main ul { list-style-type: "• "; }
 
 /* Remove spacing between paragraphs and lists */
 p + ul { margin-top: -10px; }
