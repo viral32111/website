@@ -11,15 +11,13 @@ navigationBarWeight: 7
 draft: false
 ---
 
-# Community
-
 I own a small community that I founded in early 2016 with some friends. We have been going on for around 5 years now and have always kept our relaxed & chill approach towards everything we do.
 
 The community was started up around Garry's Mod servers for DarkRP, Sandbox and Spacebuild, but those have all since closed down and nowadays the community is no longer focused around games, instead it is more of a casual place to chat with friends.
 
 Although having said that, we have recently started to host a vanilla Minecraft survival server every time a new major update releases, so if you enjoy that game then feel free to come play with us.
 
-## Platforms
+## ![Comment](/images/icons/comment.png)Platforms
 
 The primary platform for the community is [our Discord](/discord), which was created in late 2016. We have dozens of active members, around 150 current members, and nearly 500 total members.
 

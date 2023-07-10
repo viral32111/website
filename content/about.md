@@ -11,11 +11,9 @@ navigationBarWeight: 2
 draft: false
 ---
 
-# About
-
 I am a programmer and developer from the United Kingdom that has valuable experience in nearly every major programming language and a constant interest in the evergrowing technology industry.
 
-## Hobbies
+## ![Rainbow](/images/icons/rainbow.png)Hobbies
 
 I enjoy working on personal projects in my free time, which are usually desktop applications for Windows and Linux, websites, Unity games, backend server-side infrastructure, Android applications, and game modding. Though I do still have fun taking on new projects in areas I have never explored before.
 
@@ -23,7 +21,7 @@ My interests are not just in software though, I am quite knowledgeable in comput
 
 I also like experimenting with embedded electronics and microsystems, such as Arduino's, Raspberry Pi's, etc. Though I have not made anything worth sharing yet, since it is still a small hobby that I am actively trying to get better at.
 
-## Experience
+## ![Book](/images/icons/book.png)Experience
 
 My programming experience over the last decade has been in the following languages and areas:
 
@@ -61,7 +59,7 @@ I also have experience using or integrating with the following software suites a
 
 Thanks to my many years of experience with such a large variety of languages and technologies in the computing space, I find it very easy to get started and learn new topics.
 
-## Links
+## ![Attach](/images/icons/attach.png)Links
 
 These are my various online profiles. If you come across a profile with my username on it that is not listed below then it is likely not mine.
 

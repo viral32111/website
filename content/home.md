@@ -11,19 +11,17 @@ navigationBarWeight: 1
 draft: false
 ---
 
-# Home
-
 Welcome to my personal corner of the world-wide web where I can discuss myself, showcase my projects, and highlight my achievements from over the many years I have been programming.
 
 See the [about page](/about) for more information around who I am and what I do.
 
-## Source
+## ![Script](/images/icons/script.png)Source
 
 I open-sourced the code for this website in July of 2022, it is available on [GitHub](https://github.com/viral32111/website) for free.
 
 I used the repository for the development of this design, which is why it is over 2 years old despite the recent release to the public.
 
-## History
+## ![Date](/images/icons/date.png)History
 
 This website has undergone dozens of redesigns, rewrites and domain changes over the five years it has been operational.
 
@@ -33,7 +31,7 @@ The inspiration behind this design stems from wanting to create a fast, minimali
 
 The only exception to "*any device from any time*" is security. This web server requires clients to support TLS v1.2 or newer, EC certificates, and strong cipher suites. See the [security page](/security) for more details about the security of this website.
 
-### Archives
+### ![Compress](/images/icons/compress.png)Archives
 
 The only archives of my previous designs are [here](https://web.archive.org/web/20200310153357/https://viral32111.com/) (2019 to 2020) and [here](https://web.archive.org/web/20180826152843/https://viral32111.com/) (2018 to 2019). Nothing of the former `viralstudios.phy.sx` and `viral32111.phy.sx` domains (2016 to 2018) was archived.
 
