@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 	<head>
-		<title>{{ .Title }} - {{ .Site.Title }}</title>
+		{{ if eq .Title .Site.Title }}
+			<title>{{ .Title }}</title>
+		{{ else }}
+			<title>{{ .Title }} - {{ .Site.Title }}</title>
+		{{ end }}
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,10 +38,11 @@
 
 		<link rel="icon" href="/images/avatar/icon.webp" type="image/webp">
 
-		<link rel="stylesheet" href="/styles/global.css" type="text/css">
-		<link rel="stylesheet" href="/styles/header.css" type="text/css">
-		<link rel="stylesheet" href="/styles/footer.css" type="text/css">
-		<link rel="stylesheet" href="/styles/content.css" type="text/css">
+		{{ $styles := slice ( resources.Get "/stylesheets/global.css" ) ( resources.Get "/stylesheets/header.css" ) ( resources.Get "/stylesheets/footer.css" ) ( resources.Get "/stylesheets/content.css" ) }}
+		{{ range $style := $styles }}
+			{{ $stylesheet := $style | minify | fingerprint "sha384" }}
+			<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" crossorigin="anonymous" type="text/css">
+		{{ end }}
 
 		{{ block "head" . }}{{ end }}
 	</head>
@@ -47,12 +52,15 @@
 
 			<nav>
 				{{ $currentPage := . }}
-
 				{{ range sort ( where .Site.Pages "Params.navigationBar" true ) "Params.navigationBarWeight" }}
 					{{ if .Params.navigationBarDisabled }}
 						<a>{{ .Title }}</a>
 					{{ else }}
-						<a href="{{ strings.TrimSuffix "/" .Permalink }}" {{ if eq .Permalink $currentPage.Permalink }}class="current"{{ end }}>{{ .Title }}</a>
+						{{ if eq .RelPermalink $currentPage.RelPermalink }}
+							<a href="{{ strings.TrimSuffix "/" .RelPermalink }}" class="current">{{ .Title }}</a>
+						{{ else }}
+							<a href="{{ strings.TrimSuffix "/" .RelPermalink }}">{{ .Title }}</a>
+						{{ end }}
 					{{ end }}
 				{{ end }}
 			</nav>

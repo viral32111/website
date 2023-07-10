@@ -1,8 +1,8 @@
 # Generated files
-/public/
-/resources/_gen/
-/assets/jsconfig.json
+public/
+resources/_gen/
+assets/jsconfig.json
 hugo_stats.json
 
 # Lock file
-/.hugo_build.lock
+.hugo_build.lock
