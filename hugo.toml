@@ -21,3 +21,22 @@ themeColor = "#AEA49A" # Majority color of my avatar
 [taxonomies]
 tag = ""
 category = ""
+
+[minify]
+minifyOutput = true
+disableHTML = false
+disableCSS = false
+disableJS = true
+
+[minify.tdewolff.html]
+keepComments = false
+keepConditionalComments = true
+keepDefaultAttrVals = true
+keepDocumentTags = true
+keepEndTags = true
+keepQuotes = true
+keepWhitespace = true
+
+[minify.tdewolff.css]
+keepCSS2 = false # Not like we support ancient browsers anyway due to the security requirements
+precision = 0

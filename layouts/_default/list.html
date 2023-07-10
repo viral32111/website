@@ -3,7 +3,7 @@
 
 	<ol>
 	{{ range .Paginator.Pages }}
-		<li><a href="{{ strings.TrimSuffix "/" .Permalink }}">{{ .Title }}</a></li>
+		<li><a href="{{ strings.TrimSuffix "/" .RelPermalink }}">{{ .Title }}</a></li>
 	{{ end }}
 	</ol>
 {{ end }}
