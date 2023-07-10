@@ -155,3 +155,14 @@ main p.donation-note {
 main form input {
 	width: 100%;
 }*/
+
+/* Underline headings, except h1 (the title) */
+:is( h2, h3, h4, h4, h5, h6 ) {
+	text-decoration: underline;
+}
+
+/* Align icons next to headings */
+:is( h1, h2, h3, h4, h4, h5, h6 ) img {
+	vertical-align: text-bottom;
+	margin-right: 5px;
+}
