@@ -64,9 +64,9 @@
 						<a>{{ .Title }}</a>
 					{{ else }}
 						{{ if eq .RelPermalink $currentPage.RelPermalink }}
-							<a href="{{ if .Site.Params.uglyurls }}{{ strings.TrimSuffix ".html" .RelPermalink }}{{ else }}{{ .RelPermalink }}{{ end }}" class="current">{{ .Title }}</a>
+							<a href="{{ strings.TrimSuffix ".html" .RelPermalink }}" class="current">{{ .Title }}</a>
 						{{ else }}
-							<a href="{{ if .Site.Params.uglyurls }}{{ strings.TrimSuffix ".html" .RelPermalink }}{{ else }}{{ .RelPermalink }}{{ end }}">{{ .Title }}</a>
+							<a href="{{ strings.TrimSuffix ".html" .RelPermalink }}">{{ .Title }}</a>
 						{{ end }}
 					{{ end }}
 				{{ end }}
