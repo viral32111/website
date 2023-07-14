@@ -1,6 +1,6 @@
 # Website configuration
 title = "viral32111's website"
-baseURL = "https://viral32111.com"
+baseURL = "https://viral32111.com/"
 languageCode = "en-gb"
 
 # Allow fetching file modification times from Git, for use below.
