@@ -26,7 +26,8 @@
 		<meta name="og:site_name" content="{{ .Site.Title }}">
 		<meta name="og:title" content="{{ .Title }}">
 		<meta name="og:description" content="{{ .Description }}">
-		<meta name="og:image" content="{{ .Site.BaseURL }}/images/avatar/embed.webp">
+		{{ $embedImage := resources.Get "/images/avatar/embed.webp" }}
+		<meta name="og:image" content="{{ $embedImage.RelPermalink }}">
 		<meta name="og:image:type" content="image/webp">
 		<meta name="og:image:alt" content="viral32111's avatar">
 		<meta name="og:locale" content="{{ .Site.LanguageCode }}">
@@ -36,7 +37,8 @@
 
 		<link rel="canonical" href="{{ .Permalink }}">
 
-		<link rel="icon" href="{{ .Site.BaseURL }}/images/avatar/icon.webp" type="image/webp">
+		{{ $iconImage := resources.Get "/images/avatar/icon.webp" }}
+		<link rel="icon" href="{{ $iconImage.RelPermalink }}" type="image/webp">
 
 		{{ $styles := slice ( resources.Get "/stylesheets/global.css" ) ( resources.Get "/stylesheets/header.css" ) ( resources.Get "/stylesheets/footer.css" ) ( resources.Get "/stylesheets/content.css" ) }}
 		{{ range $style := $styles }}
@@ -48,7 +50,8 @@
 	</head>
 	<body>
 		<header>
-			<h1><img src="{{ .Site.BaseURL }}/images/avatar/title.webp" alt="viral32111's avatar" width="29" height="29">{{ .Site.Title }}</h1>
+			{{ $avatarImage := resources.Get "/images/avatar/title.webp" }}
+			<h1><img src="{{ $avatarImage.RelPermalink }}" alt="viral32111's avatar" width="29" height="29" />{{ .Site.Title }}</h1>
 
 			<nav>
 				{{ $currentPage := . }}
@@ -91,7 +94,7 @@
 				<a>Terms of Service</a>
 				<a href="{{ .Site.BaseURL }}/legal/privacy-policy">Privacy Policy</a>
 				<a href="{{ .Site.BaseURL }}/legal/cookie-policy">Cookie Policy</a>
-				<a href="{{ .Site.BaseURL }}/legal/third-party-notices">Third-Party Notices</a>
+				<a href="${{ .Site.BaseURL }}/legal/third-party-notices">Third-Party Notices</a>
 			</p>
 
 			{{ block "footer" . }}{{ end }}
