@@ -25,4 +25,7 @@ a { text-decoration: none; }
 a[ href ]:hover { text-decoration: underline; }
 
 /* Disable links with no destination */
-a:not( [ href ] ) { color: #545454; }
+a:not( [ href ] ), a[ href = "" ], a[ href = "#" ] {
+	color: #545454;
+	pointer-events: none;
+}

@@ -54,7 +54,7 @@
 				{{ $currentPage := . }}
 				{{ range sort ( where .Site.Pages "Params.navigationBar" true ) "Params.navigationBarWeight" }}
 					{{ if .Params.navigationBarDisabled }}
-						<a>{{ .Title }}</a>
+						<a href="#">{{ .Title }}</a>
 					{{ else }}
 						{{ if eq .RelPermalink $currentPage.RelPermalink }}
 							<a href="{{ strings.TrimSuffix "/" .RelPermalink }}" class="current">{{ .Title }}</a>
