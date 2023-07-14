@@ -42,6 +42,7 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+          HUGO_UGLYURLS: true
         run: hugo
 
       - name: Validate HTML compliance
@@ -163,7 +164,8 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: hugo --baseURL ${{ steps.setup-pages.outputs.base_url }}
+          HUGO_UGLYURLS: false
+        run: hugo --baseURL ${{ steps.setup-pages.outputs.base_url }} --buildDrafts --buildExpired --buildFuture
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v1
