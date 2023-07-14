@@ -176,10 +176,10 @@ jobs:
           strategy: desktop
           key: ${{ secrets.PAGE_SPEED_INSIGHTS_API_KEY }}
 
-      - name: Analyse with Mozilla Observatory
-        run: |
-          npm install --global observatory-cli
-          observatory --zero --rescan --format report ${{ steps.deploy-to-pages.outputs.page_url }}
+      #- name: Analyse with Mozilla Observatory
+      #  run: |
+      #    npm install --global observatory-cli
+      #    observatory --zero --rescan --format report ${{ steps.deploy-to-pages.outputs.page_url }}
 
   release:
     name: Release
