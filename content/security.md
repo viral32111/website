@@ -15,9 +15,9 @@ The [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Lay
 
 There are a few versions of this protocol, of which this server will accept version 1.2 and 1.3, the latter is preferred. This server will deny versions 1.0 and 1.1 due to their vulnerabilities and wide-spread deprecation. Similarly, this server will deny all versions of the SSL protocol, including 1.0, 2.0 and 3.0.
 
-### HTTPS
+### HTTPs
 
-A common misconception is that website traffic is secured with the HTTPS "protocol", this is however not true (to an extent). HTTPS is just an extension to the existing [HTTP protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) that only changes the [scheme in URLs](https://en.wikipedia.org/wiki/URL#Syntax) and [Transmission Control Protocol (TCP)](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) port number. The underlying encryption is performed with TLS or SSL.
+A common misconception is that website traffic is secured with the HTTPs "protocol", this is however not true (to an extent). HTTPs is just an extension to the existing [HTTP protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) that only changes the [scheme in URLs](https://en.wikipedia.org/wiki/URL#Syntax) and [Transmission Control Protocol (TCP)](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) port number. The underlying encryption is performed with TLS or SSL.
 
 ## Ciphers
 
@@ -48,7 +48,7 @@ While HTTP headers do not improve the strength of the underlying cryptography, t
 * [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) prevents informing other websites that you came from this website.
 * [`Strict-Transport-Security`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) enforces encrypted requests to this website for future visits.
 
-In addition to the last header, this website is in the [HSTS Preload List](https://hstspreload.org/?domain=viral32111.com) to ensure all modern web browsers know to only ever visit this website over HTTPS.
+In addition to the last header, this website is in the [HSTS Preload List](https://hstspreload.org/?domain=viral32111.com) to ensure all modern web browsers know to only ever visit this website over HTTPs.
 
 ## Cookies
 
