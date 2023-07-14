@@ -3,6 +3,9 @@ title = "viral32111's website"
 baseURL = "https://viral32111.com"
 languageCode = "en-gb"
 
+# Do not place pages in their own directories.
+uglyURLs = true
+
 # Allow fetching file modification times from Git, for use below.
 enableGitInfo = true
 
