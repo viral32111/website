@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 	<head>
-		{{ if eq .Title .Site.Title }}
-			<title>{{ .Title }}</title>
+		{{ if .Title }}
+			{{ if eq .Title .Site.Title }}
+				<title>{{ .Title }}</title>
+			{{ else }}
+				<title>{{ .Title }} - {{ .Site.Title }}</title>
+			{{ end }}
 		{{ else }}
-			<title>{{ .Title }} - {{ .Site.Title }}</title>
+			<title>{{ .Site.Title }}</title>
 		{{ end }}
 
 		<meta charset="utf-8">
