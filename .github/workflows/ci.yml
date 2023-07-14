@@ -80,6 +80,18 @@ jobs:
         with:
           platforms: linux/amd64
 
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: public
+
+      - name: Setup Docker context directory
+        run: |
+          mkdir --verbose --parents context
+          cp --verbose --archive public context/
+          cp --verbose --archive nginx.conf context/
+
       - name: Create Docker image metadata
         id: metadata
         uses: docker/metadata-action@v4
@@ -95,12 +107,6 @@ jobs:
             org.opencontainers.image.title=Website
             org.opencontainers.image.description=My personal website.
             com.docker.extension.publisher-url=${{ env.WEBSITE_URL }}
-
-      - name: Setup Docker context directory
-        run: |
-          mkdir --verbose --parents context
-          cp --verbose --archive public context/
-          cp --verbose --archive nginx.conf context/
 
       - name: Build & push Docker image
         uses: docker/build-push-action@v4
