@@ -176,13 +176,13 @@ jobs:
         id: deploy-to-pages
         uses: actions/deploy-pages@v2
 
-      #- name: Analyse with PageSpeed Insights
-      #  uses: jakepartusch/psi-action@v1.3
-      #  with:
-      #    url: ${{ steps.deploy-to-pages.outputs.page_url }}
-      #    threshold: 70
-      #    strategy: desktop
-      #    key: ${{ secrets.PAGE_SPEED_INSIGHTS_API_KEY }}
+      - name: Analyse with PageSpeed Insights
+        uses: jakepartusch/psi-action@v1.3
+        with:
+          url: ${{ steps.deploy-to-pages.outputs.page_url }}
+          threshold: 70
+          strategy: desktop
+          key: ${{ secrets.PAGE_SPEED_INSIGHTS_API_KEY }}
 
       #- name: Analyse with Mozilla Observatory
       #  run: |
