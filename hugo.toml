@@ -4,7 +4,7 @@ baseURL = "https://viral32111.com"
 languageCode = "en-gb"
 
 # Do not place pages in their own directories.
-uglyURLs = true
+uglyURLs = "${HUGO_UGLYURLS:-false}"
 
 # Allow fetching file modification times from Git, for use below.
 enableGitInfo = true
