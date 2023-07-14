@@ -3,7 +3,7 @@ title: "Home"
 description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
 
 date: "2023-06-20T09:00:00Z"
-lastmod: "2023-06-20T12:00:00Z"
+lastmod: "2023-07-14T21:47:26Z"
 
 navigationBar: true
 navigationBarWeight: 1
@@ -17,7 +17,7 @@ See the [about page](/about) for more information around who I am and what I do.
 
 ## ![Script](/images/icons/script.png)Source
 
-I open-sourced the code for this website in July of 2022, it is available on [GitHub](https://github.com/viral32111/website) for free.
+I open-sourced the code for this website in July of 2022, it is available on [GitHub](https://github.com/viral32111/website/tree/hugo) for free.
 
 I used the repository for the development of this design, which is why it is over 2 years old despite the recent release to the public.
 
