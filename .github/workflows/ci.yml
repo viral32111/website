@@ -8,6 +8,7 @@ on:
       - 'layouts/**'
       - 'static/**'
       - 'hugo.toml'
+      - 'Dockerfile'
       - '.github/workflows/ci.yml'
     branches:
       - '**'
@@ -17,6 +18,9 @@ on:
 
 env:
   ARTIFACT_NAME: website
+  DOCKER_REGISTRY_DOMAIN: ghcr.io
+  DOCKER_IMAGE_NAME: website
+  WEBSITE_URL: https://viral32111.com
   HUGO_VERSION: 0.115.2
 
 jobs:
@@ -51,6 +55,76 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: public
+
+  docker:
+    name: Docker
+    runs-on: ubuntu-22.04
+    needs: build
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Login to GitHub Container Registry
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.DOCKER_REGISTRY_DOMAIN }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Docker
+        uses: docker/setup-buildx-action@v2
+        with:
+          platforms: linux/amd64
+
+      - name: Create Docker image metadata
+        id: metadata
+        uses: docker/metadata-action@v4
+        with:
+          flavor: latest=true
+          images: ${{ env.DOCKER_REGISTRY_DOMAIN }}/${{ github.repository_owner }}/${{ env.DOCKER_IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{major}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}.{{minor}}.{{patch}}
+          labels: |
+            org.opencontainers.image.title=Website
+            org.opencontainers.image.description=My personal website.
+            com.docker.extension.publisher-url=${{ env.WEBSITE_URL }}
+
+      - name: Setup Docker context directory
+        run: |
+          mkdir --verbose --parents context
+          cp --verbose --archive public context/
+          cp --verbose --archive nginx.conf context/
+
+      - name: Build & push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          push: ${{ github.event_name != 'pull_request' }}
+          file: Dockerfile
+          context: context
+          tags: ${{ steps.metadata.outputs.tags }}
+          labels: ${{ steps.metadata.outputs.labels }}
+          platforms: linux/amd64
+          provenance: false
+          no-cache: true
+          pull: true
+
+      - name: Cleanup old Docker images
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: snok/container-retention-policy@v2
+        with:
+          image-names: ${{ env.DOCKER_IMAGE_NAME }}
+          cut-off: 0 seconds ago UTC
+          keep-at-least: 0
+          untagged-only: true
+          account-type: personal
+          token: ${{ secrets.PACKAGES_PERSONAL_ACCESS_TOKEN }}
 
   deploy:
     name: Deploy
