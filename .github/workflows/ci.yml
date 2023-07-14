@@ -17,6 +17,7 @@ on:
 
 env:
   ARTIFACT_NAME: website
+  HUGO_VERSION: 0.115.2
 
 jobs:
   build:
@@ -31,7 +32,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.115.2
+          hugo-version: ${{ env.HUGO_VERSION }}
 
       - name: Build
         env:
@@ -39,7 +40,13 @@ jobs:
           HUGO_ENV: production
         run: hugo
 
-      - name: Upload artifact
+      - name: Validate HTML compliance
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: public
+          css: true
+
+      - name: Upload build artifact
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.ARTIFACT_NAME }}
@@ -55,7 +62,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy-to-pages.outputs.page_url }}
     concurrency:
       group: github-pages
       cancel-in-progress: false
@@ -63,23 +70,42 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v3
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: public
+          hugo-version: ${{ env.HUGO_VERSION }}
 
       - name: Setup GitHub Pages
+        id: setup-pages
         uses: actions/configure-pages@v3
 
-      - name: Upload pages artifact
+      - name: Build for GitHub Pages
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: hugo --baseURL ${{ steps.setup-pages.outputs.base_url }}
+
+      - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
           path: public
 
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deploy-to-pages
         uses: actions/deploy-pages@v2
+
+      - name: Analyse with PageSpeed Insights
+        uses: jakepartusch/psi-action@v1.3
+        with:
+          url: ${{ steps.deploy-to-pages.outputs.page_url }}
+          threshold: 70
+          strategy: desktop
+          key: ${{ secrets.PAGE_SPEED_INSIGHTS_API_KEY }}
+
+      - name: Analyse with Mozilla Observatory
+        run: |
+          npm install --global observatory-cli
+          observatory --zero --rescan --format report ${{ steps.deploy-to-pages.outputs.page_url }}
 
   release:
     name: Release
@@ -89,9 +115,19 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: public
+
+      - name: Bundle build artifact
+        run: zip -r ${{ env.ARTIFACT_NAME }}.zip public
+
       - name: Create draft release
         uses: softprops/action-gh-release@v1
         with:
           draft: true
           tag_name: ${{ github.ref_name }}
+          files: ${{ env.ARTIFACT_NAME }}.zip
           token: ${{ secrets.GITHUB_TOKEN }}
