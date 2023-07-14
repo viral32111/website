@@ -7,4 +7,4 @@ FROM nginx:stable
 COPY --chown=0:0 public /usr/share/nginx/html
 
 # Copy the NGINX configuration file
-COPY --chown=0:0 --chmod=644 nginx.conf /etc/nginx/nginx.conf
+COPY --chown=0:0 --chmod=644 nginx.conf /etc/nginx/custom.conf
