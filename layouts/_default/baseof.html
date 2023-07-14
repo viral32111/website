@@ -34,7 +34,7 @@
 		<meta name="robots" content="all">
 		<meta name="msvalidate.01" content="53069EE4EE24BB1092C68717474C38A6" />
 
-		<link rel="canonical" content="{{ .Permalink }}">
+		<link rel="canonical" href="{{ .Permalink }}">
 
 		<link rel="icon" href="/images/avatar/icon.webp" type="image/webp">
 
@@ -54,7 +54,7 @@
 				{{ $currentPage := . }}
 				{{ range sort ( where .Site.Pages "Params.navigationBar" true ) "Params.navigationBarWeight" }}
 					{{ if .Params.navigationBarDisabled }}
-						<a href="#">{{ .Title }}</a>
+						<a>{{ .Title }}</a>
 					{{ else }}
 						{{ if eq .RelPermalink $currentPage.RelPermalink }}
 							<a href="{{ strings.TrimSuffix "/" .RelPermalink }}" class="current">{{ .Title }}</a>
