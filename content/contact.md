@@ -11,7 +11,9 @@ navigationBarWeight: 8
 draft: false
 ---
 
-To get in touch with me about my projects, work, to ask questions, or anything else then contact me [via my email](mailto:contact@viral32111.com). Please refrain from adding me as a friend on social media or chat platforms.
+~~To get in touch with me about my projects, work, to ask questions, or anything else then contact me [via my email](mailto:contact@viral32111.com). Please refrain from adding me as a friend on social media or chat platforms.~~
+
+**As of June 2023, my email server is currently down due to server upgrades. I am working as fast as I can to get it running again! In the mean time, please get in touch with me via alternative methods.**
 
 If you wish to discuss something community related, then joining [our Discord server](/discord) would be best.
 
