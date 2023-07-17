@@ -1,9 +1,9 @@
 ---
 title: "About"
-description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
+description: "Information about who I am, what I enjoy, and my technical experience."
 
 date: "2023-06-20T09:00:00Z"
-lastmod: "2023-06-20T12:00:00Z"
+lastmod: "2023-07-17T20:21:23Z"
 
 navigationBar: true
 navigationBarWeight: 2
@@ -11,57 +11,58 @@ navigationBarWeight: 2
 draft: false
 ---
 
-I am a programmer and developer from the United Kingdom that has valuable experience in nearly every major programming language and a constant interest in the evergrowing technology industry.
+I am a developer from the United Kingdom with a constant interest in the evergrowing technology industry and valuable experience with nearly every aspect of computing, ranging from high-level programming to low-level hardware.
+
+My main passion resides around server-side infrastructure and network administration, I have been deploying, administrating and maintaining my own servers for nearly half a decade. This includes virtual in the cloud, unmanaged dedicated in datacenters, and on-site/at home.
 
 ## ![Rainbow](/images/icons/rainbow.png)Hobbies
 
-I enjoy working on personal projects in my free time, which are usually desktop applications for Windows and Linux, websites, Unity games, backend server-side infrastructure, Android applications, and game modding. Though I do still have fun taking on new projects in areas I have never explored before.
+I enjoy working on personal projects in my free time, usually desktop applications for Windows and Linux, websites, server-side infrastructure, Android applications, and game modding. Though, I still have fun taking on new projects in areas I have never explored before.
 
-My interests are not just in software though, I am quite knowledgeable in computer hardware too. I have repaired many laptops and desktops, and built my own desktop and home server. I can give great suggestions and advice for hardware choices, and explain the rationales behind why it is ideal for the given use case.
+My interests do not remain in the software space though, as I enjoy computer hardware too. I have repaired many laptops and desktops along with having built numerous desktops and servers. I feel confident that I can give great suggestions and up-to-date advice for hardware choices, while rationalising my choices as to why it is ideal for the given scenario.
 
-I also like experimenting with embedded electronics and microsystems, such as Arduino's, Raspberry Pi's, etc. Though I have not made anything worth sharing yet, since it is still a small hobby that I am actively trying to get better at.
+I also like experimenting with embedded electronics and microsystems, such as Arduino's, Raspberry Pi's, etc. Though I have not made anything worth sharing yet, as it is still just a hobby which I am actively trying to get better at.
 
-## ![Book](/images/icons/book.png)Experience
+## ![Book](/images/icother
 
 My programming experience over the last decade has been in the following languages and areas:
 
-* C# for .NET Core & .NET Framework applications, and Unity games.
-* PHP for server-side website development.
+* C# for server-side .NET Core & desktop .NET Framework applications, and Unity games.
+* PHP for server-side website & RESTful API development.
 * Python for chat platform bots.
 * Go for utilities & tools.
-* JavaScript for websites & serverless cloud functions.
-* TypeScript (Node.js) for chat platform bots.
-* Java for Minecraft mods & Android applications.
-* Kotlin for Android applications.
+* TypeScript (Node.js & Deno) for chat platform bots, full-stack websites, and serverless cloud functions.
+* Java & Kotlin for Minecraft mods & Android applications.
 * C++ for Garry's Mod modules & 2D graphical games.
+* Lua for Garry's Mod addons & general game modding.
 * C for low-level UEFI applications & utilities.
-* HTML/CSS for website design.
+* HTML/CSS/JavaScript for client-side website design.
 * Bash & PowerShell for automation scripts.
 
 I also have experience using or integrating with the following software suites and technologies:
 
-* Linux, on both servers and desktops.
-* MySQL, MariaDB, SQLite & Redis databases.
-* Unity for game development & simulations.
-* Grafana & Prometheus for system monitoring & analysis.
+* MySQL/MariaDB, Redis, Neo4j, Prometheus & SQLite databases.
 * Windows Server 2016, 2019 & 2022 for AD DS, AD CS, DNS, DHCP, IIS, etc.
-* WSL, Hyper-V, VirtualBox & QEMU virtualisation.
-* Visual Studio, Visual Studio Code, IntelliJ IDEA & Android Studio IDEs.
-* Git for version control.
+* Amazon Web Services, Google Cloud Platform/Firebase, Cloudflare Workers, Azure, Oracle Clouds.
+* Docker container building/deployment & artifact/image registries.
+* Apache HTTP Server & NGINX web servers.
+* WSL, Hyper-V, VirtualBox & Proxmox (KVM) virtualisation.
+* Grafana, Loki & Promtail for system monitoring/analysis.
+* Git, GitHub, GitLab & Gitea for version control.
 * Remote dedicated & virtual private server hosting.
-* Amazon Web Services, Firebase, Cloudflare Workers.
-* PayPal & Stripe for payment processing.
-* Apache HTTP Server & NGINX.
-* Docker containers & image registries.
+* Authoritive DNS (ISC BIND) & DHCP (Kea, DNSMASQ) servers.
+* OpenVPN & WireGuard site-to-site VPNs.
+* PayPal & Stripe payment processing.
+* Linux-based servers & desktop environments.
+* Unity for game development & simulations.
+* Visual Studio, Visual Studio Code, IntelliJ IDEA & Android Studio IDEs.
 * SMB & NFS file shares.
-* OpenVPN & WireGuard.
-* ISC BIND 9 & DHCP Server.
 
-Thanks to my many years of experience with such a large variety of languages and technologies in the computing space, I find it very easy to get started and learn new topics.
+Thanks to my many years of experience with such a large variety of languages and technologies in computing, I find it easy learn and get started in new topics.
 
 ## ![Attach](/images/icons/attach.png)Links
 
-These are my various online profiles. If you come across a profile with my username on it that is not listed below then it is likely not mine.
+Below are my various online profiles. If you come across a profile with my username on it that is not listed below then it is unlikely to be mine.
 
 * [GitHub](/github)
 * [Steam](/steam)
@@ -70,6 +71,6 @@ These are my various online profiles. If you come across a profile with my usern
 * [Reddit](/reddit)
 * [Twitter](/twitter)
 * [DeviantArt](/deviantart)
-* [Minecraft](/namemc)
+* [Minecraft (NameMC)](/namemc)
 * [MyAnimeList](/myanimelist)
 * [GmodStore](/gmodstore)
