@@ -9,6 +9,7 @@ on:
       - 'static/**'
       - 'hugo.toml'
       - 'Dockerfile'
+      - 'nginx.conf'
       - '.github/workflows/ci.yml'
     branches:
       - '**'
