@@ -23,7 +23,7 @@ My interests do not remain in the software space though, as I enjoy computer har
 
 I also like experimenting with embedded electronics and microsystems, such as Arduino's, Raspberry Pi's, etc. Though I have not made anything worth sharing yet, as it is still just a hobby which I am actively trying to get better at.
 
-## ![Book](/images/icother
+## ![Book](/images/icons/book.png)Experience
 
 My programming experience over the last decade has been in the following languages and areas:
 
