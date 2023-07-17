@@ -21,7 +21,7 @@ I open-sourced the code for this website in July of 2022, it is available on [Gi
 
 I used the repository for the development of this design, which is why it is over 2 years old despite the recent release to the public.
 
-In July of 2023, I rewrote the code for this website so it could be statically generated using [Hugo](https://gohugo.io) instead of server-side rendered using [PHP](https://www.php.net/). This has resulted in the loss of some functionality for now, such as the dynamic data on the [security][/security] and [cookie policy](/legal/cookie-policy) pages. Check out the [issue tracker](https://github.com/viral32111/website/issues) and [Kanban board](https://github.com/users/viral32111/projects/13) for progress updates.
+In July of 2023, I rewrote the code for this website so it could be statically generated using [Hugo](https://gohugo.io) instead of server-side rendered using [PHP](https://www.php.net/). This has resulted in the loss of some functionality for now, such as the dynamic data on the [security](/security) and [cookie policy](/legal/cookie-policy) pages. Check out the [issue tracker](https://github.com/viral32111/website/issues) and [Kanban board](https://github.com/users/viral32111/projects/13) for progress updates.
 
 ## ![Date](/images/icons/date.png)History
 
