@@ -70,6 +70,8 @@ Below are my various online profiles. If you come across a profile with my usern
 * [Twitch](/twitch)
 * [Reddit](/reddit)
 * [Twitter](/twitter)
+* [Instagram](/instagram)
+* [Threads](/threads)
 * [DeviantArt](/deviantart)
 * [Minecraft (NameMC)](/namemc)
 * [MyAnimeList](/myanimelist)
