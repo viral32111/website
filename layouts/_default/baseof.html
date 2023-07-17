@@ -14,7 +14,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<meta name="url" content="{{ .Permalink }}">
+		<meta name="url" content="{{ strings.TrimSuffix ".html" .Permalink }}">
 		<meta name="description" content="{{ .Description }}">
 		<meta name="subject" content="{{ .Description }}">
 		<meta name="keywords" content="{{ .Site.Params.searchTags }}">
@@ -26,7 +26,7 @@
 
 		<meta name="theme-color" content="{{ .Site.Params.themeColor }}">
 		<meta name="og:type" content="website">
-		<meta name="og:url" content="{{ .Permalink }}">
+		<meta name="og:url" content="{{ strings.TrimSuffix ".html" .Permalink }}">
 		<meta name="og:site_name" content="{{ .Site.Title }}">
 		<meta name="og:title" content="{{ .Title }}">
 		<meta name="og:description" content="{{ .Description }}">
@@ -39,7 +39,7 @@
 		<meta name="robots" content="all">
 		<meta name="msvalidate.01" content="53069EE4EE24BB1092C68717474C38A6" />
 
-		<link rel="canonical" href="{{ .Permalink }}">
+		<link rel="canonical" href="{{ strings.TrimSuffix ".html" .Permalink }}">
 
 		{{ $iconImage := resources.Get "/images/avatar/icon.webp" }}
 		<link rel="icon" href="{{ $iconImage.RelPermalink }}" type="image/webp">
