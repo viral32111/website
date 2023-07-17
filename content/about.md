@@ -53,7 +53,7 @@ I also have experience using or integrating with the following software suites a
 * Authoritive DNS (ISC BIND) & DHCP (Kea, DNSMASQ) servers.
 * OpenVPN & WireGuard site-to-site VPNs.
 * PayPal & Stripe payment processing.
-* Linux-based servers & desktop environments.
+* Linux-based servers (Debian, Ubuntu, Alpine) & desktop environments (Ubuntu, Mint, Manjaro, Arch).
 * Unity for game development & simulations.
 * Visual Studio, Visual Studio Code, IntelliJ IDEA & Android Studio IDEs.
 * SMB & NFS file shares.
