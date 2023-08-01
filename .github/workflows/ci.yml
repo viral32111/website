@@ -198,7 +198,7 @@ jobs:
     name: Release
     runs-on: ubuntu-22.04
     needs: build
-    if: ${{ github.ref_type == 'tag' }}
+    if: ${{ github.event_name == 'push' && github.ref_type == 'tag' }}
     permissions:
       contents: write
     steps:
