@@ -77,10 +77,13 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v2
+
       - name: Setup Docker
         uses: docker/setup-buildx-action@v2
         with:
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
 
       - name: Download build artifact
         uses: actions/download-artifact@v3
@@ -118,7 +121,7 @@ jobs:
           context: context
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           provenance: false
           no-cache: true
           pull: true
