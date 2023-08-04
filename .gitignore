@@ -6,3 +6,6 @@ hugo_stats.json
 
 # Lock file
 .hugo_build.lock
+
+# Downloads directory
+static/downloads/
