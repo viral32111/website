@@ -26,3 +26,6 @@ COPY --chown=0:0 --chmod=644 nginx.conf /etc/nginx/custom.conf
 
 # Downloads directory
 VOLUME [ "/usr/share/nginx/html/download" ]
+
+# Periodically check health
+HEALTHCHECK --interval=5m --timeout=10s --start-period=5s --retries=3 CMD [ "healthcheck", "--expect", "200", "http://127.0.0.1:80" ]
