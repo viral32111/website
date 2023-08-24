@@ -3,7 +3,7 @@ title: "About"
 description: "Information about who I am, what I enjoy, and my technical experience."
 
 date: "2023-06-20T09:00:00Z"
-lastmod: "2023-07-17T20:21:23Z"
+lastmod: "2023-08-24T09:32:54Z"
 
 navigationBar: true
 navigationBarWeight: 2
@@ -70,7 +70,7 @@ Below are my various online profiles. If you come across a profile with my usern
 * [YouTube](/youtube)
 * [Twitch](/twitch)
 * [Reddit](/reddit)
-* [Twitter](/twitter)
+* [Twitter (X)](/twitter)
 * [Instagram](/instagram)
 * [Threads](/threads)
 * [Mastodon](/mastodon)
