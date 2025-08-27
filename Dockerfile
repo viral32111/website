@@ -1,22 +1,15 @@
 # syntax=docker/dockerfile:1
 
+# mkdir --verbose --parents context
+# cp --verbose --archive public context/
+# cp --verbose --archive nginx.conf context/
+# docker buildx build --platform linux/amd64 --no-cache --pull --file Dockerfile --tag ghcr.io/viral32111/website:latest context
+
 # Start from NGINX (Debian-based)
 FROM nginx:stable
 
-# Download my healthcheck utility
-ARG HEALTHCHECK_VERSION=2.0.1 TARGETPLATFORM
-RUN apt-get update && \
-	apt-get install --no-install-recommends --yes wget && \
-	case "${TARGETPLATFORM}" in \
-		"linux/amd64") ARCHITECTURE="amd64" ;; \
-		"linux/arm64") ARCHITECTURE="arm64" ;; \
-		*) echo "Unrecognised target platform: '${TARGETPLATFORM}'!" && exit 1 ;; \
-	esac && \
-	wget --no-hsts --progress dot:mega --output-document /usr/local/bin/healthcheck https://github.com/viral32111/healthcheck/releases/download/${HEALTHCHECK_VERSION}/healthcheck-linux-${ARCHITECTURE}-glibc && \
-	chmod 755 /usr/local/bin/healthcheck && \
-	apt-get purge --auto-remove --yes wget && \
-	apt-get clean --yes && \
-	rm --verbose --recursive /var/lib/apt/lists/*
+ARG HEALTHCHECK_VERSION=2.0.1 TARGETARCH
+ADD --chown=0:0 --chmod=755 https://github.com/viral32111/healthcheck/releases/download/${HEALTHCHECK_VERSION}/healthcheck-linux-${TARGETARCH}-glibc /usr/local/bin/healthcheck
 
 # Copy the static site files
 COPY --chown=0:0 public /usr/share/nginx/html
