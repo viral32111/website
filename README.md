@@ -41,6 +41,8 @@ Previous websites that I operated are not available in this repository. This inc
 * `conspiracyservers.co.uk`
 * `conspiracyservers.com`
 
+The legacy PHP "static site generator" that previously powered this website can be found [further back in this repository](https://github.com/viral32111/website/tree/23918238952a50f092d573686ac3bb003e555bbd).
+
 ## ⚖️ License
 
 Copyright (C) 2020 [viral32111](https://viral32111.com).
