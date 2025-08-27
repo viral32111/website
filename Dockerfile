@@ -1,10 +1,5 @@
 # syntax=docker/dockerfile:1
 
-# mkdir --verbose --parents context
-# cp --verbose --archive public context/
-# cp --verbose --archive nginx.conf context/
-# docker buildx build --platform linux/amd64 --no-cache --pull --file Dockerfile --tag ghcr.io/viral32111/website:latest context
-
 # Start from NGINX (Debian-based)
 FROM nginx:stable
 
