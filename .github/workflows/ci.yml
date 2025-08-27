@@ -145,7 +145,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deploy-to-pages.outputs.page_url }}
+      url: ${{ steps.deploy-to-pages.outputs.page_url }}home
     concurrency:
       group: github-pages
       cancel-in-progress: false
@@ -181,7 +181,7 @@ jobs:
       - name: Analyse with PageSpeed Insights
         uses: jakepartusch/psi-action@v1.3
         with:
-          url: ${{ steps.deploy-to-pages.outputs.page_url }}
+          url: ${{ steps.deploy-to-pages.outputs.page_url }}home
           threshold: 70
           strategy: desktop
           key: ${{ secrets.PAGE_SPEED_INSIGHTS_API_KEY }}
