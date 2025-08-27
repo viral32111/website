@@ -9,8 +9,6 @@
 
 This is the [source code](/layouts/_default/), [pages](/content/), and [web-server configuration](/nginx.conf) behind [my personal website](https://viral32111.com).
 
-**My website does not always match the state of this repository, sometimes updates are delayed.**
-
 ## 📡 Technologies
 
 This website does not use any modern JavaScript-based web frameworks. It is a pure statically generated site from Markdown pages using [Hugo](https://gohugo.io/).
@@ -45,7 +43,7 @@ Previous websites that I operated are not available in this repository. This inc
 
 ## ⚖️ License
 
-Copyright (C) 2020-2023 [viral32111](https://viral32111.com).
+Copyright (C) 2020 [viral32111](https://viral32111.com).
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
