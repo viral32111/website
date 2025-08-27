@@ -9,7 +9,7 @@ declare -r DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH="$PWD/context"
 declare -r DOCKER_IMAGE_NAME="ghcr.io/viral32111/website"
 
 # 1. Build the static website
-if ! hugo || [[ ! -d "${HUGO_BUILD_DIRECTORY_PATH}" ]]; then
+if ! hugo --baseURL 'http://localhost:80' --buildDrafts --buildExpired --buildFuture --destination "${HUGO_BUILD_DIRECTORY_PATH}" || [[ ! -d "${HUGO_BUILD_DIRECTORY_PATH}" ]]; then
 	echo "Hugo did not create build directory '${HUGO_BUILD_DIRECTORY_PATH}'!" 1>&2
 	exit 1
 fi
