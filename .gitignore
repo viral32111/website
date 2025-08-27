@@ -9,3 +9,6 @@ hugo_stats.json
 
 # Downloads directory
 static/downloads/
+
+# Docker builds
+context/
