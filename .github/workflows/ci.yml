@@ -132,7 +132,7 @@ jobs:
             package-type: container
             package-name: website
             delete-only-untagged-versions: true
-            min-versions-to-keep: 1
+            min-versions-to-keep: 5
             ignore-versions: latest
 
   deploy:
