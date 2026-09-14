@@ -1,39 +1,33 @@
-The following public key is valid from 06/09/2021 until 05/09/2026.
-It is used for signing/encrypting my email and GitHub commits.
-
-The key's identifier is F0204F59A25EA72F.
-The key's fingerprint is 2440B42609FA45164D776C4FF0204F59A25EA72F.
+pub   ed25519/F0204F59A25EA72F 2021-09-06 [SC] [expires: 2031-09-11]
+Key fingerprint = 2440 B426 09FA 4516 4D77  6C4F F020 4F59 A25E A72F
+uid                 [ultimate] viral32111 (Mail) <contact@viral32111.com>
+uid                 [ultimate] viral32111 (GitHub) <19510403+viral32111@users.noreply.github.com>
+sub   cv25519/AE52D5AC9DBE3F04 2021-09-06 [E] [expires: 2031-09-11]
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEYTVlQRYJKwYBBAHaRw8BAQdA4FAFKpOdcgCxypqt9dJDgX1L/EJaPUq84lCZ
-6dRfZiy0QnZpcmFsMzIxMTEgKEdpdEh1YikgPDE5NTEwNDAzK3ZpcmFsMzIxMTFA
-dXNlcnMubm9yZXBseS5naXRodWIuY29tPoiWBBMWCAA+FiEEJEC0Jgn6RRZNd2xP
-8CBPWaJepy8FAmE1ZWwCGwMFCQlmAYAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AA
-CgkQ8CBPWaJepy+CRAD/czGwnwhMNedwYQmOQeHWt8DQPgMtWAOkdz3SHJPrUm4B
-ALiz9vW0Ggiq+37+52d9ueomFes3GIQs/LB2tOt/pIUPtCp2aXJhbDMyMTExIChN
-YWlsKSA8Y29udGFjdEB2aXJhbDMyMTExLmNvbT6ImQQTFggAQQIbAwUJCWYBgAUL
-CQgHAgYVCgkICwIEFgIDAQIeAQIXgBYhBCRAtCYJ+kUWTXdsT/AgT1miXqcvBQJh
-NWWJAhkBAAoJEPAgT1miXqcvMdsBAIndAIAMLepqVJfwekKwQiNOC2YZzXim/ifD
-IgRrXYZRAQCJ0dslrg37RGHluelLL8+eklcGp1LPfCRTXc95Z5LyA7g4BGE1ZUES
+6dRfZiy0KnZpcmFsMzIxMTEgKE1haWwpIDxjb250YWN0QHZpcmFsMzIxMTEuY29t
+PoiZBBMWCABBAhsDBQsJCAcCBhUKCQgLAgQWAgMBAh4BAheAAhkBFiEEJEC0Jgn6
+RRZNd2xP8CBPWaJepy8FAmqlGAYFCRLVtEUACgkQ8CBPWaJepy8tAgEAvxBFtOIN
+8dsmmM5yofr2jdOK1n5C2owQ+7RKCDESEKMA/2gRFNZNOASpJcqp9SuhGMTjrMJP
+dc2DXYP75guuB9AOtEJ2aXJhbDMyMTExIChHaXRIdWIpIDwxOTUxMDQwMyt2aXJh
+bDMyMTExQHVzZXJzLm5vcmVwbHkuZ2l0aHViLmNvbT6IlgQTFggAPgIbAwULCQgH
+AgYVCgkICwIEFgIDAQIeAQIXgBYhBCRAtCYJ+kUWTXdsT/AgT1miXqcvBQJqpRgH
+BQkS1bRFAAoJEPAgT1miXqcvNNsBAIYIEeL8UCqtlvfkxtuRBlEqBp53dibDR6Ak
+Lv1NuTlXAP0SKsQGeFkME27MC9qKP0bzVSAV3VpH7xU1PNCl5RHtBLg4BGE1ZUES
 CisGAQQBl1UBBQEBB0B06q60R3IGyYceGVhyvbcjVf96QjtxAeFJOHq3QkmcawMB
-CAeIfgQYFggAJhYhBCRAtCYJ+kUWTXdsT/AgT1miXqcvBQJhNWVBAhsMBQkJZgGA
-AAoJEPAgT1miXqcvCNEA/RSc0lSGsrh4SyfpiDAaIG1+1XsFx51IxYfnKcx+m96s
-AP0SKDbtAiMalxOOrekpjKZxdoSpDK0JOoRIsqZWh0fxAA==
-=kIp6
+CAeIfgQYFggAJgIbDBYhBCRAtCYJ+kUWTXdsT/AgT1miXqcvBQJqpRfuBQkS1bQt
+AAoJEPAgT1miXqcv7zcA/11QP1VhpOoggmh+JqAGn/PEF4MB+ltREhSIOy4t2RM5
+AQCsNrOO4JCGg1uaovBW9CH1+A19vM4Rt/B3nK/6P6T7Bw==
+=QhLl
 -----END PGP PUBLIC KEY BLOCK-----
 
 
-=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
-=~=~=~= Below is my previous key history, my current key is above =~=~=~=
-=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 
-
-The following public key is valid from 25/02/2020.
-It was used for signing/encrypting my email.
-
-The key's identifier is 1EF3D5216ABCC4F9.
-The key's fingerprint is 6CA588695A357491172A6B8A1EF3D5216ABCC4F9.
+pub   ed25519/1EF3D5216ABCC4F9 2020-02-25 [SC] [revoked: 2021-09-06]
+Key fingerprint = 6CA5 8869 5A35 7491 172A  6B8A 1EF3 D521 6ABC C4F9
+uid                 [ revoked] contact@viral32111.com <contact@viral32111.com>
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: OpenPGP.js v4.10.8
@@ -51,9 +45,6 @@ jGGA4Ra4uqBexTOPYIXr5IYp/gwH
 =Vx3U
 -----END PGP PUBLIC KEY BLOCK-----
 
-The above key was superseded on 06/09/2021, the official revocation follows.
-Emails signed and/or encrypted with this key before the above date should still be considered genuine.
-
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: This is a revocation certificate
 
@@ -66,14 +57,10 @@ MjVFQTcyRi4ACgkQHvPVIWq8xPmIGAD/T8bqFJmeeCZzsGBkZ/rCT8pVwgdx+4iI
 -----END PGP PUBLIC KEY BLOCK-----
 
 
-=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 
-
-The following public key is valid from 19/04/2020 until 19/05/2022.
-It was used for signing my GitHub commits.
-
-The key's identifier is C3978A7C377D9F5E.
-The key's fingerprint is D468E26877F53A2AD33EE929C3978A7C377D9F5E.
+pub   rsa4096/C3978A7C377D9F5E 2020-04-19 [SC] [revoked: 2021-09-06]
+Key fingerprint = D468 E268 77F5 3A2A D33E  E929 C397 8A7C 377D 9F5E
+uid                 [ revoked] viral32111 <19510403+viral32111@users.noreply.github.com>
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -104,9 +91,6 @@ ogHtixHm9UnE+eNVB8fcF6x/eydnwqr+n9WqWs5M/bG2MKj+7iqLoKk05nyjdHoi
 FyPicqzsbsbDuxqNLjXHQ7iYhZyBny2YLy9kQw==
 =gS1s
 -----END PGP PUBLIC KEY BLOCK-----
-
-The above key was superseded on 06/09/2021, the official revocation follows.
-GitHub commits signed with this key before the above date should still be considered genuine.
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: This is a revocation certificate

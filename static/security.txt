@@ -1,5 +1,5 @@
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA512
 
 # Got a security issue or vulnerability to report?
 
@@ -20,11 +20,11 @@ Canonical: https://viral32111.com/security.txt
 Canonical: http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion/security.txt
 
 # Consider this information stale after the date & time below
-Expires: Sat, 5 Sep 2026 00:00:00 +0000
+Expires: Thu, 11 Sep 2031 00:00:00 +0000
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCYUie8QAKCRDwIE9Zol6n
-L4aeAQCrXG9wzRXN1gQhM7h2CYrklzuoAbdq8DwBHDt0LiQFsAD+M46fdZA+FRxk
-N/FY1r+9omeKKLQCRuAeVvMeS/LI+gM=
-=KvXf
+iHUEARYKAB0WIQQkQLQmCfpFFk13bE/wIE9Zol6nLwUCaqhQJwAKCRDwIE9Zol6n
+Ly5NAQCKc4SaXG59pDzOB81IGJziSp9AvQzdwM5R5tMkFfrssQEAtGxggImsB7AG
+RURP4MYwlnDkU2OOqg3kVbjkCkn4Qwg=
+=68+y
 -----END PGP SIGNATURE-----
