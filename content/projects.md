@@ -3,7 +3,7 @@ title: "Projects"
 description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
 
 date: "2023-06-20T09:00:00Z"
-lastmod: "2023-06-20T12:00:00Z"
+lastmod: "2026-09-14T20:56:00Z"
 
 navigationBar: true
 navigationBarWeight: 3
@@ -27,4 +27,4 @@ My favourite projects though is my [website](https://github.com/viral32111/websi
 
 This section will eventually be updated to show a table of repositories on my self-hosted Git server.
 
-Most of these repositories will be unaccessible as they are for private projects, the ones that are not though will be downloadable via `git clone https://viral32111.com/projects/name` without the need for authentication.
+Most of these repositories will be inaccessible as they are for private projects, the ones that are not though will be downloadable via `git clone https://viral32111.com/projects/name` without the need for authentication.

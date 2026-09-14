@@ -3,7 +3,7 @@ title: "Contact"
 description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
 
 date: "2023-06-20T09:00:00Z"
-lastmod: "2023-06-20T12:00:00Z"
+lastmod: "2026-09-14T20:54:00Z"
 
 navigationBar: true
 navigationBarWeight: 8
@@ -11,9 +11,7 @@ navigationBarWeight: 8
 draft: false
 ---
 
-~~To get in touch with me about my projects, work, to ask questions, or anything else then contact me [via my email](mailto:contact@viral32111.com). Please refrain from adding me as a friend on social media or chat platforms.~~
-
-**As of June 2023, my email server is currently down due to server upgrades. I am working as fast as I can to get it running again! In the mean time, please get in touch with me via alternative methods.**
+To get in touch with me about my projects, work, to ask questions, or anything else then contact me [via my email](mailto:contact@viral32111.com). Please refrain from adding me as a friend on social media or chat platforms.
 
 If you wish to discuss something community related, then joining [our Discord server](/discord) would be best.
 

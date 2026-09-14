@@ -2,7 +2,7 @@
 title: "Privacy Policy"
 description: "Disclaimer about visitor privacy."
 
-lastmod: "2023-07-14T22:07:14Z"
+lastmod: "2026-09-14T20:59:00Z"
 ---
 
 ## What data is collected?
@@ -40,8 +40,10 @@ See the [security page](/security) for more information about the physical serve
 
 ## Tor
 
-Consider using [Tor](https://www.torproject.org/) to access this website if you are concerned about your privacy.
+~~Consider using [Tor](https://www.torproject.org/) to access this website if you are concerned about your privacy.~~
 
-The onion site address is [http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion](http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion). You should be automatically redirected to it when accessing this website in Tor Browser due to the use of the [`Onion-Location`](https://community.torproject.org/onion-services/advanced/onion-location/) HTTP header.
+~~The onion site address is [http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion](http://viraldwfella5we7pdbi75pmzg4bcrehcwjstyy6tgjbqhdh6pgdi6yd.onion). You should be automatically redirected to it when accessing this website in Tor Browser due to the use of the [`Onion-Location`](https://community.torproject.org/onion-services/advanced/onion-location/) HTTP header.~~
 
-This will provide both a benefit to privacy and security as your request is designed to look identical to all other requests before being routed through a circuit of unknown nodes. This makes it impossible for this website to identify you.
+~~This will provide both a benefit to privacy and security as your request is designed to look identical to all other requests before being routed through a circuit of unknown nodes. This makes it impossible for this website to identify you.~~
+
+**June 2023: My Onion site is no longer online. Though I still retain the keys, so I may bring it back in the future.**

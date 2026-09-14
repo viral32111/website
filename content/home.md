@@ -1,9 +1,9 @@
 ---
 title: "Home"
-description: "I am a developer from the United Kingdom with extensive experience in a wide array of programming languages and technologies. I am passionate about server-side infrastructure, network administration, and a myriad of programming paradigms. I enjoy working on personal projects and exploring the evergrowing technology industry."
+description: "I am a developer from the United Kingdom with extensive experience in a wide array of programming languages and technologies. I am passionate about server-side infrastructure, network administration, and a myriad of programming paradigms. I enjoy working on personal projects and exploring the ever-growing technology industry."
 
 date: "2023-06-20T09:00:00Z"
-lastmod: "2023-07-14T21:47:26Z"
+lastmod: "2026-09-14T20:56:00Z"
 
 navigationBar: true
 navigationBarWeight: 1

@@ -3,7 +3,7 @@ title: "About"
 description: "Information about who I am, what I enjoy, and my technical experience."
 
 date: "2023-06-20T09:00:00Z"
-lastmod: "2023-08-24T09:32:54Z"
+lastmod: "2026-09-14T20:55:00Z"
 
 navigationBar: true
 navigationBarWeight: 2
@@ -11,7 +11,7 @@ navigationBarWeight: 2
 draft: false
 ---
 
-I am a developer from the United Kingdom with a constant interest in the evergrowing technology industry and valuable experience with nearly every aspect of computing, ranging from high-level programming to low-level hardware.
+I am a developer from the United Kingdom with a constant interest in the ever-growing technology industry and valuable experience with nearly every aspect of computing, ranging from high-level programming to low-level hardware.
 
 My main passion resides around server-side infrastructure and network administration, I have been deploying, administrating and maintaining my own servers for nearly half a decade. This includes virtual in the cloud, unmanaged dedicated in datacenters, and on-site/at home.
 
@@ -21,7 +21,7 @@ I enjoy working on personal projects in my free time, usually desktop applicatio
 
 My interests do not remain in the software space though, as I enjoy computer hardware too. I have repaired many laptops and desktops along with having built numerous desktops and servers. I feel confident that I can give great suggestions and up-to-date advice for hardware choices, while rationalising my choices as to why it is ideal for the given scenario.
 
-I also like experimenting with embedded electronics and microsystems, such as Arduino's, Raspberry Pi's, etc. Though I have not made anything worth sharing yet, as it is still just a hobby which I am actively trying to get better at.
+I also like experimenting with embedded electronics and microsystems, such as Arduinos, Raspberry Pis, etc. Though I have not made anything worth sharing yet, as it is still just a hobby which I am actively trying to get better at.
 
 ## ![Book](/images/icons/book.png)Experience
 
@@ -50,7 +50,7 @@ I also have experience using or integrating with the following software suites a
 * Grafana, Loki & Promtail for system monitoring/analysis.
 * Git, GitHub, GitLab & Gitea for version control.
 * Remote dedicated & virtual private server hosting.
-* Authoritive DNS (ISC BIND) & DHCP (Kea, DNSMASQ) servers.
+* Authoritative DNS (ISC BIND) & DHCP (Kea, DNSmasq) servers.
 * Postfix email server with Dovecot IMAP, OpenDKIM signing, ClamAV scanning & Roundcube web-mail.
 * OpenVPN & WireGuard site-to-site VPNs.
 * PayPal & Stripe payment processing.
@@ -70,11 +70,11 @@ Below are my various online profiles. If you come across a profile with my usern
 * [YouTube](/youtube)
 * [Twitch](/twitch)
 * [Reddit](/reddit)
-* [Twitter (X)](/twitter)
+* [X](/twitter) *(formerly Twitter)*
 * [Instagram](/instagram)
 * [Threads](/threads)
 * [Mastodon](/mastodon)
 * [DeviantArt](/deviantart)
 * [Minecraft (NameMC)](/namemc)
 * [MyAnimeList](/myanimelist)
-* [GmodStore](/gmodstore)
+* [GmodStore](/gmodstore) *(formerly Script Fodder)*
