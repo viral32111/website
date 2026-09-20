@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"oven.bun-vscode", // Bun
+		"oxc.oxc-vscode", // oxlint & oxfmt
+		"streetsidesoftware.code-spell-checker", // Spell Checker
+		"mikestead.dotenv", // .env
+		"redhat.vscode-yaml", // YAML
+		"tamasfe.even-better-toml", // TOML (bunfig.toml)
+		"Atlassian.atlascode" // Bitbucket
+	]
+}

@@ -1,19 +1,21 @@
 # Website configuration
 title = "viral32111's website"
 baseURL = "https://viral32111.com"
-languageCode = "en-gb"
 
-# Do not place pages in their own directories.
-uglyURLs = "${HUGO_UGLYURLS:-false}"
+[language]
+locale = "en-gb"
 
-# Allow fetching file modification times from Git, for use below.
+# Do not place pages in their own directories
+uglyURLs = false
+
+# Allow fetching file modification times from Git, for use below
 enableGitInfo = true
 
-# Try use file modification times from Git, falling back to front matter, then filesystem, and finally build time.
+# Try use file modification times from Git, falling back to front matter, then filesystem, and finally build time
 [frontmatter]
 lastmod = [ "lastmod", ":git", ":fileModTime", ":default" ]
 
-# Custom parameters.
+# Custom parameters
 [params]
 authorName = "viral32111"
 authorEmailAddress = "contact@viral32111.com"
@@ -33,7 +35,7 @@ disableJS = true
 
 [minify.tdewolff.html]
 keepComments = false
-keepConditionalComments = true
+keepSpecialComments = true
 keepDefaultAttrVals = true
 keepDocumentTags = true
 keepEndTags = true
@@ -41,5 +43,18 @@ keepQuotes = true
 keepWhitespace = true
 
 [minify.tdewolff.css]
-keepCSS2 = false # Not like we support ancient browsers anyway due to the security requirements
+version = 0
 precision = 0
+
+[outputs]
+home = ["html", "sitemap", "robots"]
+
+[outputFormats.sitemap]
+mediaType = "text/plain"
+baseName = "sitemap"
+isPlainText = true
+
+[outputFormats.robots]
+mediaType = "text/plain"
+baseName = "robots"
+isPlainText = true

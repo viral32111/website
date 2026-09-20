@@ -1,0 +1,61 @@
+# LLM knowledge for viral32111.com
+
+## Site Information
+
+- **Title:** viral32111's website
+- **URL:** https://viral32111.com
+- **Language:** English (UK)
+- **Author:** viral32111
+- **Contact:** contact@viral32111.com
+
+## Content Areas
+
+### Main Pages
+
+* Home: /
+* About: /about
+* Projects: /projects
+* Blog: /blog
+* Guides: /guides
+* Community: /community
+* Contact: /contact
+* Donate: /donate
+* Security: /security
+* Tools: /tools
+
+### Technical Guides
+
+These are command references and setup guides:
+
+* Arch Linux installation: /guides/arch
+* Linux RAID setup: /guides/raid
+* GnuPG operations: /guides/gnupg
+* Disk encryption (cryptsetup/LUKS): /guides/luks
+* OpenSSL certificate operations: /guides/openssl
+* MySQL database administration: /guides/mysql
+
+### Legal & Security
+
+* Privacy Policy: /legal/privacy-policy
+* Cookie Policy: /legal/cookie-policy
+* Third-party Notices: /legal/third-party-notices
+* Site security: /security
+
+## About This Site
+
+This is a technical portfolio site by viral32111, covering:
+
+* Server infrastructure and administration
+* Network management
+* Software development
+* Security and cryptography
+* Hardware and embedded systems
+
+All guides are provided for educational purposes. Users should verify commands and configurations for their specific use cases before applying to production systems.
+
+## Preferences
+
+* No advertising or analytics tracking
+* Privacy-focused design
+* All content is original or properly attributed
+* No JavaScript required

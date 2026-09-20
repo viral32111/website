@@ -1,7 +1,86 @@
 {
+	// Title
+	"window.title": "viral32111.com",
+
+	// Indent with tabs by default
+	"editor.detectIndentation": true,
+	"editor.insertSpaces": false,
+	"editor.indentSize": "tabSize",
+	"editor.tabSize": 4,
+
+	// Indent with spaces in YAML files
+	"[yaml]": { "editor.insertSpaces": true, "editor.tabSize": 2 },
+
+	// Force file format
+	"files.eol": "\n",
+	"files.encoding": "utf8",
+	"files.insertFinalNewline": true,
+
+	// Show & trim unnecessary whitespace
+	"editor.renderWhitespace": "boundary",
+	"editor.trimAutoWhitespace": true,
+	"files.trimTrailingWhitespace": true,
+	"files.trimFinalNewlines": true,
+
+	// Close strings, comments & brackets
+	"editor.autoClosingQuotes": "always",
+	"editor.autoClosingComments": "always",
+	"editor.autoClosingBrackets": "always",
+
+	// Show parameter names & enum values
+	"editor.inlayHints.enabled": "on",
+
+	// Highlight matching brackets
+	"editor.bracketPairColorization.enabled": true,
+
+	// Show color picker next to RGB/hex codes
+	"editor.colorDecorators": true,
+
+	// Smoother animations
+	"editor.smoothScrolling": true,
+	"editor.cursorBlinking": "smooth",
+	"editor.cursorStyle": "line-thin",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"terminal.integrated.smoothScrolling": true,
+	"workbench.list.smoothScrolling": true,
+
+	// IntelliSense
+	"editor.inlineSuggest.enabled": true,
+
+	// Pin tabs
+	"workbench.editor.pinnedTabsOnSeparateRow": true,
+	"workbench.editor.preventPinnedEditorClose": "never",
+	"workbench.editor.pinnedTabSizing": "normal",
+	"workbench.editor.showTabs": "multiple",
+
+	// Check code, configs & docs for spelling mistakes
 	"cSpell.language": "en-GB",
+	"cSpell.files": ["**/*.ts", "*.config.ts", "*.config.js", "**/*.md"],
 	"cSpell.words": [
 		"autobuild",
 		"buildx"
-	]
+	],
+
+	// Custom colours
+	"workbench.colorCustomizations": {
+		"activityBar.activeBackground": "#AEA49A",
+		"activityBar.background": "#AEA49A",
+		"activityBar.foreground": "#FFFFFF",
+		"activityBar.inactiveForeground": "#FFFFFFbb",
+		"activityBar.inactiveBackground": "#AEA49A99",
+		"activityBarBadge.background": "#FFFFFF",
+		"activityBarBadge.foreground": "#AEA49A",
+		"commandCenter.border": "#FFFFFF99",
+		"sash.hoverBorder": "#AEA49A",
+		"statusBar.background": "#AEA49A",
+		"statusBar.foreground": "#FFFFFF",
+		"statusBarItem.hoverBackground": "#AEA49A",
+		"statusBarItem.remoteBackground": "#AEA49A",
+		"statusBarItem.remoteForeground": "#FFFFFF",
+		"statusBar.inactiveBackground": "#AEA49A99",
+		"titleBar.activeBackground": "#AEA49A",
+		"titleBar.activeForeground": "#FFFFFF",
+		"titleBar.inactiveBackground": "#AEA49A99",
+		"titleBar.inactiveForeground": "#FFFFFF99"
+	}
 }

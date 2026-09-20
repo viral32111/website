@@ -1,0 +1,7 @@
+{{- $path := strings.TrimSuffix ".html" .RelPermalink -}}
+
+{{- if not .IsHome }}
+	{{ $path = strings.TrimSuffix "/" $path }}
+{{ end -}}
+
+{{- return $path -}}

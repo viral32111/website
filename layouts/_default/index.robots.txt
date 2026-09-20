@@ -1,0 +1,35 @@
+# Deny specific bots outright
+User-agent: CuteStat
+User-agent: Mediapartners-Google
+User-agent: AdsBot-Google-Mobile
+User-agent: AdsBot-Google
+User-agent: AdsBot-Google-Mobile-Apps
+Disallow: /
+
+# Deny all bots access to private resources
+User-agent: *
+Disallow: /images/
+Disallow: /stylesheets/
+
+# Allow all bots to access public pages
+User-agent: *
+{{- range (sort (where site.Pages "Sitemap.Disable" "!=" true) "Permalink") }}
+Allow: {{ partial "canonical-path.html" . }}
+{{- end }}
+
+# Allow all bots to access static information
+User-agent: *
+Allow: /btc.txt
+Allow: /xmr.txt
+Allow: /public.txt
+Allow: /security.txt
+Allow: /humans.txt
+Allow: /robots.txt
+Allow: /sitemap.txt
+Allow: /sitemap.xml
+Allow: /llms.txt
+Allow: /ads.txt
+
+# Allow all bots to access downloads
+User-agent: *
+Allow: /download/

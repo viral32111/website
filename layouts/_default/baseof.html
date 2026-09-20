@@ -14,7 +14,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<meta name="url" content="{{ strings.TrimSuffix ".html" .Permalink }}">
+		<meta name="url" content="{{ partial "canonical-url.html" . }}">
 		<meta name="description" content="{{ .Description }}">
 		<meta name="subject" content="{{ .Description }}">
 		<meta name="keywords" content="{{ .Site.Params.searchTags }}">
@@ -26,7 +26,7 @@
 
 		<meta name="theme-color" content="{{ .Site.Params.themeColor }}">
 		<meta name="og:type" content="website">
-		<meta name="og:url" content="{{ strings.TrimSuffix ".html" .Permalink }}">
+		<meta name="og:url" content="{{ partial "canonical-url.html" . }}">
 		<meta name="og:site_name" content="{{ .Site.Title }}">
 		<meta name="og:title" content="{{ .Title }}">
 		<meta name="og:description" content="{{ .Description }}">
@@ -81,7 +81,7 @@
 			}
 		</script>
 
-		<link rel="canonical" href="{{ strings.TrimSuffix ".html" .Permalink }}">
+		<link rel="canonical" href="{{ partial "canonical-url.html" . }}">
 
 		{{ $iconImage := resources.Get "/images/avatar/icon.webp" }}
 		<link rel="icon" href="{{ $iconImage.RelPermalink }}" type="image/webp">
@@ -106,9 +106,9 @@
 						<a>{{ .Title }}</a>
 					{{ else }}
 						{{ if eq .RelPermalink $currentPage.RelPermalink }}
-							<a href="{{ strings.TrimSuffix ".html" .RelPermalink }}" class="current">{{ .Title }}</a>
+							<a href="{{ partial "canonical-path.html" . }}" class="current">{{ .Title }}</a>
 						{{ else }}
-							<a href="{{ strings.TrimSuffix ".html" .RelPermalink }}">{{ .Title }}</a>
+							<a href="{{ partial "canonical-path.html" . }}">{{ .Title }}</a>
 						{{ end }}
 					{{ end }}
 				{{ end }}
@@ -132,7 +132,7 @@
 			<!-- [Disable CSS] [Dark Theme] -->
 
 			<p>
-				Copyright &copy; 2016 - {{ now.Format "2006" }} {{ .Site.Params.authorName }}. All rights reserved unless stated otherwise.<br>
+				Copyright &copy; 2016 - <span id="copyright-year">{{ now.Format "2006" }}</span> {{ .Site.Params.authorName }}. All rights reserved unless stated otherwise.<br>
 				The <a class="no-brackets" href="https://github.com/viral32111/website">code</a> is licensed under the <a class="no-brackets" href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">GNU Affero General Public License Version 3</a>.
 			</p>
 
@@ -141,9 +141,20 @@
 				<a href="/legal/privacy-policy">Privacy Policy</a>
 				<a href="/legal/cookie-policy">Cookie Policy</a>
 				<a href="/legal/third-party-notices">Third-Party Notices</a>
+				<a href="/sitemap.txt">Sitemap</a>
 			</p>
 
 			{{ block "footer" . }}{{ end }}
 		</footer>
 	</body>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const copyrightYear = document.getElementById("copyright-year");
+			if (copyrightYear == null) return;
+
+			const currentYear = new Date().getFullYear();
+			copyrightYear.textContent = currentYear;
+		}, { once: true });
+	</script>
 </html>

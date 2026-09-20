@@ -1,14 +1,13 @@
-# Generated files
+# Hugo
 public/
 resources/_gen/
 assets/jsconfig.json
 hugo_stats.json
-
-# Lock file
 .hugo_build.lock
 
-# Downloads directory
-static/downloads/
+# Downloads
+download/*
+!download/*SUMS
 
-# Docker builds
-context/
+# NGINX
+.tls/

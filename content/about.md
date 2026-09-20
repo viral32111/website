@@ -70,7 +70,7 @@ Below are my various online profiles. If you come across a profile with my usern
 * [YouTube](/youtube)
 * [Twitch](/twitch)
 * [Reddit](/reddit)
-* [X](/twitter) *(formerly Twitter)*
+* [&#88;](/twitter) *(formerly Twitter)*
 * [Instagram](/instagram)
 * [Threads](/threads)
 * [Mastodon](/mastodon)

@@ -1,0 +1,8 @@
+# Ignore everything by default
+/*
+
+# Include the Hugo output
+!public
+
+# Include NGINX configuration
+!nginx/*.conf

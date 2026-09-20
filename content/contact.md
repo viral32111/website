@@ -3,7 +3,7 @@ title: "Contact"
 description: "I am a programmer and developer from the United Kingdom with many years of experience in popular programming languages."
 
 date: "2023-06-20T09:00:00Z"
-lastmod: "2026-09-14T20:54:00Z"
+lastmod: "2026-09-19T17:12:00Z"
 
 navigationBar: true
 navigationBarWeight: 8
@@ -17,7 +17,7 @@ If you wish to discuss something community related, then joining [our Discord se
 
 ## ![Key](/images/icons/key.png)Encryption
 
-If you are familiar with PGP then consider encrypting your messages with [my PGP public key](/public.txt) for secure communication.
+If you are familiar with PGP then consider encrypting your messages using [my public key](/public.txt) for secure communication. [[Signature](/public.txt.asc)] [[SHA-256](/public.txt.sha256)] [[SHA-512](/public.txt.sha512)]
 
 Remember to send your public key in your initial message so that I may encrypt my replies.
 

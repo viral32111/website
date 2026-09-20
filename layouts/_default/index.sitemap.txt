@@ -1,0 +1,3 @@
+{{- range (sort (where site.Pages "Sitemap.Disable" "!=" true) "Permalink") -}}
+{{ partial "canonical-url.html" . }}
+{{ end -}}

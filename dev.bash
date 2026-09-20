@@ -3,39 +3,55 @@
 set -e -u -o pipefail -x
 
 # Configuration
-declare -r NGINX_CONFIGURATION_FILE_PATH="$PWD/nginx.conf"
-declare -r HUGO_BUILD_DIRECTORY_PATH="$PWD/public"
-declare -r DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH="$PWD/context"
-declare -r DOCKER_IMAGE_NAME="ghcr.io/viral32111/website"
+declare -r DOMAIN="viral32111.local"
+declare -r DOCKER_IMAGE="ghcr.io/viral32111/website:local"
+declare -r HUGO_OUTPUT_DIRECTORY_PATH="$PWD/public"
 
-# 1. Build the static website
-if ! hugo --baseURL 'http://localhost:80' --buildDrafts --buildExpired --buildFuture --destination "${HUGO_BUILD_DIRECTORY_PATH}" || [[ ! -d "${HUGO_BUILD_DIRECTORY_PATH}" ]]; then
-	echo "Hugo did not create build directory '${HUGO_BUILD_DIRECTORY_PATH}'!" 1>&2
+# Clean up the output directory
+if [[ -d "${HUGO_OUTPUT_DIRECTORY_PATH}" ]]; then
+	rm -r -f "${HUGO_OUTPUT_DIRECTORY_PATH}"
+	mkdir -v -p "${HUGO_OUTPUT_DIRECTORY_PATH}"
+fi
+
+# Build the website into the output directory
+if ! hugo --baseURL "https://${DOMAIN}" --buildDrafts --buildExpired --buildFuture --destination "${HUGO_OUTPUT_DIRECTORY_PATH}" || [[ ! -d "${HUGO_OUTPUT_DIRECTORY_PATH}" ]]; then
+	echo "Hugo failed to build into output directory '${HUGO_OUTPUT_DIRECTORY_PATH}'!" 1>&2
 	exit 1
 fi
 
-# 2. Setup the Docker context directory
-if [[ -d "${DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH}" ]]; then
-	rm --recursive --force "${DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH}"
-fi
-mkdir --parents "${DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH}"
-cp --archive "${HUGO_BUILD_DIRECTORY_PATH}" "${DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH}/"
-cp --archive "${NGINX_CONFIGURATION_FILE_PATH}" "${DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH}/"
-trap 'rm --recursive --force "${DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH}"' EXIT
-
-# 3. Build the Docker image
+# Build the Docker image
 docker buildx build \
 	--pull \
 	--progress plain \
-	--platform linux/amd64 \
 	--file Dockerfile \
-	--tag "${DOCKER_IMAGE_NAME}:local" \
-	"${DOCKER_IMAGE_CONTEXT_DIRECTORY_PATH}"
+	--tag "${DOCKER_IMAGE}" \
+	"$PWD"
 
-# 4. Start the Docker container
+# Generate self-signed TLS certificates
+declare -r TLS_DIRECTORY_PATH=".tls"
+declare -r TLS_PRIVATE_KEY_PATH="${TLS_DIRECTORY_PATH}/private.pem"
+declare -r TLS_CERTIFICATE_PATH="${TLS_DIRECTORY_PATH}/certificate.pem"
+if [[ ! -d "${TLS_DIRECTORY_PATH}" ]]; then
+	mkdir -v -p "${TLS_DIRECTORY_PATH}"
+fi
+if [[ ! -f "${TLS_PRIVATE_KEY_PATH}" || ! -f "${TLS_CERTIFICATE_PATH}" ]]; then
+	mkcert -key-file "${TLS_PRIVATE_KEY_PATH}" -cert-file "${TLS_CERTIFICATE_PATH}" localhost 127.0.0.1 ${DOMAIN}
+fi
+
+# Create the download directory
+declare -r DOWNLOAD_DIRECTORY_PATH="$PWD/download"
+if [[ ! -d "$PWD/download" ]]; then
+	mkdir -v -p "$PWD/download"
+fi
+
+# Start the Docker container
 docker container run \
-	--name website \
+	--name ${DOMAIN} \
 	--publish published=127.0.0.1:80,target=80,protocol=tcp \
+	--publish published=127.0.0.1:443,target=443,protocol=tcp \
+	--publish published=127.0.0.1:443,target=443,protocol=udp \
+	--mount "type=bind,source=${TLS_DIRECTORY_PATH},target=/usr/local/share/tls,readonly" \
+	--mount "type=bind,source=${DOWNLOAD_DIRECTORY_PATH},target=/var/lib/download,readonly" \
 	--interactive --tty \
 	--rm \
-	"${DOCKER_IMAGE_NAME}:local"
+	"${DOCKER_IMAGE}"
