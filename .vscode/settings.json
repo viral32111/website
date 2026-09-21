@@ -58,7 +58,10 @@
 	"cSpell.files": ["**/*.ts", "*.config.ts", "*.config.js", "**/*.md"],
 	"cSpell.words": [
 		"autobuild",
-		"buildx"
+		"buildx",
+		"cryptsetup",
+		"luks",
+		"pbkdf"
 	],
 
 	// Custom colours

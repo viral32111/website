@@ -1,15 +1,17 @@
 /* Font across every page */
-* {
+html, body {
 	font-family: "Verdana", sans-serif;
+}
+* {
 	font-size: 13px;
 }
 
 /* Maximum page width */
 body { width: 675px; }
 
-/* Responsive maximum page width */
+/* Mobile view */
 @media ( max-width: 675px ) {
-	body { width: 100%; }
+	body { width: 96dvw; }
 }
 
 /* Minimalistic dividers for header & footer */
@@ -28,4 +30,5 @@ a[ href ]:hover { text-decoration: underline; }
 a:not( [ href ] ), a[ href = "" ], a[ href = "#" ] {
 	color: #545454;
 	pointer-events: none;
+	/* text-decoration: line-through; */
 }

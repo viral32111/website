@@ -6,6 +6,12 @@ set -e -u -o pipefail -x
 declare -r DOMAIN="viral32111.local"
 declare -r DOCKER_IMAGE="ghcr.io/viral32111/website:local"
 declare -r HUGO_OUTPUT_DIRECTORY_PATH="$PWD/public"
+declare -r HUGO_ASSETS_DIRECTORY_PATH="$PWD/assets"
+
+# Generate the syntax highlighting CSS - https://gohugo.io/quick-reference/syntax-highlighting-styles/
+declare -r THEME_NAME="friendly"
+declare -r THEME_MODE="light"
+hugo gen chromastyles --style=${THEME_NAME} --mode=${THEME_MODE} > "${HUGO_ASSETS_DIRECTORY_PATH}/stylesheets/chromastyles.${THEME_NAME}.${THEME_MODE}.css"
 
 # Clean up the output directory
 if [[ -d "${HUGO_OUTPUT_DIRECTORY_PATH}" ]]; then

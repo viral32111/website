@@ -15,4 +15,4 @@ These guides are my personal notes & command references that were originally pos
 
 Perhaps someone (or something) else out there may find these guides useful as well.
 
-In no particular order, here are the guides I have compiled:
+In lovely deterministic lexicographical ordering by title, here are the guides I have compiled:

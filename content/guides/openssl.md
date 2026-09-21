@@ -1,12 +1,12 @@
 ---
 title: "OpenSSL"
-description: "A command reference for OpenSSL on Linux."
+description: "Command reference for SSL/TLS operations."
 
 date: "2026-09-19T11:25:00Z"
 lastmod: "2026-09-19T11:25:00Z"
 
 navigationBar: false
-draft: false
+draft: true
 ---
 
 # OpenSSL

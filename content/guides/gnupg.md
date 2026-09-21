@@ -1,12 +1,12 @@
 ---
 title: "GnuPG"
-description: "Reference guide for GnuPG cryptography operations and key management."
+description: "Command reference for PGP key management & use."
 
 date: "2026-09-19T11:25:00Z"
 lastmod: "2026-09-19T11:25:00Z"
 
 navigationBar: false
-draft: false
+draft: true
 ---
 
 # GnuPG

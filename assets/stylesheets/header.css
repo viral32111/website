@@ -26,3 +26,15 @@ header nav a::after { content: "]"; }
 
 /* Bold navigation link for current page */
 header nav a.current { font-weight: bold; }
+
+/* Mobile view */
+@media ( max-width: 675px ) {
+	header h1 {
+		text-align: left;
+	}
+
+	header nav {
+		flex-direction: column;
+		text-align: left;
+	}
+}

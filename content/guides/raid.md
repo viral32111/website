@@ -1,12 +1,12 @@
 ---
 title: "RAID"
-description: "A command reference for RAID'ing disks on Linux."
+description: "Command reference for RAID'ing disks on Linux."
 
 date: "2026-09-19T11:25:00Z"
 lastmod: "2026-09-19T11:25:00Z"
 
 navigationBar: false
-draft: false
+draft: true
 ---
 
 # Linux RAID

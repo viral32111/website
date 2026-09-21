@@ -1,12 +1,12 @@
 ---
 title: "Arch Linux"
-description: "Setup guide for Arch Linux installation with LUKS encryption, LVM, and complete system configuration."
+description: "Command cookbook for installing Arch Linux."
 
 date: "2026-09-19T11:25:00Z"
 lastmod: "2026-09-19T11:25:00Z"
 
 navigationBar: false
-draft: false
+draft: true
 ---
 
 # Arch Linux Setup

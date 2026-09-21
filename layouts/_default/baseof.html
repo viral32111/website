@@ -86,11 +86,20 @@
 		{{ $iconImage := resources.Get "/images/avatar/icon.webp" }}
 		<link rel="icon" href="{{ $iconImage.RelPermalink }}" type="image/webp">
 
-		{{ $styles := slice ( resources.Get "/stylesheets/global.css" ) ( resources.Get "/stylesheets/header.css" ) ( resources.Get "/stylesheets/footer.css" ) ( resources.Get "/stylesheets/content.css" ) }}
+		{{ $styles := slice
+			( resources.Get "/stylesheets/global.css" )
+			( resources.Get "/stylesheets/header.css" )
+			( resources.Get "/stylesheets/footer.css" )
+			( resources.Get "/stylesheets/content.css" )
+			( resources.Get "/stylesheets/chromastyles.friendly.light.css" )
+		}}
 		{{ range $style := $styles }}
 			{{ $stylesheet := $style | minify | fingerprint "sha384" }}
 			<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" crossorigin="anonymous" type="text/css">
 		{{ end }}
+
+		<!-- Highlight.js for syntax highlighting -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/default.min.css" integrity="sha384-4Y0nObtF3CbKnh+lpzmAVdAMtQXl+ganWiiv73RcGVdRdfVIya8Cao1C8ZsVRRDz" crossorigin="anonymous">
 
 		{{ block "head" . }}{{ end }}
 	</head>
@@ -141,7 +150,7 @@
 				<a href="/legal/privacy-policy">Privacy Policy</a>
 				<a href="/legal/cookie-policy">Cookie Policy</a>
 				<a href="/legal/third-party-notices">Third-Party Notices</a>
-				<a href="/sitemap.txt">Sitemap</a>
+				<a href="/sitemap.txt">Site Map</a>
 			</p>
 
 			{{ block "footer" . }}{{ end }}
@@ -157,4 +166,12 @@
 			copyrightYear.textContent = currentYear;
 		}, { once: true });
 	</script>
+
+	<!-- Highlight.js for syntax highlighting -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js" integrity="sha384-wjfDDhOPPdjtva8vWBhWeVprSpmxisEu5aYT3q1JyACqXpdKpo3PWZTMVq24MBix" crossorigin="anonymous" defer="true"></script>
+	<!-- <script>
+		document.addEventListener("DOMContentLoaded", () => {
+			hljs.highlightAll();
+		}, { once: true });
+	</script> -->
 </html>

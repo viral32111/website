@@ -1,12 +1,12 @@
 ---
 title: "MySQL"
-description: "A command reference for MySQL on Linux."
+description: "Command reference for MySQL database administration."
 
 date: "2026-09-19T11:25:00Z"
 lastmod: "2026-09-19T11:25:00Z"
 
 navigationBar: false
-draft: false
+draft: true
 ---
 
 # MySQL

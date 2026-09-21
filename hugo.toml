@@ -58,3 +58,11 @@ isPlainText = true
 mediaType = "text/plain"
 baseName = "robots"
 isPlainText = true
+
+# https://gohugo.io/quick-reference/syntax-highlighting-styles/
+[markup.highlight]
+noClasses = false
+style = "friendly"
+
+lineNos = true
+lineNumbersInTable = false
